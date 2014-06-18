@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D0A851FB195134AC0004A4A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A851FA195134AC0004A4A2 /* AppDelegate.swift */; };
+		D0A851FD195134AC0004A4A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A851FC195134AC0004A4A2 /* ViewController.swift */; };
+		D0A85200195134AC0004A4A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A851FE195134AC0004A4A2 /* Main.storyboard */; };
+		D0A85202195134AC0004A4A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A85201195134AC0004A4A2 /* Images.xcassets */; };
+		D0A8520E195134AC0004A4A2 /* MauiPomodoroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A8520D195134AC0004A4A2 /* MauiPomodoroTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0A85208195134AC0004A4A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0A851ED195134AC0004A4A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0A851F4195134AC0004A4A2;
+			remoteInfo = MauiPomodoro;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D0A851F5195134AC0004A4A2 /* MauiPomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MauiPomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A851F9195134AC0004A4A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0A851FA195134AC0004A4A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D0A851FC195134AC0004A4A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D0A851FF195134AC0004A4A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0A85201195134AC0004A4A2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D0A85207195134AC0004A4A2 /* MauiPomodoroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MauiPomodoroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A8520C195134AC0004A4A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0A8520D195134AC0004A4A2 /* MauiPomodoroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MauiPomodoroTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0A851F2195134AC0004A4A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0A85204195134AC0004A4A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0A851EC195134AC0004A4A2 = {
+			isa = PBXGroup;
+			children = (
+				D0A851F7195134AC0004A4A2 /* MauiPomodoro */,
+				D0A8520A195134AC0004A4A2 /* MauiPomodoroTests */,
+				D0A851F6195134AC0004A4A2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0A851F6195134AC0004A4A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0A851F5195134AC0004A4A2 /* MauiPomodoro.app */,
+				D0A85207195134AC0004A4A2 /* MauiPomodoroTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0A851F7195134AC0004A4A2 /* MauiPomodoro */ = {
+			isa = PBXGroup;
+			children = (
+				D0A851FA195134AC0004A4A2 /* AppDelegate.swift */,
+				D0A851FC195134AC0004A4A2 /* ViewController.swift */,
+				D0A851FE195134AC0004A4A2 /* Main.storyboard */,
+				D0A85201195134AC0004A4A2 /* Images.xcassets */,
+				D0A851F8195134AC0004A4A2 /* Supporting Files */,
+			);
+			path = MauiPomodoro;
+			sourceTree = "<group>";
+		};
+		D0A851F8195134AC0004A4A2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0A851F9195134AC0004A4A2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0A8520A195134AC0004A4A2 /* MauiPomodoroTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0A8520D195134AC0004A4A2 /* MauiPomodoroTests.swift */,
+				D0A8520B195134AC0004A4A2 /* Supporting Files */,
+			);
+			path = MauiPomodoroTests;
+			sourceTree = "<group>";
+		};
+		D0A8520B195134AC0004A4A2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0A8520C195134AC0004A4A2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0A851F4195134AC0004A4A2 /* MauiPomodoro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0A85211195134AC0004A4A2 /* Build configuration list for PBXNativeTarget "MauiPomodoro" */;
+			buildPhases = (
+				D0A851F1195134AC0004A4A2 /* Sources */,
+				D0A851F2195134AC0004A4A2 /* Frameworks */,
+				D0A851F3195134AC0004A4A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MauiPomodoro;
+			productName = MauiPomodoro;
+			productReference = D0A851F5195134AC0004A4A2 /* MauiPomodoro.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0A85206195134AC0004A4A2 /* MauiPomodoroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0A85214195134AC0004A4A2 /* Build configuration list for PBXNativeTarget "MauiPomodoroTests" */;
+			buildPhases = (
+				D0A85203195134AC0004A4A2 /* Sources */,
+				D0A85204195134AC0004A4A2 /* Frameworks */,
+				D0A85205195134AC0004A4A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0A85209195134AC0004A4A2 /* PBXTargetDependency */,
+			);
+			name = MauiPomodoroTests;
+			productName = MauiPomodoroTests;
+			productReference = D0A85207195134AC0004A4A2 /* MauiPomodoroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0A851ED195134AC0004A4A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Justin Gordon";
+				TargetAttributes = {
+					D0A851F4195134AC0004A4A2 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					D0A85206195134AC0004A4A2 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = D0A851F4195134AC0004A4A2;
+					};
+				};
+			};
+			buildConfigurationList = D0A851F0195134AC0004A4A2 /* Build configuration list for PBXProject "MauiPomodoro" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0A851EC195134AC0004A4A2;
+			productRefGroup = D0A851F6195134AC0004A4A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0A851F4195134AC0004A4A2 /* MauiPomodoro */,
+				D0A85206195134AC0004A4A2 /* MauiPomodoroTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0A851F3195134AC0004A4A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0A85200195134AC0004A4A2 /* Main.storyboard in Resources */,
+				D0A85202195134AC0004A4A2 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0A85205195134AC0004A4A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0A851F1195134AC0004A4A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0A851FD195134AC0004A4A2 /* ViewController.swift in Sources */,
+				D0A851FB195134AC0004A4A2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0A85203195134AC0004A4A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0A8520E195134AC0004A4A2 /* MauiPomodoroTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0A85209195134AC0004A4A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0A851F4195134AC0004A4A2 /* MauiPomodoro */;
+			targetProxy = D0A85208195134AC0004A4A2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D0A851FE195134AC0004A4A2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0A851FF195134AC0004A4A2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0A8520F195134AC0004A4A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0A85210195134AC0004A4A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0A85212195134AC0004A4A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = MauiPomodoro/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D0A85213195134AC0004A4A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = MauiPomodoro/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D0A85215195134AC0004A4A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MauiPomodoro.app/MauiPomodoro";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MauiPomodoroTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		D0A85216195134AC0004A4A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MauiPomodoro.app/MauiPomodoro";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MauiPomodoroTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0A851F0195134AC0004A4A2 /* Build configuration list for PBXProject "MauiPomodoro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0A8520F195134AC0004A4A2 /* Debug */,
+				D0A85210195134AC0004A4A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0A85211195134AC0004A4A2 /* Build configuration list for PBXNativeTarget "MauiPomodoro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0A85212195134AC0004A4A2 /* Debug */,
+				D0A85213195134AC0004A4A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D0A85214195134AC0004A4A2 /* Build configuration list for PBXNativeTarget "MauiPomodoroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0A85215195134AC0004A4A2 /* Debug */,
+				D0A85216195134AC0004A4A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0A851ED195134AC0004A4A2 /* Project object */;
+}
