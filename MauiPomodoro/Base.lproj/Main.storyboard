@@ -1,25 +1,112 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6162" systemVersion="14A238h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6160"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Timer View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Timer View Controller" customClass="TimerViewController" customModule="MauiPomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="Black Background View">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AG-FU-uhp" userLabel="Reset Button">
+                                <rect key="frame" x="420" y="430" width="40" height="30"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mYX-WK-iwZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2i-FE-xAc">
+                                <rect key="frame" x="20" y="430" width="54" height="30"/>
+                                <state key="normal" title="Options">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cVB-uP-0jw" kind="presentation" id="b1D-Sd-Ncg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="JbY-vB-NPH" userLabel="Time Label">
+                                <rect key="frame" x="20" y="61" width="440" height="358"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="300"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydx-Iu-Vti">
+                                <rect key="frame" x="329" y="430" width="71" height="30"/>
+                                <state key="normal" title="Start/Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startStopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZAS-b9-5OJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="D2i-FE-xAc" secondAttribute="bottom" constant="20" id="3Ud-1A-OVn"/>
+                            <constraint firstAttribute="centerY" secondItem="JbY-vB-NPH" secondAttribute="centerY" id="Mmb-GQ-zmr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ydx-Iu-Vti" secondAttribute="bottom" constant="20" id="Qos-fA-3aX"/>
+                            <constraint firstItem="4AG-FU-uhp" firstAttribute="leading" secondItem="ydx-Iu-Vti" secondAttribute="trailing" constant="20" id="RxC-KR-VEg"/>
+                            <constraint firstItem="4AG-FU-uhp" firstAttribute="leading" secondItem="ydx-Iu-Vti" secondAttribute="trailing" constant="20" id="cYG-lP-NZR"/>
+                            <constraint firstItem="JbY-vB-NPH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="dZF-sN-Yje"/>
+                            <constraint firstItem="D2i-FE-xAc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="fhL-7Y-DWw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4AG-FU-uhp" secondAttribute="bottom" constant="20" id="gGe-Yl-bqa"/>
+                            <constraint firstAttribute="trailing" secondItem="4AG-FU-uhp" secondAttribute="trailing" constant="20" id="hQr-BZ-Wmf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ydx-Iu-Vti" secondAttribute="bottom" constant="20" id="krK-T2-6R6"/>
+                            <constraint firstAttribute="trailing" secondItem="JbY-vB-NPH" secondAttribute="trailing" constant="20" id="owD-FH-PQO"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="JbY-vB-NPH" id="AM8-ap-ue2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="146" y="1158"/>
+        </scene>
+        <!--Options View Controller-->
+        <scene sceneID="bdb-9s-x23">
+            <objects>
+                <viewController id="cVB-uP-0jw" userLabel="Options View Controller" customClass="OptionsViewController" customModule="MauiPomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fwi-RW-Rh2"/>
+                        <viewControllerLayoutGuide type="bottom" id="rIA-Ue-TIO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oqd-Bz-7FG">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zel-st-yc2">
+                                <rect key="frame" x="423" y="30" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="donePressed:" destination="cVB-uP-0jw" eventType="touchUpInside" id="W1X-Ht-L4v"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Zel-st-yc2" secondAttribute="trailing" constant="20" id="AOI-fh-xzb"/>
+                            <constraint firstItem="Zel-st-yc2" firstAttribute="top" secondItem="Fwi-RW-Rh2" secondAttribute="bottom" constant="10" id="v5b-KN-Uyf"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AK9-l4-z0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="146" y="629"/>
         </scene>
     </scenes>
 </document>

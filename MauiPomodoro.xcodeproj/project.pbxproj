@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		D0A851FB195134AC0004A4A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A851FA195134AC0004A4A2 /* AppDelegate.swift */; };
-		D0A851FD195134AC0004A4A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A851FC195134AC0004A4A2 /* ViewController.swift */; };
+		D0A851FD195134AC0004A4A2 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A851FC195134AC0004A4A2 /* TimerViewController.swift */; };
 		D0A85200195134AC0004A4A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A851FE195134AC0004A4A2 /* Main.storyboard */; };
 		D0A85202195134AC0004A4A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A85201195134AC0004A4A2 /* Images.xcassets */; };
 		D0A8520E195134AC0004A4A2 /* MauiPomodoroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A8520D195134AC0004A4A2 /* MauiPomodoroTests.swift */; };
+		D0A85218195142780004A4A2 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A85217195142780004A4A2 /* OptionsViewController.swift */; };
+		D0A8521A19517B540004A4A2 /* PomodoroState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A8521919517B540004A4A2 /* PomodoroState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,12 +30,14 @@
 		D0A851F5195134AC0004A4A2 /* MauiPomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MauiPomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A851F9195134AC0004A4A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0A851FA195134AC0004A4A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D0A851FC195134AC0004A4A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D0A851FC195134AC0004A4A2 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		D0A851FF195134AC0004A4A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0A85201195134AC0004A4A2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D0A85207195134AC0004A4A2 /* MauiPomodoroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MauiPomodoroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A8520C195134AC0004A4A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0A8520D195134AC0004A4A2 /* MauiPomodoroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MauiPomodoroTests.swift; sourceTree = "<group>"; };
+		D0A85217195142780004A4A2 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		D0A8521919517B540004A4A2 /* PomodoroState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				D0A851FA195134AC0004A4A2 /* AppDelegate.swift */,
-				D0A851FC195134AC0004A4A2 /* ViewController.swift */,
+				D0A851FC195134AC0004A4A2 /* TimerViewController.swift */,
+				D0A85217195142780004A4A2 /* OptionsViewController.swift */,
 				D0A851FE195134AC0004A4A2 /* Main.storyboard */,
+				D0A8521919517B540004A4A2 /* PomodoroState.swift */,
 				D0A85201195134AC0004A4A2 /* Images.xcassets */,
 				D0A851F8195134AC0004A4A2 /* Supporting Files */,
 			);
@@ -158,6 +164,7 @@
 				TargetAttributes = {
 					D0A851F4195134AC0004A4A2 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 6X96472YF2;
 					};
 					D0A85206195134AC0004A4A2 = {
 						CreatedOnToolsVersion = 6.0;
@@ -208,7 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A851FD195134AC0004A4A2 /* ViewController.swift in Sources */,
+				D0A85218195142780004A4A2 /* OptionsViewController.swift in Sources */,
+				D0A851FD195134AC0004A4A2 /* TimerViewController.swift in Sources */,
+				D0A8521A19517B540004A4A2 /* PomodoroState.swift in Sources */,
 				D0A851FB195134AC0004A4A2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,9 +336,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MauiPomodoro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -338,9 +351,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MauiPomodoro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -399,6 +416,7 @@
 				D0A85213195134AC0004A4A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0A85214195134AC0004A4A2 /* Build configuration list for PBXNativeTarget "MauiPomodoroTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +425,7 @@
 				D0A85216195134AC0004A4A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
