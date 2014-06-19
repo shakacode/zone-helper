@@ -12,14 +12,13 @@ class TimerViewController: UIViewController {
     
     let workTimeSeconds = 25 * 60
     
-    var startTime: NSDate?
-    
     //var timer = NSTimer()
     var timer: NSTimer?
     var pomodoroState = PomodoroState()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refresh()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,18 +36,22 @@ class TimerViewController: UIViewController {
         pomodoroState.start()
         timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "refresh", userInfo: nil, repeats: true)
     }
- 
-    func pauseTimer() {
+    
+    func stopTimer() {
         if let theTimer = timer {
             theTimer.invalidate()
         }
         timer = nil
+    }
+ 
+    func pauseTimer() {
+        stopTimer()
         pomodoroState.pause()
     }
     
     @IBAction func resetPressed(sender : UIButton) {
-        self.startTime = NSDate()
         pomodoroState.reset()
+        stopTimer()
         refresh()
     }
 

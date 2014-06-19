@@ -20,10 +20,10 @@ class PomodoroState {
     var mode: Mode = Mode.Work
 
     let totalWorkTimeSeconds = 25.0 * 60.0
-    var workTimeSecondsRemaining: Double?
+    var workTimeSecondsRemaining = 0.0
     
     init() {
-        
+        reset()
     }
     
     func reset() {
@@ -41,15 +41,27 @@ class PomodoroState {
     }
     
     func convertSecsToMinSecs(secs: Double) -> String {
-        return String(secs)
+        var mm = Int(secs / 60)
+        var ss = Int(secs % 60)
+        var sss = String(ss)
+        if ss < 10 {
+            sss = "0" + sss
+        }
+        
+        return String("\(mm):\(sss)")
     }
 
     func secsLeft() -> Double {
         if let st = startTime {
-            var secs = st.timeIntervalSinceNow
-            return workTimeSecondsRemaining! - secs
+            var elapsed = st.timeIntervalSinceNow
+            var remaining = workTimeSecondsRemaining + elapsed
+            if remaining > 0 {
+                return remaining
+            } else {
+                return 0
+            }
         } else {
-            return 0
+            return totalWorkTimeSeconds
         }
     }
     

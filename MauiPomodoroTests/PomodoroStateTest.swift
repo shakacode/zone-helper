@@ -1,16 +1,17 @@
 //
-//  MauiPomodoroTests.swift
-//  MauiPomodoroTests
+//  PomodoroStateTest.swift
+//  MauiPomodoro
 //
-//  Created by Justin Gordon on 6/17/14.
+//  Created by Justin Gordon on 6/18/14.
 //  Copyright (c) 2014 Justin Gordon. All rights reserved.
 //
 
 import XCTest
+import PomodoroState
 
-class MauiPomodoroTests: XCTestCase {
-    
-    
+class PomodoroStateTest: XCTestCase {
+
+    var pomodoroState: PomodoroState?
     
     override func setUp() {
         super.setUp()
@@ -21,22 +22,17 @@ class MauiPomodoroTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+
     func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Passing")
-    }
-    
-    func testExample2() {
         // This is an example of a functional test case.
         XCTAssert(true, "Pass")
     }
-    
+
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock() {
             // Put the code you want to measure the time of here.
         }
     }
-    
+
 }
