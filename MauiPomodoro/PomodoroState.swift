@@ -18,19 +18,33 @@ class PomodoroState {
   var startTime: NSDate?
   var mode: Mode = Mode.Work
   
-  let totalWorkTimeSeconds = 25.0 * 60.0
-  var workTimeSecondsRemaining = 0.0
+  var totalWorkTimeSeconds = 27.minutes
+  var totalShortBreakTimeSeconds = 3.minutes
+  var totalLongBreakTimeSeconds = 15.minutes
+ 
+  var secondsRemaining = 0.minutes
   
   init() {
-    reset()
+    resetWork()
   }
   
-  func reset() {
-    workTimeSecondsRemaining = totalWorkTimeSeconds
+  func resetWork() {
+    startTime = nil
+    secondsRemaining = totalWorkTimeSeconds
+  }
+
+  func resetLongBreak() {
+    startTime = nil
+    secondsRemaining = totalLongBreakTimeSeconds
+  }
+
+  func resetShortBreak() {
+    startTime = nil
+    secondsRemaining = totalShortBreakTimeSeconds
   }
   
   func pause() {
-    workTimeSecondsRemaining = secsLeft()
+    secondsRemaining = secsLeft()
     startTime = nil
   }
   
@@ -39,26 +53,28 @@ class PomodoroState {
   }
   
   func convertSecsToMinSecs(secs: Double) -> String {
-    var mm = Int(secs / 60)
-    var ss = Int(secs % 60)
-    var sss = String(ss)
-    if ss < 10 {
-      sss = "0" + sss
+    var absSecs = abs(secs)
+    var minutes = Int(absSecs / 60)
+    var seconds = Int(absSecs % 60)
+    var secondsString: String
+    if seconds < 10 {
+      secondsString = "0\(seconds)"
+    } else {
+      secondsString = String(seconds)
     }
-    return String("\(mm):\(sss)")
+    return String("\(minutes):\(secondsString)")
   }
   
   func secsLeft() -> Double {
+    var elapsed = 0.0
     if let st = startTime {
-      var elapsed = st.timeIntervalSinceNow
-      var remaining = workTimeSecondsRemaining + elapsed
-      return max(0, remaining)
+      elapsed = st.timeIntervalSinceNow
     }
-    return totalWorkTimeSeconds
+    return secondsRemaining + elapsed
   }
   
-  func timerValue() -> String {
+  func timerStatus() -> (text: String, secs: Double) {
     var secs = secsLeft()
-    return convertSecsToMinSecs(secs)
+    return (convertSecsToMinSecs(secs), secs)
   }
 }

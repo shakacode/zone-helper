@@ -7,22 +7,32 @@
 //
 
 import UIKit
+import AudioToolbox
 
 extension Int {
-  var minutes: Int { return self * 60 }
-  var minute: Int { return self * 60 }
+  var minutes: Double { return Double(self) * 60.0 }
+  var minute: Double { return Double(self) * 60.0 }
 }
 
 class TimerViewController: UIViewController {
-  
-  let workTimeSeconds = 25.minutes
+  let overColor = UIColor.redColor()
+  let workColor = UIColor.blackColor()
+  let shortBreakColor = UIColor.brownColor()
+  let longBreakColor = UIColor.darkGrayColor()
   var timer: NSTimer?
   var pomodoroState = PomodoroState()
+  var activeColor: UIColor
+  
+  init(coder aDecoder: NSCoder!) {
+    activeColor = workColor
+    super.init(coder: aDecoder)
+  }
   
   @IBOutlet var timerLabel : UILabel = nil
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
+    activeColor = workColor
     refresh()
   }
   
@@ -32,7 +42,20 @@ class TimerViewController: UIViewController {
   }
   
   func refresh() {
-    self.timerLabel.text = pomodoroState.timerValue()
+    var timerStatus = pomodoroState.timerStatus()
+    self.timerLabel.text = timerStatus.text
+    if timerStatus.secs < 0 {
+      view.backgroundColor = overColor
+    } else {
+      view.backgroundColor = activeColor
+    }
+    if timerAtZero(timerStatus.secs) {
+      AudioServicesPlaySystemSound(1304);
+    }
+  }
+  
+  func timerAtZero(secs: Double) -> Bool {
+    return -0.5 < secs && secs <= 0.5
   }
   
   func startTimer() {
@@ -54,10 +77,27 @@ class TimerViewController: UIViewController {
     pomodoroState.pause()
   }
   
-  @IBAction func resetPressed(sender : UIButton) {
-    pomodoroState.reset()
+  func reset() {
     stopTimer()
     refresh()
+  }
+  
+  @IBAction func resetPressed(sender : UIButton) {
+    pomodoroState.resetWork()
+    activeColor = workColor
+    reset()
+  }
+  
+  @IBAction func shortBreakPressed(sender: UIButton) {
+    pomodoroState.resetShortBreak()
+    activeColor = shortBreakColor
+    reset()
+  }
+  
+  @IBAction func longBreakPressed(sender: UIButton) {
+    pomodoroState.resetLongBreak()
+    activeColor = longBreakColor
+    reset()
   }
   
   @IBAction func startStopButton(sender : AnyObject) {
