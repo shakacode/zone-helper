@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
         <!--Timer View Controller-->
@@ -25,7 +25,7 @@
                                     <action selector="resetPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mYX-WK-iwZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2i-FE-xAc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2i-FE-xAc" userLabel="Options Button">
                                 <rect key="frame" x="20" y="430" width="54" height="30"/>
                                 <state key="normal" title="Options">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,9 +40,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydx-Iu-Vti">
-                                <rect key="frame" x="329" y="430" width="71" height="30"/>
-                                <state key="normal" title="Start/Stop">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydx-Iu-Vti" userLabel="Start Stop Button">
+                                <rect key="frame" x="20" y="61" width="440" height="358"/>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -52,16 +52,16 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ydx-Iu-Vti" firstAttribute="top" secondItem="JbY-vB-NPH" secondAttribute="top" id="1Yr-kd-jzU"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="D2i-FE-xAc" secondAttribute="bottom" constant="20" id="3Ud-1A-OVn"/>
+                            <constraint firstItem="ydx-Iu-Vti" firstAttribute="trailing" secondItem="JbY-vB-NPH" secondAttribute="trailing" id="DjR-Pc-0wa"/>
+                            <constraint firstItem="ydx-Iu-Vti" firstAttribute="bottom" secondItem="JbY-vB-NPH" secondAttribute="bottom" id="IXh-Or-lMX"/>
+                            <constraint firstItem="ydx-Iu-Vti" firstAttribute="leading" secondItem="JbY-vB-NPH" secondAttribute="leading" id="IfE-Zx-rPc"/>
                             <constraint firstAttribute="centerY" secondItem="JbY-vB-NPH" secondAttribute="centerY" id="Mmb-GQ-zmr"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ydx-Iu-Vti" secondAttribute="bottom" constant="20" id="Qos-fA-3aX"/>
-                            <constraint firstItem="4AG-FU-uhp" firstAttribute="leading" secondItem="ydx-Iu-Vti" secondAttribute="trailing" constant="20" id="RxC-KR-VEg"/>
-                            <constraint firstItem="4AG-FU-uhp" firstAttribute="leading" secondItem="ydx-Iu-Vti" secondAttribute="trailing" constant="20" id="cYG-lP-NZR"/>
                             <constraint firstItem="JbY-vB-NPH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="dZF-sN-Yje"/>
                             <constraint firstItem="D2i-FE-xAc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="fhL-7Y-DWw"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4AG-FU-uhp" secondAttribute="bottom" constant="20" id="gGe-Yl-bqa"/>
                             <constraint firstAttribute="trailing" secondItem="4AG-FU-uhp" secondAttribute="trailing" constant="20" id="hQr-BZ-Wmf"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ydx-Iu-Vti" secondAttribute="bottom" constant="20" id="krK-T2-6R6"/>
                             <constraint firstAttribute="trailing" secondItem="JbY-vB-NPH" secondAttribute="trailing" constant="20" id="owD-FH-PQO"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
