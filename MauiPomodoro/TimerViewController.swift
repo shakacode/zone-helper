@@ -14,25 +14,25 @@ extension Int {
   var minute: Double { return Double(self) * 60.0 }
 }
 
-class TimerViewController: UIViewController {
-  let overColor = UIColor.redColor()
-  let workColor = UIColor.blackColor()
-  let shortBreakColor = UIColor.brownColor()
-  let longBreakColor = UIColor.darkGrayColor()
+class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   var timer: NSTimer?
   var pomodoroState = PomodoroState()
-  var activeColor: UIColor
   
   init(coder aDecoder: NSCoder!) {
-    activeColor = workColor
     super.init(coder: aDecoder)
   }
   
-  @IBOutlet var timerLabel : UILabel = nil
-
+  @IBOutlet var bottomButtonView: UIView
+  @IBOutlet var timerLabel : UILabel
+  @IBOutlet var workStateLabel: UILabel
+  @IBOutlet var nextButton: UIButton
+  @IBOutlet var optionsButton: UIButton
+  
+  //@IBOutlet var swipeGestureRecognizer: UISwipeGestureRecognizer
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    activeColor = workColor
+    doWork()
     refresh()
   }
   
@@ -43,23 +43,49 @@ class TimerViewController: UIViewController {
   
   func refresh() {
     var timerStatus = pomodoroState.timerStatus()
-    self.timerLabel.text = timerStatus.text
-    if timerStatus.secs < 0 {
-      view.backgroundColor = overColor
-    } else {
-      view.backgroundColor = activeColor
+    timerLabel.text = timerStatus.text
+    if timerStatus.secs < 0 || timer == nil {
+      showBottomButtonBar()
     }
+    
+    workStateLabel.text = String(pomodoroState.consecutiveWorks)
+    view.backgroundColor = pomodoroState.backgroundColor()
     if timerAtZero(timerStatus.secs) {
       AudioServicesPlaySystemSound(1304);
     }
+  }
+  
+  @IBAction func swipeRightAction(sender: UISwipeGestureRecognizer) {
+    startStop()
+  }
+  
+  @IBAction func swipeLeftAction(sender: AnyObject) {
+    startStop()
   }
   
   func timerAtZero(secs: Double) -> Bool {
     return -0.5 < secs && secs <= 0.5
   }
   
+  func showBottomButtonBar() {
+    var nextButtonHidden = pomodoroState.nextButtonHidden()
+    if !nextButtonHidden {
+      var nextButtonTitle = pomodoroState.nextButtonLabel()
+      nextButton.setTitle(nextButtonTitle, forState: UIControlState.Normal)
+    }
+    nextButton.hidden = nextButtonHidden
+    bottomButtonView.hidden = false
+    optionsButton.hidden = false
+  }
+  
+  func hideBottomButtonBar() {
+    bottomButtonView.hidden = true
+    optionsButton.hidden = true
+  }
+  
   func startTimer() {
     pomodoroState.start()
+    hideBottomButtonBar()
     timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "refresh", userInfo: nil, repeats: true)
     UIApplication.sharedApplication().idleTimerDisabled = true
   }
@@ -70,6 +96,7 @@ class TimerViewController: UIViewController {
     }
     UIApplication.sharedApplication().idleTimerDisabled = false
     timer = nil
+    showBottomButtonBar()
   }
   
   func pauseTimer() {
@@ -82,29 +109,42 @@ class TimerViewController: UIViewController {
     refresh()
   }
   
-  @IBAction func resetPressed(sender : UIButton) {
+  @IBAction func nextPressed(sender: UIButton) {
+    pomodoroState.nextPressed()
+    startTimer()
+  }
+  
+  func doWork() {
     pomodoroState.resetWork()
-    activeColor = workColor
     reset()
+  }
+  
+  @IBAction func workPressed(sender : UIButton) {
+    doWork()
   }
   
   @IBAction func shortBreakPressed(sender: UIButton) {
     pomodoroState.resetShortBreak()
-    activeColor = shortBreakColor
     reset()
   }
   
   @IBAction func longBreakPressed(sender: UIButton) {
     pomodoroState.resetLongBreak()
-    activeColor = longBreakColor
     reset()
   }
   
-  @IBAction func startStopButton(sender : AnyObject) {
+  func startStop() {
     if timer {
       pauseTimer()
     } else {
       startTimer()
+    }
+  }
+  
+  @IBAction func startStopButton(sender : AnyObject) {
+    // stop/start timer if timer stopped, or in work mode (b/c on desk)
+    if !timer || timer && pomodoroState.mode == PomodoroMode.Work {
+      startStop()
     }
   }
 }

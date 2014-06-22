@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
@@ -16,39 +17,102 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="JbY-vB-NPH" userLabel="Time Label">
-                                <rect key="frame" x="20" y="70" width="440" height="352"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="JbY-vB-NPH" userLabel="Time Label">
+                                <rect key="frame" x="20" y="61" width="440" height="358"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="300"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydx-Iu-Vti" userLabel="Start Stop Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydx-Iu-Vti" userLabel="Start Stop Button">
                                 <rect key="frame" x="20" y="61" width="440" height="358"/>
+                                <gestureRecognizers/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="startStopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZAS-b9-5OJ"/>
+                                    <outletCollection property="gestureRecognizers" destination="wa9-iK-tx6" appends="YES" id="DZD-gK-Gxc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AG-FU-uhp" userLabel="Reset Button">
-                                <rect key="frame" x="400" y="430" width="60" height="50"/>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HkC-Fs-Oal" userLabel="Bottom Button View">
+                                <rect key="frame" x="0.0" y="420" width="480" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AG-FU-uhp" userLabel="Work Button">
+                                        <rect key="frame" x="5" y="10" width="60" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="4lC-06-ik9"/>
+                                            <constraint firstAttribute="height" constant="50" id="gaZ-Ai-tKf"/>
+                                        </constraints>
+                                        <state key="normal" title="Work">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="workPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MEE-4f-93K"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deD-cR-fcq" userLabel="SB Button">
+                                        <rect key="frame" x="70" y="10" width="60" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="1uf-DN-BMx"/>
+                                            <constraint firstAttribute="height" constant="50" id="QoQ-5c-Vu6"/>
+                                        </constraints>
+                                        <state key="normal" title="Short">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shortBreakPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="15Q-jq-9Vb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CB7-2H-RoP">
+                                        <rect key="frame" x="375" y="10" width="100" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="8Rh-c3-4yj"/>
+                                            <constraint firstAttribute="height" constant="50" id="lbc-lI-J0h"/>
+                                        </constraints>
+                                        <state key="normal" title="Start Work">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nextPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rLq-nS-Os8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="La8-LS-BqW" userLabel="LB Button">
+                                        <rect key="frame" x="135" y="10" width="60" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="baA-Bp-oup"/>
+                                            <constraint firstAttribute="height" constant="50" id="szX-2l-tog"/>
+                                        </constraints>
+                                        <state key="normal" title="Long">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="longBreakPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qEN-lM-g1u"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="oGO-l2-FJ8"/>
-                                    <constraint firstAttribute="width" constant="60" id="wfD-OU-fXl"/>
+                                    <constraint firstAttribute="bottom" secondItem="CB7-2H-RoP" secondAttribute="bottom" id="Agi-x5-Nx2"/>
+                                    <constraint firstItem="deD-cR-fcq" firstAttribute="leading" secondItem="4AG-FU-uhp" secondAttribute="trailing" constant="5" id="Ba5-lD-txN"/>
+                                    <constraint firstAttribute="trailing" secondItem="CB7-2H-RoP" secondAttribute="trailing" constant="5" id="Mza-wl-ma9"/>
+                                    <constraint firstAttribute="bottom" secondItem="La8-LS-BqW" secondAttribute="bottom" id="OrL-YG-GSN"/>
+                                    <constraint firstItem="4AG-FU-uhp" firstAttribute="leading" secondItem="HkC-Fs-Oal" secondAttribute="leading" constant="5" id="VmY-cB-sBC"/>
+                                    <constraint firstAttribute="bottom" secondItem="deD-cR-fcq" secondAttribute="bottom" id="dzh-lc-Nih"/>
+                                    <constraint firstAttribute="bottom" secondItem="4AG-FU-uhp" secondAttribute="bottom" id="ktL-0n-6Bx"/>
+                                    <constraint firstItem="La8-LS-BqW" firstAttribute="leading" secondItem="deD-cR-fcq" secondAttribute="trailing" constant="5" id="lrC-UA-E3S"/>
+                                    <constraint firstAttribute="height" constant="60" id="sjl-gJ-rfv"/>
                                 </constraints>
-                                <state key="normal" title="Work">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="resetPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mYX-WK-iwZ"/>
-                                </connections>
-                            </button>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOC-78-xRe" userLabel="Work State Label">
+                                <rect key="frame" x="20" y="20" width="10" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2i-FE-xAc" userLabel="Options Button">
-                                <rect key="frame" x="20" y="430" width="60" height="50"/>
+                                <rect key="frame" x="400" y="0.0" width="60" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="RGQ-6K-kU1"/>
-                                    <constraint firstAttribute="height" constant="50" id="ig9-FT-agA"/>
+                                    <constraint firstAttribute="width" constant="60" id="qmX-A4-QZr"/>
+                                    <constraint firstAttribute="height" constant="50" id="zzy-FI-BI6"/>
                                 </constraints>
                                 <state key="normal" title="Options">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,59 +121,49 @@
                                     <segue destination="cVB-uP-0jw" kind="presentation" id="b1D-Sd-Ncg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deD-cR-fcq" userLabel="SB Button">
-                                <rect key="frame" x="112" y="430" width="60" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="guu-Qk-Wpg"/>
-                                    <constraint firstAttribute="width" constant="60" id="rai-Om-y3X"/>
-                                </constraints>
-                                <state key="normal" title="SB">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="shortBreakPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="15Q-jq-9Vb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="La8-LS-BqW" userLabel="LB Button">
-                                <rect key="frame" x="192" y="430" width="60" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="ZCd-ip-gAR"/>
-                                    <constraint firstAttribute="height" constant="50" id="zII-SV-0DN"/>
-                                </constraints>
-                                <state key="normal" title="LB">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="longBreakPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qEN-lM-g1u"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HkC-Fs-Oal" secondAttribute="trailing" id="15M-H4-8nw"/>
                             <constraint firstItem="ydx-Iu-Vti" firstAttribute="top" secondItem="JbY-vB-NPH" secondAttribute="top" id="1Yr-kd-jzU"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="deD-cR-fcq" secondAttribute="bottom" id="CeE-XB-pzp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HkC-Fs-Oal" secondAttribute="bottom" id="2pQ-p9-QKc"/>
+                            <constraint firstItem="HkC-Fs-Oal" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7Ok-6K-hcN"/>
                             <constraint firstItem="ydx-Iu-Vti" firstAttribute="trailing" secondItem="JbY-vB-NPH" secondAttribute="trailing" id="DjR-Pc-0wa"/>
-                            <constraint firstItem="deD-cR-fcq" firstAttribute="leading" secondItem="D2i-FE-xAc" secondAttribute="trailing" constant="32" id="GpQ-Oe-S63"/>
+                            <constraint firstAttribute="trailing" secondItem="D2i-FE-xAc" secondAttribute="trailing" constant="20" id="F6p-vx-9cW"/>
                             <constraint firstItem="ydx-Iu-Vti" firstAttribute="bottom" secondItem="JbY-vB-NPH" secondAttribute="bottom" id="IXh-Or-lMX"/>
                             <constraint firstItem="ydx-Iu-Vti" firstAttribute="leading" secondItem="JbY-vB-NPH" secondAttribute="leading" id="IfE-Zx-rPc"/>
                             <constraint firstAttribute="centerY" secondItem="JbY-vB-NPH" secondAttribute="centerY" id="Mmb-GQ-zmr"/>
-                            <constraint firstItem="La8-LS-BqW" firstAttribute="leading" secondItem="deD-cR-fcq" secondAttribute="trailing" constant="20" id="Osf-aV-Xee"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="D2i-FE-xAc" secondAttribute="bottom" id="P3a-qr-cw1"/>
-                            <constraint firstItem="D2i-FE-xAc" firstAttribute="top" secondItem="JbY-vB-NPH" secondAttribute="bottom" constant="8" symbolic="YES" id="WPV-ux-5Vu"/>
+                            <constraint firstItem="kOC-78-xRe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="VFe-yZ-knn"/>
                             <constraint firstItem="JbY-vB-NPH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="dZF-sN-Yje"/>
-                            <constraint firstItem="D2i-FE-xAc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="fhL-7Y-DWw"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4AG-FU-uhp" secondAttribute="bottom" id="gGe-Yl-bqa"/>
-                            <constraint firstAttribute="trailing" secondItem="4AG-FU-uhp" secondAttribute="trailing" constant="20" id="hQr-BZ-Wmf"/>
                             <constraint firstAttribute="trailing" secondItem="JbY-vB-NPH" secondAttribute="trailing" constant="20" id="owD-FH-PQO"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="La8-LS-BqW" secondAttribute="bottom" id="zoW-q2-yPh"/>
+                            <constraint firstItem="D2i-FE-xAc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="psG-IS-g1u"/>
+                            <constraint firstItem="kOC-78-xRe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="yzh-YO-HxU"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="9Vv-7m-WYK" appends="YES" id="nfM-ZV-1em"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="bottomButtonView" destination="HkC-Fs-Oal" id="ROR-Y0-ioX"/>
+                        <outlet property="nextButton" destination="CB7-2H-RoP" id="ckJ-Gd-ijo"/>
+                        <outlet property="optionsButton" destination="D2i-FE-xAc" id="7j6-A6-QxA"/>
                         <outlet property="timerLabel" destination="JbY-vB-NPH" id="AM8-ap-ue2"/>
+                        <outlet property="workStateLabel" destination="kOC-78-xRe" id="Q5Q-Em-rIi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="wa9-iK-tx6" userLabel="Swipe Right Gesture Recognizer">
+                    <connections>
+                        <action selector="swipeRightAction:" destination="BYZ-38-t0r" id="3qa-nN-fOR"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="9Vv-7m-WYK" userLabel="Swipe Left Gesture Recognizer">
+                    <connections>
+                        <action selector="swipeLeftAction:" destination="BYZ-38-t0r" id="3Dz-Pe-Qek"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="146" y="1158"/>
         </scene>
