@@ -9,10 +9,67 @@
 import Foundation
 import UIKit
 
+let debugMode = false
+let debugTime = 10.0
+
 enum PomodoroMode: Int {
-  case Work
-  case ShortBreak
-  case LongBreak
+  case Work = 0
+  case ShortBreak = 1
+  case LongBreak = 2
+  
+  func totalTimeSeconds() -> Double {
+    if debugMode {
+      return debugTime
+    }
+    switch self {
+    case .Work:
+      return 27.minutes
+    case .ShortBreak:
+      return 3.minutes
+    case .LongBreak:
+      return 15.minutes
+    }
+  }
+  
+  func label() -> String {
+    switch self {
+    case .Work:
+      return "Work"
+    case .ShortBreak:
+      return "Short Break"
+    case .LongBreak:
+      return "Long Break"
+    }
+  }
+  
+  func startButtonLabel() -> String {
+    return "Start \(label())"
+  }
+  
+  func continueButtonLabel() -> String {
+    return "Cont \(label())"
+  }
+  
+  func nextButtonLabel(consecutiveWorks: Int, secsRemaining: Double) -> String {
+    if 0.0 < secsRemaining && secsRemaining < totalTimeSeconds() && self == .Work {
+      return continueButtonLabel()
+    }
+    
+    if secsRemaining == totalTimeSeconds()   {
+      return startButtonLabel()
+    }
+    
+    switch self {
+    case .Work:
+      if consecutiveWorks < 3 {
+        return "Start Short Break"
+      } else {
+        return "Start Long Break"
+      }
+    case .ShortBreak, .LongBreak:
+      return PomodoroMode.Work.startButtonLabel()
+    }
+  }
 }
 
 class PomodoroState {
@@ -22,23 +79,27 @@ class PomodoroState {
   let shortBreakColor = UIColor.brownColor()
   let longBreakColor = UIColor.darkGrayColor()
   
+  let timeConsecutiveWorksResets = 30.minutes
+  
   var startTime: NSDate?
+  var pauseStartTime: NSDate?
+  
   var mode: PomodoroMode = PomodoroMode.Work
-
-  var totalWorkTimeSeconds = 27.minutes //10.0 //
-  var totalShortBreakTimeSeconds = 3.minutes //3.0 //
-  var totalLongBreakTimeSeconds = 15.minutes // 5.0 //
- 
-  var secondsRemaining = 0.minutes
+  
+  // Used when timer is paused and restarted
+  var secondsRemainingWhenTimerStarts = 0.minutes
   
   var consecutiveWorks = 0
   
   init() {
     resetWork()
+    if debugMode {
+      timeConsecutiveWorksResets = 15.0
+    }
   }
   
   func backgroundColor() -> (UIColor) {
-    if secsLeft() < 0 {
+    if secsUntilTimerEnds() < 0 {
       if mode == PomodoroMode.Work {
         return overWorkColor
       } else {
@@ -46,53 +107,31 @@ class PomodoroState {
       }
     } else {
       switch mode {
-      case PomodoroMode.Work:
+      case .Work:
         return workColor
-      case PomodoroMode.ShortBreak:
+      case .ShortBreak:
         return shortBreakColor
-      case PomodoroMode.LongBreak:
+      case .LongBreak:
         return longBreakColor
       }
     }
   }
   
   func nextButtonLabel() -> (String) {
-    switch mode {
-    case PomodoroMode.Work:
-      if startTime {
-        if consecutiveWorks < 3 {
-          return "Start Short Break"
-        } else {
-          return "Start Long Break"
-        }
-      } else {
-        return "Start Working"
-      }
-    case PomodoroMode.ShortBreak, PomodoroMode.LongBreak:
-      if startTime {
-        return "Start Working"
-      } else {
-        if mode == PomodoroMode.ShortBreak {
-          return "Start Short Break"
-        } else {
-          return "Start Long Break"
-        }
-      }
-    }
+    return mode.nextButtonLabel(consecutiveWorks, secsRemaining: secsUntilTimerEnds())
   }
   
   func nextButtonHidden() -> (Bool) {
-    if startTime == nil {
-      return false
-    }
-    
-    // do not show next button if in work mode and secs left > 0
-    return mode == PomodoroMode.Work && secsLeft() > 0.0
+    return startTime != nil
   }
-
+  
+  func startedSinceReset() -> (Bool) {
+    return secsUntilTimerEnds() != totalTimeForMode(mode)
+  }
+  
   func nextPressed() {
-    if startTime {
-      if mode == PomodoroMode.Work {
+    if startedSinceReset() {
+      if secsUntilTimerEnds() < 0 && mode == PomodoroMode.Work {
         consecutiveWorks++
         if consecutiveWorks < 4 {
           resetShortBreak()
@@ -101,62 +140,94 @@ class PomodoroState {
           consecutiveWorks = 0
         }
       } else {
-        resetWork()
+        if mode != PomodoroMode.Work {
+          resetWork()
+        }
       }
-    } // else just start
+    }
+    // else just start (continue)
     start()
   }
   
+  func totalTimeForMode(mode: PomodoroMode) -> (Double) {
+    return mode.totalTimeSeconds()
+  }
+  
+  
+  func resetCommon(mode: PomodoroMode) {
+    self.mode = mode
+    startTime = nil
+    secondsRemainingWhenTimerStarts = mode.totalTimeSeconds()
+  }
+  
   func resetWork() {
-    startTime = nil
-    secondsRemaining = totalWorkTimeSeconds
-    mode = PomodoroMode.Work
+    resetCommon(PomodoroMode.Work)
   }
-
-  func resetLongBreak() {
-    startTime = nil
-    secondsRemaining = totalLongBreakTimeSeconds
-    mode = PomodoroMode.LongBreak
-  }
-
+  
   func resetShortBreak() {
-    startTime = nil
-    secondsRemaining = totalShortBreakTimeSeconds
-    mode = PomodoroMode.ShortBreak
+    resetCommon(PomodoroMode.ShortBreak)
+  }
+  
+  func resetLongBreak() {
+    resetCommon(PomodoroMode.LongBreak)
   }
   
   func pause() {
-    secondsRemaining = secsLeft()
+    secondsRemainingWhenTimerStarts = secsUntilTimerEnds()
     startTime = nil
+    pauseStartTime = NSDate()
   }
   
   func start() {
+    pauseStartTime = nil
     startTime = NSDate()
   }
   
   func convertSecsToMinSecs(secs: Double) -> String {
-    var absSecs = abs(secs)
-    var minutes = Int(absSecs / 60)
-    var seconds = Int(absSecs % 60)
-    var secondsString: String
-    if seconds < 10 {
-      secondsString = "0\(seconds)"
-    } else {
-      secondsString = String(seconds)
+    func leadingZero(num: Int) -> String {
+      if num < 10 {
+        return "0\(num)"
+      } else {
+        return String(num)
+      }
     }
-    return String("\(minutes):\(secondsString)")
+    var absSecs = abs(secs)
+    var hours = Int(absSecs / 3600)
+    var secondsAfterHours = Int(absSecs % 3660)
+    var minutes = secondsAfterHours / 60
+    var seconds = Int(secondsAfterHours % 60)
+    if 0 < hours {
+      return String("\(hours):\(leadingZero(minutes)):\(leadingZero(seconds))")
+    } else {
+      return String("\(minutes):\(leadingZero(seconds))")
+    }
   }
   
-  func secsLeft() -> Double {
+  func secsUntilTimerEnds() -> Double {
     var elapsed = 0.0
     if let st = startTime {
       elapsed = st.timeIntervalSinceNow
     }
-    return secondsRemaining + elapsed
+    return secondsRemainingWhenTimerStarts + elapsed
   }
   
   func timerStatus() -> (text: String, secs: Double) {
-    var secs = secsLeft()
+    var secs = secsUntilTimerEnds()
+    checkResetConsecutiveWorks(secs)
     return (convertSecsToMinSecs(secs), secs)
+  }
+  
+  // If any time goes over 30 min or if paused for over 30 min
+  func checkResetConsecutiveWorks(secs: Double) {
+    if secs < -timeConsecutiveWorksResets || timeConsecutiveWorksResets < pausedTime() {
+      consecutiveWorks = 0
+    }
+  }
+  
+  func pausedTime() -> Double {
+    if let st = pauseStartTime {
+      return -st.timeIntervalSinceNow
+    }
+    return 0.0
   }
 }

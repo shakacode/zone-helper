@@ -68,12 +68,8 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   }
   
   func showBottomButtonBar() {
-    var nextButtonHidden = pomodoroState.nextButtonHidden()
-    if !nextButtonHidden {
-      var nextButtonTitle = pomodoroState.nextButtonLabel()
-      nextButton.setTitle(nextButtonTitle, forState: UIControlState.Normal)
-    }
-    nextButton.hidden = nextButtonHidden
+    var nextButtonTitle = pomodoroState.nextButtonLabel()
+    nextButton.setTitle(nextButtonTitle, forState: UIControlState.Normal)
     bottomButtonView.hidden = false
     optionsButton.hidden = false
   }
