@@ -11,8 +11,8 @@ import UIKit
 import QuartzCore
 import AudioToolbox
 
-let debugMode = false
-let debugTime = 10.0
+var demoMode = false
+var demoTime = 10.0
 
 enum PomodoroMode: Int {
   case Work = 0
@@ -20,8 +20,8 @@ enum PomodoroMode: Int {
   case LongBreak = 2
   
   func totalTimeSeconds() -> Double {
-    if debugMode {
-      return debugTime
+    if demoMode {
+      return demoTime
     }
     switch self {
     case .Work:
@@ -74,7 +74,6 @@ enum PomodoroMode: Int {
   }
 }
 
-
 class PomodoroState {
   let colors = Colors()
   
@@ -94,7 +93,7 @@ class PomodoroState {
   
   init() {
     resetWork()
-    if debugMode {
+    if demoMode {
       timeConsecutiveWorksResets = 15.0
     }
   }
@@ -115,6 +114,18 @@ class PomodoroState {
         return colors.shortBreakColorGradientLayer
       case .LongBreak:
         return colors.longBreakColorGradientLayer
+      }
+    }
+  }
+  
+  func statusLabel() -> (String) {
+    if secsUntilTimerEnds() > 0 {
+      return mode.label()
+    } else {
+      if mode == PomodoroMode.Work {
+        return "\(mode.label()) Finished: Take Break"
+      } else {
+        return "\(mode.label()) Finished: Start Work"
       }
     }
   }

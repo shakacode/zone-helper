@@ -33,6 +33,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   @IBOutlet var workStateLabel: UILabel
   @IBOutlet var nextButton: UIButton
   // @IBOutlet var optionsButton: UIButton
+  @IBOutlet var statusLabel: UILabel
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -53,14 +54,34 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
     refreshOnRotate = false
   }
   
+  var toggling = false
+
+  @IBAction func toggleDemoMode(sender: UILongPressGestureRecognizer) {
+    if !toggling {
+      toggling = true
+      demoMode = !demoMode
+      var alert = UIAlertView()
+      alert.title = "Toggled Demo Mode to \(demoMode)"
+      alert.addButtonWithTitle("OK")
+      alert.show()
+      doWork()
+      refresh()
+      println("toggled demoMode to \(demoMode)")
+      toggling = false
+    }
+  }
+  
   func refresh() {
     var timerStatus = pomodoroState.timerStatus()
     timerLabel.text = timerStatus.text
+    
     if timerStatus.secs < 0 || timer == nil {
       showBottomButtonBar()
     }
     
     workStateLabel.text = String(pomodoroState.consecutiveWorks)
+    
+    statusLabel.text = pomodoroState.statusLabel()
 
     var setOvertimeColor = timerStatus.secs < 0 && !overtimeColorSet
 
