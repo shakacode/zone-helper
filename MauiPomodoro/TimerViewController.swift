@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AudioToolbox
+
 
 extension Int {
   var minutes: Double { return Double(self) * 60.0 }
@@ -18,6 +18,9 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   var timer: NSTimer?
   var pomodoroState = PomodoroState()
   
+  var lastMode = PomodoroMode.Work
+  var playedAlarm = false
+  
   init(coder aDecoder: NSCoder!) {
     super.init(coder: aDecoder)
   }
@@ -26,9 +29,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   @IBOutlet var timerLabel : UILabel
   @IBOutlet var workStateLabel: UILabel
   @IBOutlet var nextButton: UIButton
-  @IBOutlet var optionsButton: UIButton
-  
-  //@IBOutlet var swipeGestureRecognizer: UISwipeGestureRecognizer
+  // @IBOutlet var optionsButton: UIButton
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -49,10 +50,18 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
     }
     
     workStateLabel.text = String(pomodoroState.consecutiveWorks)
-    view.backgroundColor = pomodoroState.backgroundColor()
-    if timerAtZero(timerStatus.secs) {
-      AudioServicesPlaySystemSound(1304);
+    if lastMode != pomodoroState.mode {
+      lastMode = pomodoroState.mode
+      if lastMode == PomodoroMode.Work {
+        view.backgroundColor = UIColor.blackColor()
+      } else {
+        view.backgroundColor = UIColor.clearColor()
+        var backgroundLayer = pomodoroState.backgroundGradient()
+        backgroundLayer.frame = view.frame
+        view.layer.insertSublayer(backgroundLayer, atIndex: 0)
+      }
     }
+    pomodoroState.checkPlayedAlarm()
   }
   
   @IBAction func swipeRightAction(sender: UISwipeGestureRecognizer) {
@@ -64,19 +73,19 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   }
   
   func timerAtZero(secs: Double) -> Bool {
-    return -0.5 < secs && secs <= 0.5
+    return -0.25 < secs && secs <= 0.25
   }
   
   func showBottomButtonBar() {
     var nextButtonTitle = pomodoroState.nextButtonLabel()
     nextButton.setTitle(nextButtonTitle, forState: UIControlState.Normal)
     bottomButtonView.hidden = false
-    optionsButton.hidden = false
+    // optionsButton.hidden = false
   }
   
   func hideBottomButtonBar() {
     bottomButtonView.hidden = true
-    optionsButton.hidden = true
+    // optionsButton.hidden = true
   }
   
   func startTimer() {

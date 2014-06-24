@@ -63,19 +63,6 @@
                                             <action selector="shortBreakPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="15Q-jq-9Vb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CB7-2H-RoP">
-                                        <rect key="frame" x="345" y="10" width="130" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="130" id="8Rh-c3-4yj"/>
-                                            <constraint firstAttribute="height" constant="50" id="lbc-lI-J0h"/>
-                                        </constraints>
-                                        <state key="normal" title="Start Work">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="nextPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rLq-nS-Os8"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="La8-LS-BqW" userLabel="LB Button">
                                         <rect key="frame" x="135" y="10" width="60" height="50"/>
                                         <constraints>
@@ -87,6 +74,20 @@
                                         </state>
                                         <connections>
                                             <action selector="longBreakPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qEN-lM-g1u"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CB7-2H-RoP">
+                                        <rect key="frame" x="305" y="10" width="170" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="170" id="8Rh-c3-4yj"/>
+                                            <constraint firstAttribute="height" constant="50" id="lbc-lI-J0h"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                        <state key="normal" title="Next: Short Break">
+                                            <color key="titleColor" red="0.2855905040272364" green="0.88693253011129158" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nextPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rLq-nS-Os8"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -103,24 +104,11 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOC-78-xRe" userLabel="Work State Label">
-                                <rect key="frame" x="20" y="20" width="10" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <rect key="frame" x="20" y="20" width="12" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2i-FE-xAc" userLabel="Options Button">
-                                <rect key="frame" x="400" y="0.0" width="60" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="qmX-A4-QZr"/>
-                                    <constraint firstAttribute="height" constant="50" id="zzy-FI-BI6"/>
-                                </constraints>
-                                <state key="normal" title="Options">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="cVB-uP-0jw" kind="presentation" id="b1D-Sd-Ncg"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -130,14 +118,12 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HkC-Fs-Oal" secondAttribute="bottom" id="2pQ-p9-QKc"/>
                             <constraint firstItem="HkC-Fs-Oal" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7Ok-6K-hcN"/>
                             <constraint firstItem="ydx-Iu-Vti" firstAttribute="trailing" secondItem="JbY-vB-NPH" secondAttribute="trailing" id="DjR-Pc-0wa"/>
-                            <constraint firstAttribute="trailing" secondItem="D2i-FE-xAc" secondAttribute="trailing" constant="20" id="F6p-vx-9cW"/>
                             <constraint firstItem="ydx-Iu-Vti" firstAttribute="bottom" secondItem="JbY-vB-NPH" secondAttribute="bottom" id="IXh-Or-lMX"/>
                             <constraint firstItem="ydx-Iu-Vti" firstAttribute="leading" secondItem="JbY-vB-NPH" secondAttribute="leading" id="IfE-Zx-rPc"/>
                             <constraint firstAttribute="centerY" secondItem="JbY-vB-NPH" secondAttribute="centerY" id="Mmb-GQ-zmr"/>
                             <constraint firstItem="kOC-78-xRe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="VFe-yZ-knn"/>
                             <constraint firstItem="JbY-vB-NPH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="dZF-sN-Yje"/>
                             <constraint firstAttribute="trailing" secondItem="JbY-vB-NPH" secondAttribute="trailing" constant="20" id="owD-FH-PQO"/>
-                            <constraint firstItem="D2i-FE-xAc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="psG-IS-g1u"/>
                             <constraint firstItem="kOC-78-xRe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="yzh-YO-HxU"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -149,7 +135,6 @@
                     <connections>
                         <outlet property="bottomButtonView" destination="HkC-Fs-Oal" id="ROR-Y0-ioX"/>
                         <outlet property="nextButton" destination="CB7-2H-RoP" id="ckJ-Gd-ijo"/>
-                        <outlet property="optionsButton" destination="D2i-FE-xAc" id="7j6-A6-QxA"/>
                         <outlet property="timerLabel" destination="JbY-vB-NPH" id="AM8-ap-ue2"/>
                         <outlet property="workStateLabel" destination="kOC-78-xRe" id="Q5Q-Em-rIi"/>
                     </connections>
@@ -190,7 +175,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Zel-st-yc2" secondAttribute="trailing" constant="20" id="AOI-fh-xzb"/>
                             <constraint firstItem="Zel-st-yc2" firstAttribute="top" secondItem="Fwi-RW-Rh2" secondAttribute="bottom" constant="10" id="v5b-KN-Uyf"/>

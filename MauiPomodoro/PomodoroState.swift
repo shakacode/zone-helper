@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import QuartzCore
+import AudioToolbox
 
 let debugMode = false
 let debugTime = 10.0
@@ -72,12 +74,9 @@ enum PomodoroMode: Int {
   }
 }
 
+
 class PomodoroState {
-  let overWorkColor = UIColor.redColor()
-  let overBreakColor = UIColor.orangeColor()
-  let workColor = UIColor.blackColor()
-  let shortBreakColor = UIColor.brownColor()
-  let longBreakColor = UIColor.darkGrayColor()
+  let colors = Colors()
   
   let timeConsecutiveWorksResets = 30.minutes
   
@@ -89,6 +88,8 @@ class PomodoroState {
   // Used when timer is paused and restarted
   var secondsRemainingWhenTimerStarts = 0.minutes
   
+  var playedAlarm = false
+  
   var consecutiveWorks = 0
   
   init() {
@@ -98,21 +99,22 @@ class PomodoroState {
     }
   }
   
-  func backgroundColor() -> (UIColor) {
+  func backgroundGradient() -> (CAGradientLayer) {
     if secsUntilTimerEnds() < 0 {
-      if mode == PomodoroMode.Work {
-        return overWorkColor
-      } else {
-        return overBreakColor
-      }
+      return colors.overColorGradientLayer
+//      if mode == PomodoroMode.Work {
+//        return colors.overColorGradientLayer
+//      } else {
+//        return colors.overColorGradientLayer // back to same color for over break and over work
+//      }
     } else {
       switch mode {
       case .Work:
-        return workColor
+        return colors.longBreakColorGradientLayer
       case .ShortBreak:
-        return shortBreakColor
+        return colors.shortBreakColorGradientLayer
       case .LongBreak:
-        return longBreakColor
+        return colors.longBreakColorGradientLayer
       }
     }
   }
@@ -158,6 +160,7 @@ class PomodoroState {
     self.mode = mode
     startTime = nil
     secondsRemainingWhenTimerStarts = mode.totalTimeSeconds()
+    playedAlarm = false
   }
   
   func resetWork() {
@@ -229,5 +232,12 @@ class PomodoroState {
       return -st.timeIntervalSinceNow
     }
     return 0.0
+  }
+  
+  func checkPlayedAlarm() {
+    if secsUntilTimerEnds() < 0 && !playedAlarm {
+      AudioServicesPlaySystemSound(1304)
+      playedAlarm = true
+    }
   }
 }

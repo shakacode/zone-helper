@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0201336195942370072A084 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0201335195942370072A084 /* Colors.swift */; };
 		D03DB0B219524062002627AB /* PomodoroStateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DB0B119524062002627AB /* PomodoroStateTest.swift */; };
 		D0A851FB195134AC0004A4A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A851FA195134AC0004A4A2 /* AppDelegate.swift */; };
 		D0A851FD195134AC0004A4A2 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A851FC195134AC0004A4A2 /* TimerViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D0201335195942370072A084 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		D03DB0B119524062002627AB /* PomodoroStateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroStateTest.swift; sourceTree = "<group>"; };
 		D0A851F5195134AC0004A4A2 /* MauiPomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MauiPomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A851F9195134AC0004A4A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				D0A8521919517B540004A4A2 /* PomodoroState.swift */,
 				D0A85201195134AC0004A4A2 /* Images.xcassets */,
 				D0A851F8195134AC0004A4A2 /* Supporting Files */,
+				D0201335195942370072A084 /* Colors.swift */,
 			);
 			path = MauiPomodoro;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0A85218195142780004A4A2 /* OptionsViewController.swift in Sources */,
+				D0201336195942370072A084 /* Colors.swift in Sources */,
 				D0A851FD195134AC0004A4A2 /* TimerViewController.swift in Sources */,
 				D0A8521A19517B540004A4A2 /* PomodoroState.swift in Sources */,
 				D0A851FB195134AC0004A4A2 /* AppDelegate.swift in Sources */,
