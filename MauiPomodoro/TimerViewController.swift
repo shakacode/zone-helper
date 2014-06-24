@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import QuartzCore
 
 extension Int {
   var minutes: Double { return Double(self) * 60.0 }
@@ -19,7 +19,10 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   var pomodoroState = PomodoroState()
   
   var lastMode = PomodoroMode.Work
-  var playedAlarm = false
+  
+  var overtimeColorSet = false
+  
+  var currentBackgroundLayer: CALayer?
   
   init(coder aDecoder: NSCoder!) {
     super.init(coder: aDecoder)
@@ -41,6 +44,14 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
+
+  var refreshOnRotate = false
+  
+  override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+    refreshOnRotate = true
+    refresh()
+    refreshOnRotate = false
+  }
   
   func refresh() {
     var timerStatus = pomodoroState.timerStatus()
@@ -50,18 +61,42 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
     }
     
     workStateLabel.text = String(pomodoroState.consecutiveWorks)
-    if lastMode != pomodoroState.mode {
+
+    var setOvertimeColor = timerStatus.secs < 0 && !overtimeColorSet
+
+    var switchColor = (lastMode != pomodoroState.mode) || setOvertimeColor || refreshOnRotate
+
+    if switchColor {
       lastMode = pomodoroState.mode
-      if lastMode == PomodoroMode.Work {
-        view.backgroundColor = UIColor.blackColor()
+      switchBackgroundColor(setOvertimeColor)
+    }
+    
+    if setOvertimeColor {
+      overtimeColorSet = true
+    }
+    
+    pomodoroState.checkPlayedAlarm()
+  }
+  
+  func switchBackgroundColor(setOvertimeColor: Bool) {
+    if lastMode == PomodoroMode.Work && !setOvertimeColor {
+      if let cur = currentBackgroundLayer? {
+        cur.removeFromSuperlayer()
+        currentBackgroundLayer = nil
+      }
+      view.backgroundColor = UIColor.blackColor()
+    } else {
+      view.backgroundColor = UIColor.clearColor()
+      var backgroundLayer = pomodoroState.backgroundGradient()
+      backgroundLayer.frame = view.bounds;
+      
+      if let cur = currentBackgroundLayer? {
+        view.layer.replaceSublayer(cur, with: backgroundLayer)
       } else {
-        view.backgroundColor = UIColor.clearColor()
-        var backgroundLayer = pomodoroState.backgroundGradient()
-        backgroundLayer.frame = view.frame
         view.layer.insertSublayer(backgroundLayer, atIndex: 0)
       }
+      currentBackgroundLayer = backgroundLayer
     }
-    pomodoroState.checkPlayedAlarm()
   }
   
   @IBAction func swipeRightAction(sender: UISwipeGestureRecognizer) {
@@ -112,10 +147,12 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   func reset() {
     stopTimer()
     refresh()
+    overtimeColorSet = false
   }
   
   @IBAction func nextPressed(sender: UIButton) {
     pomodoroState.nextPressed()
+    overtimeColorSet = false
     startTimer()
   }
   

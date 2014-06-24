@@ -11,14 +11,14 @@ import QuartzCore
 import UIKit
 
 class Colors {
-  let overColorTop = UIColor(red: 192.0/255.0, green: 38.0/255.0, blue: 42.0/255.0, alpha: 1.0)
-  let overColorBottom = UIColor(red: 35.0/255.0, green: 2.0/255.0, blue: 2.0/255.0, alpha: 1.0)
+  let overColorTop = UIColor(red: 192.0/255.0, green: 38.0/255.0, blue: 42.0/255.0, alpha: 1.0).CGColor
+  let overColorBottom = UIColor(red: 35.0/255.0, green: 2.0/255.0, blue: 2.0/255.0, alpha: 1.0).CGColor
   
-  let shortBreakColorTop = UIColor(red: 6.0/255.0, green: 61.0/255.0, blue: 117.0/255.0, alpha: 1.0)
-  let shortBreakColorBottom = UIColor(red: 1.0/255.0, green: 12.0/255.0, blue: 33.0/255.0, alpha: 1.0)
+  let shortBreakColorTop = UIColor(red: 6.0/255.0, green: 61.0/255.0, blue: 117.0/255.0, alpha: 1.0).CGColor
+  let shortBreakColorBottom = UIColor(red: 1.0/255.0, green: 12.0/255.0, blue: 33.0/255.0, alpha: 1.0).CGColor
   
-  let longBreakColorTop = UIColor(red: 13.0/255.0, green: 85.0/255.0, blue: 89.0/255.0, alpha: 1.0)
-  let longBreakColorBottom = UIColor(red: 4.0/255.0, green: 32.0/255.0, blue: 33.0/255.0, alpha: 1.0)
+  let longBreakColorTop = UIColor(red: 13.0/255.0, green: 85.0/255.0, blue: 89.0/255.0, alpha: 1.0).CGColor
+  let longBreakColorBottom = UIColor(red: 4.0/255.0, green: 32.0/255.0, blue: 33.0/255.0, alpha: 1.0).CGColor
   
   let workColor = UIColor.blackColor()
 
