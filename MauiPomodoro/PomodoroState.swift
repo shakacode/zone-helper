@@ -20,17 +20,21 @@ enum PomodoroMode: Int {
   case LongBreak = 2
   
   func totalTimeSeconds() -> Double {
-    if demoMode {
-      return demoTime
-    }
+    var result: Double
     switch self {
     case .Work:
-      return 27.minutes
+      result = 27.minutes
     case .ShortBreak:
-      return 3.minutes
+      result = 3.minutes
     case .LongBreak:
-      return 15.minutes
+      result = 15.minutes
     }
+    
+    if demoMode {
+      result /= 60
+    }
+    
+    return result
   }
   
   func label() -> String {
