@@ -85,7 +85,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
 
     var setOvertimeColor = timerStatus.secs < 0 && !overtimeColorSet
 
-    var switchColor = (lastMode != pomodoroState.mode) || setOvertimeColor || refreshOnRotate
+    var switchColor = (lastMode != pomodoroState.mode) || setOvertimeColor || refreshOnRotate || (overtimeColorSet && timerStatus.secs >= 0)
 
     if switchColor {
       lastMode = pomodoroState.mode
