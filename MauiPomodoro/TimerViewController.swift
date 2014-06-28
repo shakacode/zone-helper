@@ -75,7 +75,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
     var timerStatus = pomodoroState.timerStatus()
     timerLabel.text = timerStatus.text
     
-    if timerStatus.secs < 0 || timer == nil {
+    if (timerStatus.secs < 0 && pomodoroState.mode != PomodoroMode.Meeting) || timer == nil {
       showBottomButtonBar()
     }
     
@@ -83,7 +83,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
     
     statusLabel.text = pomodoroState.statusLabel()
 
-    var setOvertimeColor = timerStatus.secs < 0 && !overtimeColorSet
+    var setOvertimeColor = (pomodoroState.mode != PomodoroMode.Meeting) && timerStatus.secs < 0 && (!overtimeColorSet || refreshOnRotate)
 
     var switchColor = (lastMode != pomodoroState.mode) || setOvertimeColor || refreshOnRotate || (overtimeColorSet && timerStatus.secs >= 0)
 
@@ -196,6 +196,11 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
     reset()
   }
   
+  @IBAction func meetingPressed(sender: UIButton) {
+    pomodoroState.resetMeeting()
+    reset()
+  }
+  
   func startStop() {
     if timer {
       pauseTimer()
@@ -206,7 +211,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   
   @IBAction func startStopButton(sender : AnyObject) {
     // stop/start timer if timer stopped, or in work mode (b/c on desk)
-    if !timer || timer && pomodoroState.mode == PomodoroMode.Work {
+    if !timer || timer && (pomodoroState.mode == PomodoroMode.Work || pomodoroState.mode == PomodoroMode.Meeting) {
       startStop()
     }
   }

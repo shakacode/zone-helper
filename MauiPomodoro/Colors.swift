@@ -20,11 +20,15 @@ class Colors {
   let longBreakColorTop = UIColor(red: 13.0/255.0, green: 85.0/255.0, blue: 89.0/255.0, alpha: 1.0).CGColor
   let longBreakColorBottom = UIColor(red: 4.0/255.0, green: 32.0/255.0, blue: 33.0/255.0, alpha: 1.0).CGColor
   
+  let meetingColorTop = UIColor(red: 59.0/255.0, green: 59.0/255.0, blue: 84.0/255.0, alpha: 1.0).CGColor
+  let meetingColorBottom = UIColor(red: 7.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0).CGColor
+  
   let workColor = UIColor.blackColor()
 
   let overColorGradientLayer: CAGradientLayer
   let shortBreakColorGradientLayer: CAGradientLayer
   let longBreakColorGradientLayer: CAGradientLayer
+  let meetingColorGradientLayer: CAGradientLayer
  
   init() {
     overColorGradientLayer = CAGradientLayer()
@@ -38,5 +42,9 @@ class Colors {
     longBreakColorGradientLayer = CAGradientLayer()
     longBreakColorGradientLayer.colors = [ longBreakColorTop, longBreakColorBottom]
     longBreakColorGradientLayer.locations = [ 0.0, 1.0]
+
+    meetingColorGradientLayer = CAGradientLayer()
+    meetingColorGradientLayer.colors = [ meetingColorTop, meetingColorBottom]
+    meetingColorGradientLayer.locations = [ 0.0, 1.0]
   }
 }

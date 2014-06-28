@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment version="1808" identifier="iOS"/>
+        <deployment version="1808" defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
@@ -76,6 +76,20 @@
                                             <action selector="longBreakPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qEN-lM-g1u"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49E-B2-Ssj" userLabel="Meeting Button">
+                                        <rect key="frame" x="200" y="10" width="80" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="6VF-wy-iN6"/>
+                                            <constraint firstAttribute="height" constant="50" id="ooA-BB-WDT"/>
+                                        </constraints>
+                                        <state key="normal" title="Meeting">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="longBreakPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jaw-dT-eh2"/>
+                                            <action selector="meetingPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LYx-Ld-xtp"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CB7-2H-RoP">
                                         <rect key="frame" x="305" y="10" width="170" height="50"/>
                                         <constraints>
@@ -92,6 +106,8 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="49E-B2-Ssj" secondAttribute="bottom" id="8vN-uy-IOa"/>
+                                    <constraint firstItem="49E-B2-Ssj" firstAttribute="leading" secondItem="La8-LS-BqW" secondAttribute="trailing" constant="5" id="AUs-Ma-DYT"/>
                                     <constraint firstAttribute="bottom" secondItem="CB7-2H-RoP" secondAttribute="bottom" id="Agi-x5-Nx2"/>
                                     <constraint firstItem="deD-cR-fcq" firstAttribute="leading" secondItem="4AG-FU-uhp" secondAttribute="trailing" constant="5" id="Ba5-lD-txN"/>
                                     <constraint firstAttribute="trailing" secondItem="CB7-2H-RoP" secondAttribute="trailing" constant="5" id="Mza-wl-ma9"/>

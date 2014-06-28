@@ -18,6 +18,7 @@ enum PomodoroMode: Int {
   case Work = 0
   case ShortBreak = 1
   case LongBreak = 2
+  case Meeting = 3
   
   func totalTimeSeconds() -> Double {
     var result: Double
@@ -28,6 +29,8 @@ enum PomodoroMode: Int {
       result = 3.minutes
     case .LongBreak:
       result = 15.minutes
+    case .Meeting:
+      result = 0.0
     }
     
     if demoMode {
@@ -45,24 +48,26 @@ enum PomodoroMode: Int {
       return "Short Break"
     case .LongBreak:
       return "Long Break"
+    case .Meeting:
+      return "Meeting"
     }
   }
-  
+
   func startButtonLabel() -> String {
     return "Start \(label())"
   }
   
   func continueButtonLabel() -> String {
-    return "Cont \(label())"
+    return "Continue \(label())"
   }
   
   func nextButtonLabel(consecutiveWorks: Int, secsRemaining: Double) -> String {
+    if secsRemaining == totalTimeSeconds() {
+      return startButtonLabel()
+    }
+
     if 0.0 < secsRemaining && secsRemaining < totalTimeSeconds() && self == .Work {
       return continueButtonLabel()
-    }
-    
-    if secsRemaining == totalTimeSeconds()   {
-      return startButtonLabel()
     }
     
     switch self {
@@ -74,6 +79,8 @@ enum PomodoroMode: Int {
       }
     case .ShortBreak, .LongBreak:
       return PomodoroMode.Work.startButtonLabel()
+    case .Meeting:
+      return "Continue Meeting"
     }
   }
 }
@@ -118,12 +125,14 @@ class PomodoroState {
         return colors.shortBreakColorGradientLayer
       case .LongBreak:
         return colors.longBreakColorGradientLayer
+      case .Meeting:
+        return colors.meetingColorGradientLayer
       }
     }
   }
   
   func statusLabel() -> (String) {
-    if secsUntilTimerEnds() > 0 {
+    if secsUntilTimerEnds() > 0 || mode == PomodoroMode.Meeting {
       return mode.label()
     } else {
       if mode == PomodoroMode.Work {
@@ -157,7 +166,7 @@ class PomodoroState {
           consecutiveWorks = 0
         }
       } else {
-        if mode != PomodoroMode.Work {
+        if (mode == PomodoroMode.ShortBreak || mode == PomodoroMode.LongBreak) {
           resetWork()
         }
       }
@@ -170,12 +179,11 @@ class PomodoroState {
     return mode.totalTimeSeconds()
   }
   
-  
   func resetCommon(mode: PomodoroMode) {
     self.mode = mode
     startTime = nil
     secondsRemainingWhenTimerStarts = mode.totalTimeSeconds()
-    playedAlarm = false
+    playedAlarm = mode == PomodoroMode.Meeting // false otherwise
   }
   
   func resetWork() {
@@ -188,6 +196,10 @@ class PomodoroState {
   
   func resetLongBreak() {
     resetCommon(PomodoroMode.LongBreak)
+  }
+  
+  func resetMeeting() {
+    resetCommon(PomodoroMode.Meeting)
   }
   
   func pause() {
