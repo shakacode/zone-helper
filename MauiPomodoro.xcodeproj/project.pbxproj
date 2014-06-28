@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D0201336195942370072A084 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0201335195942370072A084 /* Colors.swift */; };
-		D0201338195E38DF0072A084 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0201337195E38DF0072A084 /* AudioToolbox.framework */; };
-		D03DB0B219524062002627AB /* PomodoroStateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DB0B119524062002627AB /* PomodoroStateTest.swift */; };
+		D04574B2195F2D700047040E /* PomodoroMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04574B1195F2D700047040E /* PomodoroMode.swift */; };
 		D0A851FB195134AC0004A4A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A851FA195134AC0004A4A2 /* AppDelegate.swift */; };
 		D0A851FD195134AC0004A4A2 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A851FC195134AC0004A4A2 /* TimerViewController.swift */; };
 		D0A85200195134AC0004A4A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A851FE195134AC0004A4A2 /* Main.storyboard */; };
@@ -31,9 +30,8 @@
 
 /* Begin PBXFileReference section */
 		D0201335195942370072A084 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		D0201337195E38DF0072A084 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D0201339195E38DF0072A084 /* MauiPomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MauiPomodoro.entitlements; sourceTree = "<group>"; };
-		D03DB0B119524062002627AB /* PomodoroStateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroStateTest.swift; sourceTree = "<group>"; };
+		D04574B1195F2D700047040E /* PomodoroMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroMode.swift; sourceTree = "<group>"; };
 		D0A851F5195134AC0004A4A2 /* MauiPomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MauiPomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A851F9195134AC0004A4A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0A851FA195134AC0004A4A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +50,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0201338195E38DF0072A084 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +66,6 @@
 		D0A851EC195134AC0004A4A2 = {
 			isa = PBXGroup;
 			children = (
-				D0201337195E38DF0072A084 /* AudioToolbox.framework */,
 				D0A851F7195134AC0004A4A2 /* MauiPomodoro */,
 				D0A8520A195134AC0004A4A2 /* MauiPomodoroTests */,
 				D0A851F6195134AC0004A4A2 /* Products */,
@@ -97,6 +93,7 @@
 				D0A85201195134AC0004A4A2 /* Images.xcassets */,
 				D0A851F8195134AC0004A4A2 /* Supporting Files */,
 				D0201335195942370072A084 /* Colors.swift */,
+				D04574B1195F2D700047040E /* PomodoroMode.swift */,
 			);
 			path = MauiPomodoro;
 			sourceTree = "<group>";
@@ -114,7 +111,6 @@
 			children = (
 				D0A8520D195134AC0004A4A2 /* MauiPomodoroTests.swift */,
 				D0A8520B195134AC0004A4A2 /* Supporting Files */,
-				D03DB0B119524062002627AB /* PomodoroStateTest.swift */,
 			);
 			path = MauiPomodoroTests;
 			sourceTree = "<group>";
@@ -179,7 +175,7 @@
 						DevelopmentTeam = 6X96472YF2;
 						SystemCapabilities = {
 							com.apple.InterAppAudio = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -235,6 +231,7 @@
 				D0A85218195142780004A4A2 /* OptionsViewController.swift in Sources */,
 				D0201336195942370072A084 /* Colors.swift in Sources */,
 				D0A851FD195134AC0004A4A2 /* TimerViewController.swift in Sources */,
+				D04574B2195F2D700047040E /* PomodoroMode.swift in Sources */,
 				D0A8521A19517B540004A4A2 /* PomodoroState.swift in Sources */,
 				D0A851FB195134AC0004A4A2 /* AppDelegate.swift in Sources */,
 			);
@@ -244,7 +241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D03DB0B219524062002627AB /* PomodoroStateTest.swift in Sources */,
 				D0A8520E195134AC0004A4A2 /* MauiPomodoroTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,14 +351,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = MauiPomodoro/MauiPomodoro.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MauiPomodoro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "FB45663F-3339-48C8-A200-9CCF56A6D728";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -372,14 +367,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = MauiPomodoro/MauiPomodoro.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MauiPomodoro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "FB45663F-3339-48C8-A200-9CCF56A6D728";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
