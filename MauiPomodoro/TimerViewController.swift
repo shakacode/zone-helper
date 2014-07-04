@@ -79,7 +79,8 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
       showBottomButtonBar()
     }
     
-    workStateLabel.text = String(pomodoroState.consecutiveWorks)
+    var cw = pomodoroState.consecutiveWorks
+    workStateLabel.text = cw > 0 ? String(cw) : ""
     
     statusLabel.text = pomodoroState.statusLabel()
 
