@@ -137,11 +137,13 @@ class PomodoroState {
     secondsRemainingWhenTimerStarts = secsUntilTimerEnds()
     startTime = nil
     pauseStartTime = NSDate()
+    AudioServicesPlaySystemSound(1104)
   }
   
   func start() {
     pauseStartTime = nil
     startTime = NSDate()
+    AudioServicesPlaySystemSound(1103)
   }
   
   func paused() -> Bool {
