@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment version="1808" identifier="iOS"/>
+        <deployment version="1808" defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="JbY-vB-NPH" userLabel="Time Label">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27:00" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="JbY-vB-NPH" userLabel="Time Label">
                                 <rect key="frame" x="20" y="61" width="440" height="358"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="300"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -135,6 +135,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnC-py-6nj" userLabel="Options Button">
+                                <rect key="frame" x="435" y="20" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="jdW-CD-YqV"/>
+                                    <constraint firstAttribute="width" constant="25" id="ltW-Yc-EDL"/>
+                                </constraints>
+                                <state key="normal" image="settings_filled-50.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="yN9-NF-T3m" kind="presentation" id="2wT-rT-XOj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -142,8 +155,10 @@
                             <constraint firstAttribute="trailing" secondItem="HkC-Fs-Oal" secondAttribute="trailing" id="15M-H4-8nw"/>
                             <constraint firstItem="ydx-Iu-Vti" firstAttribute="top" secondItem="JbY-vB-NPH" secondAttribute="top" id="1Yr-kd-jzU"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HkC-Fs-Oal" secondAttribute="bottom" id="2pQ-p9-QKc"/>
+                            <constraint firstItem="SnC-py-6nj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="5Ot-Ib-uby"/>
                             <constraint firstItem="HkC-Fs-Oal" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7Ok-6K-hcN"/>
                             <constraint firstItem="ydx-Iu-Vti" firstAttribute="trailing" secondItem="JbY-vB-NPH" secondAttribute="trailing" id="DjR-Pc-0wa"/>
+                            <constraint firstAttribute="trailing" secondItem="SnC-py-6nj" secondAttribute="trailing" constant="20" id="Etd-eU-Yik"/>
                             <constraint firstItem="ydx-Iu-Vti" firstAttribute="bottom" secondItem="JbY-vB-NPH" secondAttribute="bottom" id="IXh-Or-lMX"/>
                             <constraint firstItem="ydx-Iu-Vti" firstAttribute="leading" secondItem="JbY-vB-NPH" secondAttribute="leading" id="IfE-Zx-rPc"/>
                             <constraint firstAttribute="centerY" secondItem="JbY-vB-NPH" secondAttribute="centerY" id="Mmb-GQ-zmr"/>
@@ -154,15 +169,16 @@
                             <constraint firstAttribute="centerX" secondItem="hQ8-Tj-qRU" secondAttribute="centerX" id="wVI-AK-vXj"/>
                             <constraint firstItem="kOC-78-xRe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="yzh-YO-HxU"/>
                         </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="9Vv-7m-WYK" appends="YES" id="nfM-ZV-1em"/>
-                            <outletCollection property="gestureRecognizers" destination="5nI-30-MfQ" appends="YES" id="g0B-Uv-st9"/>
                         </connections>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="bottomButtonView" destination="HkC-Fs-Oal" id="ROR-Y0-ioX"/>
                         <outlet property="nextButton" destination="CB7-2H-RoP" id="ckJ-Gd-ijo"/>
+                        <outlet property="optionsButton" destination="SnC-py-6nj" id="xOF-nt-9YK"/>
                         <outlet property="statusLabel" destination="hQ8-Tj-qRU" id="gBk-D3-hTG"/>
                         <outlet property="timerLabel" destination="JbY-vB-NPH" id="AM8-ap-ue2"/>
                         <outlet property="workStateLabel" destination="kOC-78-xRe" id="Q5Q-Em-rIi"/>
@@ -179,46 +195,114 @@
                         <action selector="swipeLeftAction:" destination="BYZ-38-t0r" id="3Dz-Pe-Qek"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="2" id="5nI-30-MfQ">
-                    <connections>
-                        <action selector="toggleDemoMode:" destination="BYZ-38-t0r" id="wB6-c4-dKa"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="146" y="1158"/>
+            <point key="canvasLocation" x="19" y="266"/>
         </scene>
         <!--Options View Controller-->
-        <scene sceneID="bdb-9s-x23">
+        <scene sceneID="wGn-Zr-ba6">
             <objects>
-                <viewController id="cVB-uP-0jw" userLabel="Options View Controller" customClass="OptionsViewController" customModule="MauiPomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Options" id="yN9-NF-T3m" userLabel="Options View Controller" customClass="OptionsViewController" customModule="MauiPomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Fwi-RW-Rh2"/>
-                        <viewControllerLayoutGuide type="bottom" id="rIA-Ue-TIO"/>
+                        <viewControllerLayoutGuide type="top" id="cny-4T-pf9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gup-N8-tXk"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Oqd-Bz-7FG">
+                    <view key="view" contentMode="scaleToFill" id="7kL-LB-F5A">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zel-st-yc2">
-                                <rect key="frame" x="423" y="30" width="37" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Osf-cX-RAt">
+                                <rect key="frame" x="20" y="20" width="37" height="30"/>
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="donePressed:" destination="cVB-uP-0jw" eventType="touchUpInside" id="W1X-Ht-L4v"/>
+                                    <action selector="donePressed:" destination="yN9-NF-T3m" eventType="touchUpInside" id="VJ3-bx-uWy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Demo Mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTn-jA-lhc">
+                                <rect key="frame" x="20" y="63" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S7V-rs-tkP" userLabel="Demo Mode Switch">
+                                <rect key="frame" x="201" y="58" width="51" height="31"/>
+                                <connections>
+                                    <action selector="demoModeToggled:" destination="yN9-NF-T3m" eventType="valueChanged" id="TtO-oo-bA3"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Swipe to stop timer in break mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53V-ZX-E7I">
+                                <rect key="frame" x="20" y="200" width="264" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="so that you get up and carry around" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCg-yo-Qqt">
+                                <rect key="frame" x="20" y="229" width="275" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Work Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4r-1c-SjV">
+                                <rect key="frame" x="20" y="97" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Short Break Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2h-Ll-smD">
+                                <rect key="frame" x="20" y="126" width="138" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Long Break Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LN0-KQ-a8t">
+                                <rect key="frame" x="20" y="155" width="135" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="27:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjV-5g-HeI" userLabel="Work Time Label">
+                                <rect key="frame" x="208" y="97" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEn-6M-VWR" userLabel="Short Break Time Label">
+                                <rect key="frame" x="208" y="126" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-CI-Onv" userLabel="Long Break Time Label">
+                                <rect key="frame" x="208" y="155" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="your timer." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLO-rf-RjY">
+                                <rect key="frame" x="20" y="258" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Zel-st-yc2" secondAttribute="trailing" constant="20" id="AOI-fh-xzb"/>
-                            <constraint firstItem="Zel-st-yc2" firstAttribute="top" secondItem="Fwi-RW-Rh2" secondAttribute="bottom" constant="10" id="v5b-KN-Uyf"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <size key="freeformSize" width="480" height="480"/>
+                    <connections>
+                        <outlet property="demoModeSwitch" destination="S7V-rs-tkP" id="MNE-Qe-F51"/>
+                        <outlet property="longBreakTimeLabel" destination="P7f-CI-Onv" id="7b0-0a-Abg"/>
+                        <outlet property="shortBreakTimeLabel" destination="NEn-6M-VWR" id="T6E-N5-clm"/>
+                        <outlet property="workTimeLabel" destination="KjV-5g-HeI" id="WD2-Sv-Jds"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AK9-l4-z0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sJR-aG-hCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="146" y="629"/>
+            <point key="canvasLocation" x="19" y="823"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings_filled-50.png" width="50" height="50"/>
+    </resources>
 </document>

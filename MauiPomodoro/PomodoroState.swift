@@ -11,7 +11,6 @@ import UIKit
 import QuartzCore
 import AudioToolbox
 
-
 class PomodoroState {
   let colors = Colors()
   
@@ -144,7 +143,7 @@ class PomodoroState {
     startTime = NSDate()
   }
   
-  func convertSecsToMinSecs(secs: Double) -> String {
+  class func convertSecsToMinSecs(secs: Double) -> String {
     func leadingZero(num: Int) -> String {
       if num < 10 {
         return "0\(num)"
@@ -175,7 +174,7 @@ class PomodoroState {
   func timerStatus() -> (text: String, secs: Double) {
     var secs = secsUntilTimerEnds()
     checkResetConsecutiveWorks(secs)
-    return (convertSecsToMinSecs(secs), secs)
+    return (PomodoroState.convertSecsToMinSecs(secs), secs)
   }
   
   // If any time goes over 30 min or if paused for over 30 min

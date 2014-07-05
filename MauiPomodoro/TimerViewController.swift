@@ -14,10 +14,11 @@ extension Int {
   var minute: Double { return Double(self) * 60.0 }
 }
 
+var pomodoroState = PomodoroState()
+var timer: NSTimer?
+
 class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
-  var timer: NSTimer?
-  var pomodoroState = PomodoroState()
-  
+
   var lastMode = PomodoroMode.Work
   
   var overtimeColorSet = false
@@ -32,7 +33,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   @IBOutlet var timerLabel : UILabel
   @IBOutlet var workStateLabel: UILabel
   @IBOutlet var nextButton: UIButton
-  // @IBOutlet var optionsButton: UIButton
+  @IBOutlet var optionsButton: UIButton
   @IBOutlet var statusLabel: UILabel
   
   override func viewDidLoad() {
@@ -54,22 +55,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
     refreshOnRotate = false
   }
   
-  var toggling = false
 
-  @IBAction func toggleDemoMode(sender: UILongPressGestureRecognizer) {
-    if !toggling {
-      toggling = true
-      demoMode = !demoMode
-      var alert = UIAlertView()
-      alert.title = "Toggled Demo Mode to \(demoMode)"
-      alert.addButtonWithTitle("OK")
-      alert.show()
-      doWork()
-      refresh()
-      println("toggled demoMode to \(demoMode)")
-      toggling = false
-    }
-  }
   
   func refresh() {
     var timerStatus = pomodoroState.timerStatus()
@@ -137,12 +123,12 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
     var nextButtonTitle = pomodoroState.nextButtonLabel()
     nextButton.setTitle(nextButtonTitle, forState: UIControlState.Normal)
     bottomButtonView.hidden = false
-    // optionsButton.hidden = false
+    optionsButton.hidden = false
   }
   
   func hideBottomButtonBar() {
     bottomButtonView.hidden = true
-    // optionsButton.hidden = true
+    optionsButton.hidden = true
   }
   
   func startTimer() {

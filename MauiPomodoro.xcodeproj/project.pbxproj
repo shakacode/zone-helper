@@ -16,6 +16,7 @@
 		D0A8520E195134AC0004A4A2 /* MauiPomodoroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A8520D195134AC0004A4A2 /* MauiPomodoroTests.swift */; };
 		D0A85218195142780004A4A2 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A85217195142780004A4A2 /* OptionsViewController.swift */; };
 		D0A8521A19517B540004A4A2 /* PomodoroState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A8521919517B540004A4A2 /* PomodoroState.swift */; };
+		D0E1648719673CD50061EFFA /* settings_filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D0E1648619673CD50061EFFA /* settings_filled-50.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		D0A8520D195134AC0004A4A2 /* MauiPomodoroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MauiPomodoroTests.swift; sourceTree = "<group>"; };
 		D0A85217195142780004A4A2 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		D0A8521919517B540004A4A2 /* PomodoroState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroState.swift; sourceTree = "<group>"; };
+		D0E1648619673CD50061EFFA /* settings_filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_filled-50.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		D0A851F7195134AC0004A4A2 /* MauiPomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				D0E1648619673CD50061EFFA /* settings_filled-50.png */,
 				D0201339195E38DF0072A084 /* MauiPomodoro.entitlements */,
 				D0A851FA195134AC0004A4A2 /* AppDelegate.swift */,
 				D0A851FC195134AC0004A4A2 /* TimerViewController.swift */,
@@ -209,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0E1648719673CD50061EFFA /* settings_filled-50.png in Resources */,
 				D0A85200195134AC0004A4A2 /* Main.storyboard in Resources */,
 				D0A85202195134AC0004A4A2 /* Images.xcassets in Resources */,
 			);

@@ -11,22 +11,34 @@ enum PomodoroMode: Int {
   
   func totalTimeSeconds() -> Double {
     var result: Double
-    switch self {
-    case .Work:
-      result = 27.minutes
-    case .ShortBreak:
-      result = 3.minutes
-    case .LongBreak:
-      result = 15.minutes
-    case .Meeting:
-      result = 0.0
+    if !demoMode {
+      switch self {
+      case .Work:
+        result = 27.minutes
+      case .ShortBreak:
+        result = 3.minutes
+      case .LongBreak:
+        result = 15.minutes
+      case .Meeting:
+        result = 0.0
+      }
+    } else {
+      switch self {
+      case .Work:
+        result = 1.minutes
+      case .ShortBreak:
+        result = 10.0
+      case .LongBreak:
+        result = 20.0
+      case .Meeting:
+        result = 0.0
+      }
     }
-    
-    if demoMode {
-      result /= 60
-    }
-    
     return result
+  }
+  
+  func totalTimeMinSecs() -> String {
+    return PomodoroState.convertSecsToMinSecs(totalTimeSeconds())
   }
   
   func label() -> String {
