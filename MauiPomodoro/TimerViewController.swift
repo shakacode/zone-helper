@@ -15,7 +15,7 @@ extension Int {
 }
 
 var pomodoroState = PomodoroState()
-var timer: NSTimer?
+var refreshTimer: NSTimer?
 
 class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
 
@@ -55,13 +55,11 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
     refreshOnRotate = false
   }
   
-
-  
   func refresh() {
     var timerStatus = pomodoroState.timerStatus()
     timerLabel.text = timerStatus.text
     
-    if (timerStatus.secs < 0 && pomodoroState.mode != PomodoroMode.Meeting) || timer == nil {
+    if (timerStatus.secs < 0 && pomodoroState.mode != PomodoroMode.Meeting) || pomodoroState.paused() {
       showBottomButtonBar()
     }
     
@@ -134,16 +132,20 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   func startTimer() {
     pomodoroState.start()
     hideBottomButtonBar()
-    timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "refresh", userInfo: nil, repeats: true)
+    if !refreshTimer  {
+      refreshTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "refresh", userInfo: nil, repeats: true)
+    }
     UIApplication.sharedApplication().idleTimerDisabled = true
   }
   
   func stopTimer() {
-    if let theTimer = timer {
-      theTimer.invalidate()
+    if pomodoroState.mode == PomodoroMode.Meeting {
+      if let theTimer = refreshTimer  {
+        theTimer.invalidate()
+        refreshTimer = nil
+      }
     }
     UIApplication.sharedApplication().idleTimerDisabled = false
-    timer = nil
     showBottomButtonBar()
   }
   
@@ -189,16 +191,16 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   }
   
   func startStop() {
-    if timer {
-      pauseTimer()
-    } else {
+    if pomodoroState.paused() || !pomodoroState.startedSinceReset() {
       startTimer()
+    } else {
+      pauseTimer()
     }
   }
   
   @IBAction func startStopButton(sender : AnyObject) {
     // stop/start timer if timer stopped, or in work mode (b/c on desk)
-    if !timer || timer && (pomodoroState.mode == PomodoroMode.Work || pomodoroState.mode == PomodoroMode.Meeting) {
+    if !pomodoroState.startedSinceReset() ||  pomodoroState.paused() || (pomodoroState.mode == PomodoroMode.Work || pomodoroState.mode == PomodoroMode.Meeting) {
       startStop()
     }
   }

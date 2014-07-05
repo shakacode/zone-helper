@@ -63,7 +63,7 @@ class PomodoroState {
   
   func statusLabel() -> (String) {
     if secsUntilTimerEnds() > 0 || mode == PomodoroMode.Meeting {
-      return mode.label()
+      return "\(mode.label())\(pausedTimeMinSecs())"
     } else {
       if mode == PomodoroMode.Work {
         return "\(mode.label()) Finished: Take Break"
@@ -112,6 +112,7 @@ class PomodoroState {
   func resetCommon(mode: PomodoroMode) {
     self.mode = mode
     startTime = nil
+    pauseStartTime = nil
     secondsRemainingWhenTimerStarts = mode.totalTimeSeconds()
     playedAlarm = mode == PomodoroMode.Meeting // false otherwise
   }
@@ -141,6 +142,10 @@ class PomodoroState {
   func start() {
     pauseStartTime = nil
     startTime = NSDate()
+  }
+  
+  func paused() -> Bool {
+    return pauseStartTime != nil
   }
   
   class func convertSecsToMinSecs(secs: Double) -> String {
@@ -182,6 +187,13 @@ class PomodoroState {
     if secs < -timeConsecutiveWorksResets || timeConsecutiveWorksResets < pausedTime() {
       consecutiveWorks = 0
     }
+  }
+  
+  func pausedTimeMinSecs() -> String {
+    if let st = pauseStartTime {
+      return " (Paused \(PomodoroState.convertSecsToMinSecs(-st.timeIntervalSinceNow)))"
+    }
+    return ""
   }
   
   func pausedTime() -> Double {
