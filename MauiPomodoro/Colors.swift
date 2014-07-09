@@ -32,19 +32,23 @@ class Colors {
  
   init() {
     overColorGradientLayer = CAGradientLayer()
-    overColorGradientLayer.colors = [ overColorTop, overColorBottom]
+    let arrayColorsOver: Array <AnyObject> = [ overColorTop, overColorBottom]
+    overColorGradientLayer.colors = arrayColorsOver
     overColorGradientLayer.locations = [ 0.0, 1.0]
     
     shortBreakColorGradientLayer = CAGradientLayer()
-    shortBreakColorGradientLayer.colors = [ shortBreakColorTop, shortBreakColorBottom]
+    let arrayColorsShort: Array <AnyObject> = [ shortBreakColorTop, shortBreakColorBottom]
+    shortBreakColorGradientLayer.colors = arrayColorsShort
     shortBreakColorGradientLayer.locations = [ 0.0, 1.0]
 
     longBreakColorGradientLayer = CAGradientLayer()
-    longBreakColorGradientLayer.colors = [ longBreakColorTop, longBreakColorBottom]
+    let arrayColorsLong: Array <AnyObject> = [ longBreakColorTop, longBreakColorBottom]
+    longBreakColorGradientLayer.colors = arrayColorsLong
     longBreakColorGradientLayer.locations = [ 0.0, 1.0]
 
     meetingColorGradientLayer = CAGradientLayer()
-    meetingColorGradientLayer.colors = [ meetingColorTop, meetingColorBottom]
+    let arrayColorsMeeting: Array <AnyObject> = [ meetingColorTop, meetingColorBottom]
+    meetingColorGradientLayer.colors = arrayColorsMeeting
     meetingColorGradientLayer.locations = [ 0.0, 1.0]
   }
 }
