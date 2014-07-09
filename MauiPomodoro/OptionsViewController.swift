@@ -28,7 +28,7 @@ class OptionsViewController: UIViewController {
   }
   
   @IBAction func donePressed(sender : UIButton) {
-    self.dismissModalViewControllerAnimated(true)
+    self.dismissViewControllerAnimated(true, nil)
     //self.parentViewController.refresh()
   }
   
