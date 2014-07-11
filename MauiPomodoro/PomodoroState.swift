@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import QuartzCore
-import AudioToolbox
+
 
 let pomodoroState = PomodoroState()
 
@@ -44,11 +44,6 @@ class PomodoroState {
     
     if secsUntilTimerEnds() < 0 {
       return colors.overColorGradientLayer
-//      if mode == PomodoroMode.Work {
-//        return colors.overColorGradientLayer
-//      } else {
-//        return colors.overColorGradientLayer // back to same color for over break and over work
-//      }
     } else {
       switch mode {
       case .Work:
@@ -139,13 +134,13 @@ class PomodoroState {
     secondsRemainingWhenTimerStarts = secsUntilTimerEnds()
     startTime = nil
     pauseStartTime = NSDate()
-    AudioServicesPlaySystemSound(1104)
+    soundResource.playPauseSound()
   }
   
   func start() {
     pauseStartTime = nil
     startTime = NSDate()
-    AudioServicesPlaySystemSound(1103)
+    soundResource.playStartSound()
   }
   
   func paused() -> Bool {
@@ -209,7 +204,7 @@ class PomodoroState {
   
   func checkPlayedAlarm() {
     if secsUntilTimerEnds() < 0 && !playedAlarm {
-      AudioServicesPlaySystemSound(1304)
+      soundResource.playAlarmSound()
       playedAlarm = true
     }
   }
