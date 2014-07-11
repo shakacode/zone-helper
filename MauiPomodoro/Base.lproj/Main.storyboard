@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment version="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
     </dependencies>
     <scenes>
         <!--Timer View Controller-->
@@ -170,7 +170,6 @@
                             <constraint firstAttribute="centerX" secondItem="hQ8-Tj-qRU" secondAttribute="centerX" id="wVI-AK-vXj"/>
                             <constraint firstItem="kOC-78-xRe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="yzh-YO-HxU"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="9Vv-7m-WYK" appends="YES" id="nfM-ZV-1em"/>
                         </connections>
@@ -294,9 +293,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <size key="freeformSize" width="480" height="480"/>
                     <connections>
                         <outlet property="demoModeSwitch" destination="S7V-rs-tkP" id="MNE-Qe-F51"/>
                         <outlet property="longBreakTimeLabel" destination="P7f-CI-Onv" id="7b0-0a-Abg"/>

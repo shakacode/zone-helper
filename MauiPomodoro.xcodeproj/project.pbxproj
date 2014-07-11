@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D00877D01970AC2200C91792 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00877CF1970AC2200C91792 /* IntExtension.swift */; };
 		D0201336195942370072A084 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0201335195942370072A084 /* Colors.swift */; };
 		D04574B2195F2D700047040E /* PomodoroMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04574B1195F2D700047040E /* PomodoroMode.swift */; };
 		D0A851FB195134AC0004A4A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A851FA195134AC0004A4A2 /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D00877CF1970AC2200C91792 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		D0201335195942370072A084 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		D0201339195E38DF0072A084 /* MauiPomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MauiPomodoro.entitlements; sourceTree = "<group>"; };
 		D04574B1195F2D700047040E /* PomodoroMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroMode.swift; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D00877CE1970AC0200C91792 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D00877CF1970AC2200C91792 /* IntExtension.swift */,
+			);
+			name = extensions;
+			sourceTree = "<group>";
+		};
 		D0A851EC195134AC0004A4A2 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 		D0A851F7195134AC0004A4A2 /* MauiPomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				D00877CE1970AC0200C91792 /* extensions */,
 				D0E1648619673CD50061EFFA /* settings_filled-50.png */,
 				D0201339195E38DF0072A084 /* MauiPomodoro.entitlements */,
 				D0A851FA195134AC0004A4A2 /* AppDelegate.swift */,
@@ -234,6 +245,7 @@
 			files = (
 				D0A85218195142780004A4A2 /* OptionsViewController.swift in Sources */,
 				D0201336195942370072A084 /* Colors.swift in Sources */,
+				D00877D01970AC2200C91792 /* IntExtension.swift in Sources */,
 				D0A851FD195134AC0004A4A2 /* TimerViewController.swift in Sources */,
 				D04574B2195F2D700047040E /* PomodoroMode.swift in Sources */,
 				D0A8521A19517B540004A4A2 /* PomodoroState.swift in Sources */,

@@ -9,17 +9,10 @@
 import UIKit
 import QuartzCore
 
-extension Int {
-  var minutes: Double { return Double(self) * 60.0 }
-  var minute: Double { return Double(self) * 60.0 }
-}
-
-var pomodoroState = PomodoroState()
-var refreshTimer: NSTimer?
-
 class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
-
   var lastMode = PomodoroMode.Work
+  
+  var refreshTimer: NSTimer?
   
   var overtimeColorSet = false
   

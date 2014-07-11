@@ -11,6 +11,8 @@ import UIKit
 import QuartzCore
 import AudioToolbox
 
+let pomodoroState = PomodoroState()
+
 class PomodoroState {
   let colors = Colors()
   
