@@ -10,14 +10,14 @@ import UIKit
 
 class OptionsViewController: UIViewController {
   
-  @IBOutlet var demoModeSwitch: UISwitch
-  @IBOutlet var workTimeLabel: UILabel
-  @IBOutlet var shortBreakTimeLabel: UILabel
-  @IBOutlet var longBreakTimeLabel: UILabel
+  @IBOutlet var demoModeSwitch: UISwitch?
+  @IBOutlet var workTimeLabel: UILabel?
+  @IBOutlet var shortBreakTimeLabel: UILabel?
+  @IBOutlet var longBreakTimeLabel: UILabel?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    demoModeSwitch.on = demoMode
+    demoModeSwitch!.on = demoMode
     setTimeLabels()
     // Do any additional setup after loading the view, typically from a nib.
   }
@@ -35,16 +35,16 @@ class OptionsViewController: UIViewController {
   
   @IBAction func demoModeToggled(sender: AnyObject)
   {
-    println("Demo toggled to \(demoModeSwitch.on)")
-    demoMode = demoModeSwitch.on
+    println("Demo toggled to \(demoModeSwitch!.on)")
+    demoMode = demoModeSwitch!.on
     pomodoroState.resetWork()
     setTimeLabels()
   }
   
   func setTimeLabels() {
-    workTimeLabel.text = PomodoroMode.Work.totalTimeMinSecs()
-    shortBreakTimeLabel.text = PomodoroMode.ShortBreak.totalTimeMinSecs()
-    longBreakTimeLabel.text = PomodoroMode.LongBreak.totalTimeMinSecs()
+    workTimeLabel!.text = PomodoroMode.Work.totalTimeMinSecs()
+    shortBreakTimeLabel!.text = PomodoroMode.ShortBreak.totalTimeMinSecs()
+    longBreakTimeLabel!.text = PomodoroMode.LongBreak.totalTimeMinSecs()
   }
 }
 

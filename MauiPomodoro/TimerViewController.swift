@@ -18,16 +18,16 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   
   var currentBackgroundLayer: CALayer?
   
-  init(coder aDecoder: NSCoder!) {
+  required init(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
   
-  @IBOutlet var bottomButtonView: UIView
-  @IBOutlet var timerLabel : UILabel
-  @IBOutlet var workStateLabel: UILabel
-  @IBOutlet var nextButton: UIButton
-  @IBOutlet var optionsButton: UIButton
-  @IBOutlet var statusLabel: UILabel
+  @IBOutlet var bottomButtonView: UIView?
+  @IBOutlet var timerLabel : UILabel?
+  @IBOutlet var workStateLabel: UILabel?
+  @IBOutlet var nextButton: UIButton?
+  @IBOutlet var optionsButton: UIButton?
+  @IBOutlet var statusLabel: UILabel?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -50,16 +50,16 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   
   func refresh() {
     var timerStatus = pomodoroState.timerStatus()
-    timerLabel.text = timerStatus.text
+    timerLabel!.text = timerStatus.text
     
     if (timerStatus.secs < 0 && pomodoroState.mode != PomodoroMode.Meeting) || pomodoroState.paused() {
       showBottomButtonBar()
     }
     
     var cw = pomodoroState.consecutiveWorks
-    workStateLabel.text = cw > 0 ? String(cw) : ""
+    workStateLabel!.text = cw > 0 ? String(cw) : ""
     
-    statusLabel.text = pomodoroState.statusLabel()
+    statusLabel!.text = pomodoroState.statusLabel()
 
     var setOvertimeColor = (pomodoroState.mode != PomodoroMode.Meeting) && timerStatus.secs < 0 && (!overtimeColorSet || refreshOnRotate)
 
@@ -112,20 +112,20 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   
   func showBottomButtonBar() {
     var nextButtonTitle = pomodoroState.nextButtonLabel()
-    nextButton.setTitle(nextButtonTitle, forState: UIControlState.Normal)
-    bottomButtonView.hidden = false
-    optionsButton.hidden = false
+    nextButton!.setTitle(nextButtonTitle, forState: UIControlState.Normal)
+    bottomButtonView!.hidden = false
+    optionsButton!.hidden = false
   }
   
   func hideBottomButtonBar() {
-    bottomButtonView.hidden = true
-    optionsButton.hidden = true
+    bottomButtonView!.hidden = true
+    optionsButton!.hidden = true
   }
   
   func startTimer() {
     pomodoroState.start()
     hideBottomButtonBar()
-    if !refreshTimer  {
+    if refreshTimer == nil  {
       refreshTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "refresh", userInfo: nil, repeats: true)
     }
     UIApplication.sharedApplication().idleTimerDisabled = true

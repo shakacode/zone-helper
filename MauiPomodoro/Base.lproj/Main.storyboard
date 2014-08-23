@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment version="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
+        <deployment version="1808" defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
         <!--Timer View Controller-->
@@ -14,17 +14,17 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="Black Background View">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27:00" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="JbY-vB-NPH" userLabel="Time Label">
-                                <rect key="frame" x="20" y="61" width="440" height="358"/>
+                                <rect key="frame" x="20" y="121" width="560" height="358"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="300"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydx-Iu-Vti" userLabel="Start Stop Button">
-                                <rect key="frame" x="20" y="61" width="440" height="358"/>
+                                <rect key="frame" x="20" y="121" width="560" height="358"/>
                                 <gestureRecognizers/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -35,7 +35,7 @@
                                 </connections>
                             </button>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HkC-Fs-Oal" userLabel="Bottom Button View">
-                                <rect key="frame" x="0.0" y="420" width="480" height="60"/>
+                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AG-FU-uhp" userLabel="Work Button">
                                         <rect key="frame" x="5" y="10" width="60" height="50"/>
@@ -91,7 +91,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CB7-2H-RoP">
-                                        <rect key="frame" x="305" y="10" width="170" height="50"/>
+                                        <rect key="frame" x="425" y="10" width="170" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="170" id="8Rh-c3-4yj"/>
                                             <constraint firstAttribute="height" constant="50" id="lbc-lI-J0h"/>
@@ -126,7 +126,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQ8-Tj-qRU" userLabel="Work State Label">
-                                <rect key="frame" x="40" y="20" width="400" height="24"/>
+                                <rect key="frame" x="100" y="20" width="400" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="JAO-LE-g9r"/>
                                     <constraint firstAttribute="height" constant="24" id="x2V-1l-hBQ"/>
@@ -136,7 +136,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnC-py-6nj" userLabel="Options Button">
-                                <rect key="frame" x="415" y="20" width="45" height="45"/>
+                                <rect key="frame" x="535" y="20" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="jdW-CD-YqV"/>
                                     <constraint firstAttribute="width" constant="45" id="ltW-Yc-EDL"/>
@@ -210,8 +210,167 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Osf-cX-RAt">
-                                <rect key="frame" x="20" y="20" width="37" height="30"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spa-oS-88K">
+                                <rect key="frame" x="10" y="49" width="460" height="421"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demo Mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTn-jA-lhc">
+                                        <rect key="frame" x="8" y="20" width="95" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S7V-rs-tkP" userLabel="Demo Mode Switch">
+                                        <rect key="frame" x="208" y="20" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="demoModeToggled:" destination="yN9-NF-T3m" eventType="valueChanged" id="TtO-oo-bA3"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to stop timer in break mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53V-ZX-E7I">
+                                        <rect key="frame" x="8" y="162" width="264" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="so that you get up and carry around" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCg-yo-Qqt">
+                                        <rect key="frame" x="8" y="191" width="275" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4r-1c-SjV">
+                                        <rect key="frame" x="8" y="59" width="87" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Break Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2h-Ll-smD">
+                                        <rect key="frame" x="8" y="88" width="138" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long Break Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LN0-KQ-a8t">
+                                        <rect key="frame" x="8" y="117" width="135" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjV-5g-HeI" userLabel="Work Time Label">
+                                        <rect key="frame" x="208" y="59" width="49" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEn-6M-VWR" userLabel="Short Break Time Label">
+                                        <rect key="frame" x="208" y="88" width="49" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-CI-Onv" userLabel="Long Break Time Label">
+                                        <rect key="frame" x="208" y="117" width="49" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your timer. In non-break mode, simple" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLO-rf-RjY">
+                                        <rect key="frame" x="8" y="220" width="291" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="click works to start-stop." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qe-tH-Qkf">
+                                        <rect key="frame" x="8" y="249" width="249" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.2 July 14, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sz-hI-lOU">
+                                        <rect key="frame" x="8" y="278" width="140" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Justin Gordon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q00-70-nz3">
+                                        <rect key="frame" x="8" y="307" width="132" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="justin.gordon@gmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3Z-ve-dhl">
+                                        <rect key="frame" x="8" y="336" width="194" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Q00-70-nz3" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="2CI-UP-Oi4"/>
+                                    <constraint firstItem="NEn-6M-VWR" firstAttribute="width" secondItem="S7V-rs-tkP" secondAttribute="width" id="2In-ek-QrD"/>
+                                    <constraint firstItem="KjV-5g-HeI" firstAttribute="leading" secondItem="NEn-6M-VWR" secondAttribute="leading" id="4zQ-Wu-jpt"/>
+                                    <constraint firstItem="2Sz-hI-lOU" firstAttribute="top" secondItem="0Qe-tH-Qkf" secondAttribute="bottom" constant="8" symbolic="YES" id="97K-zW-msK"/>
+                                    <constraint firstItem="NEn-6M-VWR" firstAttribute="trailing" secondItem="KjV-5g-HeI" secondAttribute="trailing" id="9rX-By-cBu"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Qe-tH-Qkf" secondAttribute="trailing" constant="203" id="AiH-ah-qM0"/>
+                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="LN0-KQ-a8t" secondAttribute="leading" id="C1R-8t-CsW"/>
+                                    <constraint firstItem="fCg-yo-Qqt" firstAttribute="top" secondItem="53V-ZX-E7I" secondAttribute="bottom" constant="8" id="GH4-UR-xgg"/>
+                                    <constraint firstItem="fCg-yo-Qqt" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="Hzt-eT-rva"/>
+                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="2Sz-hI-lOU" secondAttribute="leading" id="IJC-lp-P7F"/>
+                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="top" secondItem="P7f-CI-Onv" secondAttribute="bottom" constant="24" id="JSS-uB-Zj8"/>
+                                    <constraint firstItem="lLO-rf-RjY" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="JYO-K4-Xpx"/>
+                                    <constraint firstItem="lLO-rf-RjY" firstAttribute="top" secondItem="fCg-yo-Qqt" secondAttribute="bottom" constant="8" id="Jg4-dR-uvY"/>
+                                    <constraint firstItem="y3Z-ve-dhl" firstAttribute="top" secondItem="Q00-70-nz3" secondAttribute="bottom" constant="8" id="N8z-ey-CHl"/>
+                                    <constraint firstItem="d2h-Ll-smD" firstAttribute="top" secondItem="M4r-1c-SjV" secondAttribute="bottom" constant="8" id="O04-08-C0u"/>
+                                    <constraint firstItem="S7V-rs-tkP" firstAttribute="centerY" secondItem="NTn-jA-lhc" secondAttribute="centerY" id="S0r-9t-apT"/>
+                                    <constraint firstItem="NEn-6M-VWR" firstAttribute="trailing" secondItem="P7f-CI-Onv" secondAttribute="trailing" id="SS8-9M-mpp"/>
+                                    <constraint firstItem="2Sz-hI-lOU" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="TPR-iK-CPB"/>
+                                    <constraint firstItem="NTn-jA-lhc" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="8" id="UEk-m9-qwc"/>
+                                    <constraint firstAttribute="trailing" secondItem="P7f-CI-Onv" secondAttribute="trailing" constant="203" id="Wzj-QN-EME"/>
+                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="Q00-70-nz3" secondAttribute="leading" id="f9u-Gg-nMw"/>
+                                    <constraint firstItem="Q00-70-nz3" firstAttribute="top" secondItem="2Sz-hI-lOU" secondAttribute="bottom" constant="8" id="gJl-wh-ilJ"/>
+                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="d2h-Ll-smD" secondAttribute="leading" id="gfc-Md-EWB"/>
+                                    <constraint firstItem="0Qe-tH-Qkf" firstAttribute="leading" secondItem="lLO-rf-RjY" secondAttribute="leading" id="it1-p5-vAz"/>
+                                    <constraint firstItem="KjV-5g-HeI" firstAttribute="leading" secondItem="P7f-CI-Onv" secondAttribute="leading" id="ixQ-Nf-kWo"/>
+                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="jK7-Tk-E13"/>
+                                    <constraint firstItem="KjV-5g-HeI" firstAttribute="top" secondItem="S7V-rs-tkP" secondAttribute="bottom" constant="8" symbolic="YES" id="jS6-yG-Rff"/>
+                                    <constraint firstItem="KjV-5g-HeI" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="208" id="kf1-n9-xbY"/>
+                                    <constraint firstItem="P7f-CI-Onv" firstAttribute="top" secondItem="NEn-6M-VWR" secondAttribute="bottom" constant="8" id="lGE-LP-xK6"/>
+                                    <constraint firstAttribute="trailing" secondItem="S7V-rs-tkP" secondAttribute="trailing" constant="203" id="mKb-dj-AjK"/>
+                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="lLO-rf-RjY" secondAttribute="leading" id="nZq-xi-0dF"/>
+                                    <constraint firstItem="0Qe-tH-Qkf" firstAttribute="top" secondItem="lLO-rf-RjY" secondAttribute="bottom" constant="8" symbolic="YES" id="o8W-Bp-Cpz"/>
+                                    <constraint firstItem="d2h-Ll-smD" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="olc-kj-79b"/>
+                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="top" secondItem="LN0-KQ-a8t" secondAttribute="bottom" constant="24" id="ora-hh-YAX"/>
+                                    <constraint firstItem="M4r-1c-SjV" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="p67-pw-aBa"/>
+                                    <constraint firstAttribute="trailing" secondItem="NEn-6M-VWR" secondAttribute="trailing" constant="203" id="peS-5Q-H72"/>
+                                    <constraint firstItem="KjV-5g-HeI" firstAttribute="baseline" secondItem="M4r-1c-SjV" secondAttribute="baseline" id="ptV-8s-AnQ"/>
+                                    <constraint firstItem="0Qe-tH-Qkf" firstAttribute="top" secondItem="Spa-oS-88K" secondAttribute="top" constant="249" id="qa9-ZO-zaY"/>
+                                    <constraint firstItem="LN0-KQ-a8t" firstAttribute="top" secondItem="d2h-Ll-smD" secondAttribute="bottom" constant="8" id="qw9-r5-WJ8"/>
+                                    <constraint firstItem="LN0-KQ-a8t" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="rYF-J1-HV6"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Qe-tH-Qkf" secondAttribute="bottom" constant="151" id="t6B-wQ-Uau"/>
+                                    <constraint firstItem="S7V-rs-tkP" firstAttribute="height" secondItem="NTn-jA-lhc" secondAttribute="height" id="utm-et-BgM"/>
+                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="M4r-1c-SjV" secondAttribute="leading" id="wz6-YI-ODY"/>
+                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="NTn-jA-lhc" secondAttribute="leading" id="xa6-gc-vYD"/>
+                                    <constraint firstItem="y3Z-ve-dhl" firstAttribute="leading" secondItem="53V-ZX-E7I" secondAttribute="leading" id="xlZ-Kt-Le5"/>
+                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="fCg-yo-Qqt" secondAttribute="leading" id="yK8-eV-xVi"/>
+                                    <constraint firstItem="NEn-6M-VWR" firstAttribute="width" secondItem="KjV-5g-HeI" secondAttribute="width" id="yf6-5q-4A7"/>
+                                    <constraint firstItem="NEn-6M-VWR" firstAttribute="width" secondItem="P7f-CI-Onv" secondAttribute="width" id="yhz-8L-ItE"/>
+                                    <constraint firstItem="KjV-5g-HeI" firstAttribute="trailing" secondItem="NEn-6M-VWR" secondAttribute="trailing" id="z7N-vE-KwC"/>
+                                    <constraint firstItem="NEn-6M-VWR" firstAttribute="trailing" secondItem="S7V-rs-tkP" secondAttribute="trailing" id="zEj-4q-fv6"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="p67-pw-aBa"/>
+                                        <exclude reference="olc-kj-79b"/>
+                                        <exclude reference="rYF-J1-HV6"/>
+                                        <exclude reference="jK7-Tk-E13"/>
+                                        <exclude reference="Hzt-eT-rva"/>
+                                        <exclude reference="JYO-K4-Xpx"/>
+                                        <exclude reference="TPR-iK-CPB"/>
+                                        <exclude reference="2CI-UP-Oi4"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Osf-cX-RAt">
+                                <rect key="frame" x="423" y="11" width="37" height="30"/>
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -219,81 +378,21 @@
                                     <action selector="donePressed:" destination="yN9-NF-T3m" eventType="touchUpInside" id="VJ3-bx-uWy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Demo Mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTn-jA-lhc">
-                                <rect key="frame" x="20" y="63" width="95" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S7V-rs-tkP" userLabel="Demo Mode Switch">
-                                <rect key="frame" x="201" y="58" width="51" height="31"/>
-                                <connections>
-                                    <action selector="demoModeToggled:" destination="yN9-NF-T3m" eventType="valueChanged" id="TtO-oo-bA3"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Swipe to stop timer in break mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53V-ZX-E7I">
-                                <rect key="frame" x="20" y="200" width="264" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="so that you get up and carry around" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCg-yo-Qqt">
-                                <rect key="frame" x="20" y="229" width="275" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Work Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4r-1c-SjV">
-                                <rect key="frame" x="20" y="97" width="87" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Short Break Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2h-Ll-smD">
-                                <rect key="frame" x="20" y="126" width="138" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Long Break Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LN0-KQ-a8t">
-                                <rect key="frame" x="20" y="155" width="135" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="27:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjV-5g-HeI" userLabel="Work Time Label">
-                                <rect key="frame" x="208" y="97" width="43" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEn-6M-VWR" userLabel="Short Break Time Label">
-                                <rect key="frame" x="208" y="126" width="43" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-CI-Onv" userLabel="Long Break Time Label">
-                                <rect key="frame" x="208" y="155" width="43" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="your timer. In non-break mode, simple" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLO-rf-RjY">
-                                <rect key="frame" x="20" y="258" width="291" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="click works to start-stop." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qe-tH-Qkf">
-                                <rect key="frame" x="20" y="287" width="191" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Spa-oS-88K" secondAttribute="trailing" id="29A-BD-crZ"/>
+                            <constraint firstItem="Spa-oS-88K" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7kL-LB-F5A" secondAttribute="leading" id="AfC-Jq-fsU"/>
+                            <constraint firstItem="Spa-oS-88K" firstAttribute="leading" secondItem="7kL-LB-F5A" secondAttribute="leading" constant="10" id="EFk-BR-ysN"/>
+                            <constraint firstItem="Gup-N8-tXk" firstAttribute="top" secondItem="Spa-oS-88K" secondAttribute="bottom" constant="10" id="Ewq-Qc-ggi"/>
+                            <constraint firstItem="Spa-oS-88K" firstAttribute="top" secondItem="Osf-cX-RAt" secondAttribute="bottom" constant="8" id="PcA-l9-9Fx"/>
+                            <constraint firstAttribute="trailing" secondItem="Osf-cX-RAt" secondAttribute="trailing" constant="20" id="cBT-7R-khF"/>
+                            <constraint firstItem="Osf-cX-RAt" firstAttribute="top" secondItem="7kL-LB-F5A" secondAttribute="top" constant="11" id="mzf-Ux-14f"/>
+                            <constraint firstAttribute="trailing" secondItem="Spa-oS-88K" secondAttribute="trailing" constant="10" id="prz-td-Ro6"/>
+                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="480" height="480"/>
                     <connections>
                         <outlet property="demoModeSwitch" destination="S7V-rs-tkP" id="MNE-Qe-F51"/>
                         <outlet property="longBreakTimeLabel" destination="P7f-CI-Onv" id="7b0-0a-Abg"/>
@@ -303,7 +402,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJR-aG-hCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19" y="823"/>
+            <point key="canvasLocation" x="-4" y="961"/>
         </scene>
     </scenes>
     <resources>

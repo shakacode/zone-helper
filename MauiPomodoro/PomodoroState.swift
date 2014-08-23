@@ -157,7 +157,7 @@ class PomodoroState {
     }
     var absSecs = abs(secs)
     var hours = Int(absSecs / 3600)
-    var secondsAfterHours = Int(absSecs % 3660)
+    var secondsAfterHours = Int(absSecs % 3600)
     var minutes = secondsAfterHours / 60
     var seconds = Int(secondsAfterHours % 60)
     if 0 < hours {
