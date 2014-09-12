@@ -15,7 +15,7 @@
 		D0A851FD195134AC0004A4A2 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A851FC195134AC0004A4A2 /* TimerViewController.swift */; };
 		D0A85200195134AC0004A4A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A851FE195134AC0004A4A2 /* Main.storyboard */; };
 		D0A85202195134AC0004A4A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A85201195134AC0004A4A2 /* Images.xcassets */; };
-		D0A8520E195134AC0004A4A2 /* MauiPomodoroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A8520D195134AC0004A4A2 /* MauiPomodoroTests.swift */; };
+		D0A8520E195134AC0004A4A2 /* ZoneHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A8520D195134AC0004A4A2 /* ZoneHelperTests.swift */; };
 		D0A85218195142780004A4A2 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A85217195142780004A4A2 /* OptionsViewController.swift */; };
 		D0A8521A19517B540004A4A2 /* PomodoroState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A8521919517B540004A4A2 /* PomodoroState.swift */; };
 		D0E1648719673CD50061EFFA /* settings_filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D0E1648619673CD50061EFFA /* settings_filled-50.png */; };
@@ -35,17 +35,17 @@
 		D00877CF1970AC2200C91792 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		D00877D11970AD6900C91792 /* SoundResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundResource.swift; sourceTree = "<group>"; };
 		D0201335195942370072A084 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		D0201339195E38DF0072A084 /* MauiPomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MauiPomodoro.entitlements; sourceTree = "<group>"; };
+		D0201339195E38DF0072A084 /* ZoneHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ZoneHelper.entitlements; sourceTree = "<group>"; };
 		D04574B1195F2D700047040E /* PomodoroMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroMode.swift; sourceTree = "<group>"; };
-		D0A851F5195134AC0004A4A2 /* MauiPomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MauiPomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A851F5195134AC0004A4A2 /* ZoneHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZoneHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A851F9195134AC0004A4A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0A851FA195134AC0004A4A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0A851FC195134AC0004A4A2 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		D0A851FF195134AC0004A4A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0A85201195134AC0004A4A2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D0A85207195134AC0004A4A2 /* MauiPomodoroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MauiPomodoroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A85207195134AC0004A4A2 /* ZoneHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZoneHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A8520C195134AC0004A4A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0A8520D195134AC0004A4A2 /* MauiPomodoroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MauiPomodoroTests.swift; sourceTree = "<group>"; };
+		D0A8520D195134AC0004A4A2 /* ZoneHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneHelperTests.swift; sourceTree = "<group>"; };
 		D0A85217195142780004A4A2 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		D0A8521919517B540004A4A2 /* PomodoroState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroState.swift; sourceTree = "<group>"; };
 		D0E1648619673CD50061EFFA /* settings_filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_filled-50.png"; sourceTree = "<group>"; };
@@ -80,8 +80,8 @@
 		D0A851EC195134AC0004A4A2 = {
 			isa = PBXGroup;
 			children = (
-				D0A851F7195134AC0004A4A2 /* MauiPomodoro */,
-				D0A8520A195134AC0004A4A2 /* MauiPomodoroTests */,
+				D0A851F7195134AC0004A4A2 /* ZoneHelper */,
+				D0A8520A195134AC0004A4A2 /* ZoneHelperTests */,
 				D0A851F6195134AC0004A4A2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,18 +89,18 @@
 		D0A851F6195134AC0004A4A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0A851F5195134AC0004A4A2 /* MauiPomodoro.app */,
-				D0A85207195134AC0004A4A2 /* MauiPomodoroTests.xctest */,
+				D0A851F5195134AC0004A4A2 /* ZoneHelper.app */,
+				D0A85207195134AC0004A4A2 /* ZoneHelperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D0A851F7195134AC0004A4A2 /* MauiPomodoro */ = {
+		D0A851F7195134AC0004A4A2 /* ZoneHelper */ = {
 			isa = PBXGroup;
 			children = (
 				D00877CE1970AC0200C91792 /* extensions */,
 				D0E1648619673CD50061EFFA /* settings_filled-50.png */,
-				D0201339195E38DF0072A084 /* MauiPomodoro.entitlements */,
+				D0201339195E38DF0072A084 /* ZoneHelper.entitlements */,
 				D0A851FA195134AC0004A4A2 /* AppDelegate.swift */,
 				D0A851FC195134AC0004A4A2 /* TimerViewController.swift */,
 				D0A85217195142780004A4A2 /* OptionsViewController.swift */,
@@ -112,6 +112,7 @@
 				D04574B1195F2D700047040E /* PomodoroMode.swift */,
 				D00877D11970AD6900C91792 /* SoundResource.swift */,
 			);
+			name = ZoneHelper;
 			path = MauiPomodoro;
 			sourceTree = "<group>";
 		};
@@ -123,12 +124,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D0A8520A195134AC0004A4A2 /* MauiPomodoroTests */ = {
+		D0A8520A195134AC0004A4A2 /* ZoneHelperTests */ = {
 			isa = PBXGroup;
 			children = (
-				D0A8520D195134AC0004A4A2 /* MauiPomodoroTests.swift */,
+				D0A8520D195134AC0004A4A2 /* ZoneHelperTests.swift */,
 				D0A8520B195134AC0004A4A2 /* Supporting Files */,
 			);
+			name = ZoneHelperTests;
 			path = MauiPomodoroTests;
 			sourceTree = "<group>";
 		};
@@ -143,9 +145,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D0A851F4195134AC0004A4A2 /* MauiPomodoro */ = {
+		D0A851F4195134AC0004A4A2 /* ZoneHelper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D0A85211195134AC0004A4A2 /* Build configuration list for PBXNativeTarget "MauiPomodoro" */;
+			buildConfigurationList = D0A85211195134AC0004A4A2 /* Build configuration list for PBXNativeTarget "ZoneHelper" */;
 			buildPhases = (
 				D0A851F1195134AC0004A4A2 /* Sources */,
 				D0A851F2195134AC0004A4A2 /* Frameworks */,
@@ -155,14 +157,14 @@
 			);
 			dependencies = (
 			);
-			name = MauiPomodoro;
+			name = ZoneHelper;
 			productName = MauiPomodoro;
-			productReference = D0A851F5195134AC0004A4A2 /* MauiPomodoro.app */;
+			productReference = D0A851F5195134AC0004A4A2 /* ZoneHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D0A85206195134AC0004A4A2 /* MauiPomodoroTests */ = {
+		D0A85206195134AC0004A4A2 /* ZoneHelperTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D0A85214195134AC0004A4A2 /* Build configuration list for PBXNativeTarget "MauiPomodoroTests" */;
+			buildConfigurationList = D0A85214195134AC0004A4A2 /* Build configuration list for PBXNativeTarget "ZoneHelperTests" */;
 			buildPhases = (
 				D0A85203195134AC0004A4A2 /* Sources */,
 				D0A85204195134AC0004A4A2 /* Frameworks */,
@@ -173,9 +175,9 @@
 			dependencies = (
 				D0A85209195134AC0004A4A2 /* PBXTargetDependency */,
 			);
-			name = MauiPomodoroTests;
+			name = ZoneHelperTests;
 			productName = MauiPomodoroTests;
-			productReference = D0A85207195134AC0004A4A2 /* MauiPomodoroTests.xctest */;
+			productReference = D0A85207195134AC0004A4A2 /* ZoneHelperTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -202,7 +204,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D0A851F0195134AC0004A4A2 /* Build configuration list for PBXProject "MauiPomodoro" */;
+			buildConfigurationList = D0A851F0195134AC0004A4A2 /* Build configuration list for PBXProject "ZoneHelper" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -215,8 +217,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D0A851F4195134AC0004A4A2 /* MauiPomodoro */,
-				D0A85206195134AC0004A4A2 /* MauiPomodoroTests */,
+				D0A851F4195134AC0004A4A2 /* ZoneHelper */,
+				D0A85206195134AC0004A4A2 /* ZoneHelperTests */,
 			);
 		};
 /* End PBXProject section */
@@ -261,7 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A8520E195134AC0004A4A2 /* MauiPomodoroTests.swift in Sources */,
+				D0A8520E195134AC0004A4A2 /* ZoneHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +272,7 @@
 /* Begin PBXTargetDependency section */
 		D0A85209195134AC0004A4A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D0A851F4195134AC0004A4A2 /* MauiPomodoro */;
+			target = D0A851F4195134AC0004A4A2 /* ZoneHelper */;
 			targetProxy = D0A85208195134AC0004A4A2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -376,7 +378,7 @@
 				INFOPLIST_FILE = MauiPomodoro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ZoneHelper;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -392,7 +394,7 @@
 				INFOPLIST_FILE = MauiPomodoro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ZoneHelper;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -413,7 +415,7 @@
 				INFOPLIST_FILE = MauiPomodoroTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ZoneHelperTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -429,7 +431,7 @@
 				INFOPLIST_FILE = MauiPomodoroTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ZoneHelperTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
@@ -437,7 +439,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D0A851F0195134AC0004A4A2 /* Build configuration list for PBXProject "MauiPomodoro" */ = {
+		D0A851F0195134AC0004A4A2 /* Build configuration list for PBXProject "ZoneHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0A8520F195134AC0004A4A2 /* Debug */,
@@ -446,7 +448,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D0A85211195134AC0004A4A2 /* Build configuration list for PBXNativeTarget "MauiPomodoro" */ = {
+		D0A85211195134AC0004A4A2 /* Build configuration list for PBXNativeTarget "ZoneHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0A85212195134AC0004A4A2 /* Debug */,
@@ -455,7 +457,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D0A85214195134AC0004A4A2 /* Build configuration list for PBXNativeTarget "MauiPomodoroTests" */ = {
+		D0A85214195134AC0004A4A2 /* Build configuration list for PBXNativeTarget "ZoneHelperTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0A85215195134AC0004A4A2 /* Debug */,
