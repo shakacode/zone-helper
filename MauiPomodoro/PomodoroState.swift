@@ -203,7 +203,11 @@ class PomodoroState {
   }
   
   func checkPlayedAlarm() {
-    if secsUntilTimerEnds() < 0 && !playedAlarm {
+    var secs = secsUntilTimerEnds()
+    if secs < -5 {
+      // if more than 5 secs went by, then probably app was in background, so don't play sound when going to foreground
+      playedAlarm = true
+    } else if secs < 0 && !playedAlarm {
       soundResource.playAlarmSound()
       playedAlarm = true
     }
