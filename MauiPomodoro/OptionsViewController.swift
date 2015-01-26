@@ -11,10 +11,12 @@ import UIKit
 class OptionsViewController: UIViewController {
   
   @IBOutlet var demoModeSwitch: UISwitch?
-  @IBOutlet var workTimeLabel: UILabel?
-  @IBOutlet var shortBreakTimeLabel: UILabel?
-  @IBOutlet var longBreakTimeLabel: UILabel?
-  
+
+    @IBOutlet weak var workTimeField: UITextField!
+    @IBOutlet weak var shortBreakTimeField: UITextField!
+    @IBOutlet weak var longBreakTimeField: UITextField!
+   
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     demoModeSwitch!.on = demoMode
@@ -42,9 +44,12 @@ class OptionsViewController: UIViewController {
   }
   
   func setTimeLabels() {
-    workTimeLabel!.text = PomodoroMode.Work.totalTimeMinSecs()
-    shortBreakTimeLabel!.text = PomodoroMode.ShortBreak.totalTimeMinSecs()
-    longBreakTimeLabel!.text = PomodoroMode.LongBreak.totalTimeMinSecs()
-  }
+
+    workTimeField!.text = PomodoroMode.Work.totalTimeMinSecs()
+    shortBreakTimeField!.text = PomodoroMode.ShortBreak.totalTimeMinSecs()
+    longBreakTimeField!.text = PomodoroMode.LongBreak.totalTimeMinSecs()
+
+    
+      }
 }
 

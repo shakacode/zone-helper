@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment version="1808" defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment version="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -220,7 +220,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S7V-rs-tkP" userLabel="Demo Mode Switch">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S7V-rs-tkP" userLabel="Demo Mode Switch">
                                         <rect key="frame" x="208" y="8" width="51" height="31"/>
                                         <connections>
                                             <action selector="demoModeToggled:" destination="yN9-NF-T3m" eventType="valueChanged" id="TtO-oo-bA3"/>
@@ -244,24 +244,6 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjV-5g-HeI" userLabel="Work Time Label">
-                                        <rect key="frame" x="208" y="47" width="49" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEn-6M-VWR" userLabel="Short Break Time Label">
-                                        <rect key="frame" x="208" y="76" width="49" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-CI-Onv" userLabel="Long Break Time Label">
-                                        <rect key="frame" x="208" y="105" width="49" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="so that you get up and carry around" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCg-yo-Qqt">
                                         <rect key="frame" x="8" y="185" width="275" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -274,7 +256,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="click works to start-stop." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qe-tH-Qkf">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="click works to start-stop." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qe-tH-Qkf">
                                         <rect key="frame" x="8" y="243" width="249" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -304,47 +286,52 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nRc-PV-ae0">
+                                        <rect key="frame" x="278" y="43" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ce-80-4G3">
+                                        <rect key="frame" x="278" y="72" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X6x-Vy-bQg">
+                                        <rect key="frame" x="278" y="102" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="d2h-Ll-smD" firstAttribute="top" secondItem="Spa-oS-88K" secondAttribute="top" constant="76" id="1SE-9X-C3y"/>
                                     <constraint firstItem="Q00-70-nz3" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="2CI-UP-Oi4"/>
-                                    <constraint firstItem="NEn-6M-VWR" firstAttribute="width" secondItem="S7V-rs-tkP" secondAttribute="width" id="2In-ek-QrD"/>
                                     <constraint firstAttribute="bottom" secondItem="y3Z-ve-dhl" secondAttribute="bottom" constant="38" id="2Vl-56-FQM"/>
-                                    <constraint firstItem="KjV-5g-HeI" firstAttribute="leading" secondItem="NEn-6M-VWR" secondAttribute="leading" id="4zQ-Wu-jpt"/>
+                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="top" secondItem="Spa-oS-88K" secondAttribute="top" constant="156" id="541-IH-JsH"/>
                                     <constraint firstItem="2Sz-hI-lOU" firstAttribute="top" secondItem="0Qe-tH-Qkf" secondAttribute="bottom" constant="8" symbolic="YES" id="97K-zW-msK"/>
-                                    <constraint firstItem="NEn-6M-VWR" firstAttribute="trailing" secondItem="KjV-5g-HeI" secondAttribute="trailing" id="9rX-By-cBu"/>
+                                    <constraint firstItem="M4r-1c-SjV" firstAttribute="top" secondItem="Spa-oS-88K" secondAttribute="top" constant="47" id="9N8-Ha-aan"/>
                                     <constraint firstAttribute="trailing" secondItem="0Qe-tH-Qkf" secondAttribute="trailing" constant="203" id="AiH-ah-qM0"/>
                                     <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="LN0-KQ-a8t" secondAttribute="leading" id="C1R-8t-CsW"/>
                                     <constraint firstItem="fCg-yo-Qqt" firstAttribute="top" secondItem="53V-ZX-E7I" secondAttribute="bottom" constant="8" id="GH4-UR-xgg"/>
                                     <constraint firstItem="fCg-yo-Qqt" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="Hzt-eT-rva"/>
                                     <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="2Sz-hI-lOU" secondAttribute="leading" id="IJC-lp-P7F"/>
-                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="top" secondItem="P7f-CI-Onv" secondAttribute="bottom" constant="30" id="JSS-uB-Zj8"/>
                                     <constraint firstItem="lLO-rf-RjY" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="JYO-K4-Xpx"/>
                                     <constraint firstItem="lLO-rf-RjY" firstAttribute="top" secondItem="fCg-yo-Qqt" secondAttribute="bottom" constant="8" id="Jg4-dR-uvY"/>
                                     <constraint firstItem="y3Z-ve-dhl" firstAttribute="top" secondItem="Q00-70-nz3" secondAttribute="bottom" constant="8" id="N8z-ey-CHl"/>
                                     <constraint firstItem="d2h-Ll-smD" firstAttribute="top" secondItem="M4r-1c-SjV" secondAttribute="bottom" constant="8" id="O04-08-C0u"/>
                                     <constraint firstItem="S7V-rs-tkP" firstAttribute="centerY" secondItem="NTn-jA-lhc" secondAttribute="centerY" id="S0r-9t-apT"/>
-                                    <constraint firstItem="NEn-6M-VWR" firstAttribute="trailing" secondItem="P7f-CI-Onv" secondAttribute="trailing" id="SS8-9M-mpp"/>
                                     <constraint firstItem="NTn-jA-lhc" firstAttribute="top" secondItem="Spa-oS-88K" secondAttribute="top" constant="8" id="SwH-nZ-fry"/>
                                     <constraint firstItem="2Sz-hI-lOU" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="TPR-iK-CPB"/>
                                     <constraint firstItem="NTn-jA-lhc" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="8" id="UEk-m9-qwc"/>
-                                    <constraint firstAttribute="trailing" secondItem="P7f-CI-Onv" secondAttribute="trailing" constant="203" id="Wzj-QN-EME"/>
                                     <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="Q00-70-nz3" secondAttribute="leading" id="f9u-Gg-nMw"/>
-                                    <constraint firstItem="NEn-6M-VWR" firstAttribute="top" secondItem="KjV-5g-HeI" secondAttribute="bottom" constant="8" id="f9x-FY-RVD"/>
                                     <constraint firstItem="Q00-70-nz3" firstAttribute="top" secondItem="2Sz-hI-lOU" secondAttribute="bottom" constant="8" id="gJl-wh-ilJ"/>
                                     <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="d2h-Ll-smD" secondAttribute="leading" id="gfc-Md-EWB"/>
                                     <constraint firstItem="0Qe-tH-Qkf" firstAttribute="leading" secondItem="lLO-rf-RjY" secondAttribute="leading" id="it1-p5-vAz"/>
-                                    <constraint firstItem="KjV-5g-HeI" firstAttribute="leading" secondItem="P7f-CI-Onv" secondAttribute="leading" id="ixQ-Nf-kWo"/>
                                     <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="jK7-Tk-E13"/>
-                                    <constraint firstItem="KjV-5g-HeI" firstAttribute="top" secondItem="S7V-rs-tkP" secondAttribute="bottom" constant="8" symbolic="YES" id="jS6-yG-Rff"/>
-                                    <constraint firstItem="KjV-5g-HeI" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="208" id="kf1-n9-xbY"/>
-                                    <constraint firstItem="P7f-CI-Onv" firstAttribute="top" secondItem="NEn-6M-VWR" secondAttribute="bottom" constant="8" id="lGE-LP-xK6"/>
                                     <constraint firstAttribute="trailing" secondItem="S7V-rs-tkP" secondAttribute="trailing" constant="203" id="mKb-dj-AjK"/>
                                     <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="lLO-rf-RjY" secondAttribute="leading" id="nZq-xi-0dF"/>
                                     <constraint firstItem="0Qe-tH-Qkf" firstAttribute="top" secondItem="lLO-rf-RjY" secondAttribute="bottom" constant="8" symbolic="YES" id="o8W-Bp-Cpz"/>
                                     <constraint firstItem="d2h-Ll-smD" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="olc-kj-79b"/>
                                     <constraint firstItem="M4r-1c-SjV" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="p67-pw-aBa"/>
-                                    <constraint firstAttribute="trailing" secondItem="NEn-6M-VWR" secondAttribute="trailing" constant="203" id="peS-5Q-H72"/>
-                                    <constraint firstItem="KjV-5g-HeI" firstAttribute="baseline" secondItem="M4r-1c-SjV" secondAttribute="baseline" id="ptV-8s-AnQ"/>
                                     <constraint firstItem="LN0-KQ-a8t" firstAttribute="top" secondItem="d2h-Ll-smD" secondAttribute="bottom" constant="8" id="qw9-r5-WJ8"/>
                                     <constraint firstItem="LN0-KQ-a8t" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="rYF-J1-HV6"/>
                                     <constraint firstItem="S7V-rs-tkP" firstAttribute="height" secondItem="NTn-jA-lhc" secondAttribute="height" id="utm-et-BgM"/>
@@ -352,10 +339,6 @@
                                     <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="NTn-jA-lhc" secondAttribute="leading" id="xa6-gc-vYD"/>
                                     <constraint firstItem="y3Z-ve-dhl" firstAttribute="leading" secondItem="53V-ZX-E7I" secondAttribute="leading" id="xlZ-Kt-Le5"/>
                                     <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="fCg-yo-Qqt" secondAttribute="leading" id="yK8-eV-xVi"/>
-                                    <constraint firstItem="NEn-6M-VWR" firstAttribute="width" secondItem="KjV-5g-HeI" secondAttribute="width" id="yf6-5q-4A7"/>
-                                    <constraint firstItem="NEn-6M-VWR" firstAttribute="width" secondItem="P7f-CI-Onv" secondAttribute="width" id="yhz-8L-ItE"/>
-                                    <constraint firstItem="KjV-5g-HeI" firstAttribute="trailing" secondItem="NEn-6M-VWR" secondAttribute="trailing" id="z7N-vE-KwC"/>
-                                    <constraint firstItem="NEn-6M-VWR" firstAttribute="trailing" secondItem="S7V-rs-tkP" secondAttribute="trailing" id="zEj-4q-fv6"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -410,14 +393,14 @@
                     <size key="freeformSize" width="480" height="480"/>
                     <connections>
                         <outlet property="demoModeSwitch" destination="S7V-rs-tkP" id="MNE-Qe-F51"/>
-                        <outlet property="longBreakTimeLabel" destination="P7f-CI-Onv" id="7b0-0a-Abg"/>
-                        <outlet property="shortBreakTimeLabel" destination="NEn-6M-VWR" id="T6E-N5-clm"/>
-                        <outlet property="workTimeLabel" destination="KjV-5g-HeI" id="WD2-Sv-Jds"/>
+                        <outlet property="longBreakTimeField" destination="X6x-Vy-bQg" id="6bu-gS-aX1"/>
+                        <outlet property="shortBreakTimeField" destination="3ce-80-4G3" id="tCX-bT-SvE"/>
+                        <outlet property="workTimeField" destination="nRc-PV-ae0" id="r8d-ac-aGx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJR-aG-hCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4" y="961"/>
+            <point key="canvasLocation" x="-51" y="859"/>
         </scene>
     </scenes>
     <resources>
