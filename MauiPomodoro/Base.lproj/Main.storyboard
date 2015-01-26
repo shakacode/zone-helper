@@ -362,30 +362,43 @@
                                     <action selector="donePressed:" destination="yN9-NF-T3m" eventType="touchUpInside" id="VJ3-bx-uWy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZoneHelper" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V03-uv-qLP">
-                                <rect key="frame" x="24" y="11" width="108" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sDL-BO-GqP">
+                                <rect key="frame" x="0.0" y="-3" width="480" height="44"/>
+                                <items>
+                                    <navigationItem title="ZoneHelper" id="50z-UL-F7o">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="pPd-gn-33r">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GNX-pU-4Ka">
+                                                <rect key="frame" x="221" y="225" width="37" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Done">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="donePressed:" destination="yN9-NF-T3m" eventType="touchUpInside" id="J0d-2R-VQY"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="sDL-BO-GqP" firstAttribute="leading" secondItem="7kL-LB-F5A" secondAttribute="leadingMargin" constant="-16" id="1df-Qw-q75"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Spa-oS-88K" secondAttribute="trailing" id="29A-BD-crZ"/>
-                            <constraint firstItem="V03-uv-qLP" firstAttribute="leading" secondItem="7kL-LB-F5A" secondAttribute="leadingMargin" id="ACt-he-uHY"/>
                             <constraint firstItem="Spa-oS-88K" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7kL-LB-F5A" secondAttribute="leading" id="AfC-Jq-fsU"/>
-                            <constraint firstItem="V03-uv-qLP" firstAttribute="top" secondItem="Osf-cX-RAt" secondAttribute="top" id="DAW-A8-X0l"/>
                             <constraint firstItem="Spa-oS-88K" firstAttribute="leading" secondItem="7kL-LB-F5A" secondAttribute="leading" constant="10" id="EFk-BR-ysN"/>
                             <constraint firstItem="Gup-N8-tXk" firstAttribute="top" secondItem="Spa-oS-88K" secondAttribute="bottom" constant="10" id="Ewq-Qc-ggi"/>
+                            <constraint firstItem="Spa-oS-88K" firstAttribute="top" secondItem="sDL-BO-GqP" secondAttribute="bottom" id="HeV-pv-EB4"/>
                             <constraint firstItem="Spa-oS-88K" firstAttribute="top" secondItem="Osf-cX-RAt" secondAttribute="bottom" id="PcA-l9-9Fx"/>
                             <constraint firstAttribute="trailing" secondItem="Osf-cX-RAt" secondAttribute="trailing" constant="20" id="cBT-7R-khF"/>
                             <constraint firstItem="Osf-cX-RAt" firstAttribute="top" secondItem="7kL-LB-F5A" secondAttribute="top" constant="11" id="mzf-Ux-14f"/>
                             <constraint firstAttribute="trailing" secondItem="Spa-oS-88K" secondAttribute="trailing" constant="10" id="prz-td-Ro6"/>
-                            <constraint firstItem="V03-uv-qLP" firstAttribute="leading" secondItem="7kL-LB-F5A" secondAttribute="leadingMargin" constant="8" id="uV8-xU-jPz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sDL-BO-GqP" secondAttribute="trailing" constant="-16" id="sBf-eU-Dmt"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="ACt-he-uHY"/>
+                                <exclude reference="HeV-pv-EB4"/>
                             </mask>
                         </variation>
                     </view>

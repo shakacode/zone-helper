@@ -32,6 +32,11 @@ class OptionsViewController: UIViewController {
   @IBAction func donePressed(sender : UIButton) {
     self.dismissViewControllerAnimated(true, nil)
     //self.parentViewController.refresh()
+    var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    prefs.setObject(workTimeField.text, forKey: "WORKTIME")
+    prefs.setObject(shortBreakTimeField.text, forKey: "SHORTBREAKTIME")
+    prefs.setObject(longBreakTimeField.text, forKey: "LONGBREAKTIME")
+    prefs.synchronize()
   }
   
   
