@@ -2,6 +2,7 @@ import Foundation
 
 var demoMode = false
 var demoTime = 10.0
+let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
 
 enum PomodoroMode: Int {
   case Work = 0
@@ -14,12 +15,16 @@ enum PomodoroMode: Int {
     if !demoMode {
       switch self {
       case .Work:
-        result = 27.minutes
+        result = prefs.integerForKey("WORKTIME").minutes
+        //result = 27.minutes
       case .ShortBreak:
-        result = 3.minutes
+        result = prefs.integerForKey("SHORTBREAKTIME").minutes
+        //result = 3.minutes
       case .LongBreak:
-        result = 15.minutes
+        result = prefs.integerForKey("LONGBREAKTIME").minutes
+        //result = 15.minutes
       case .Meeting:
+        //result = prefs.integerForKey("MEETINGTIME").minutes
         result = 0.0
       }
     } else {
