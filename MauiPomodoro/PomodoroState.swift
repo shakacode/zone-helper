@@ -167,6 +167,13 @@ class PomodoroState {
     }
   }
   
+  class func convertMinSecsToSecs(minSecs: String) -> Int {
+    let minSecArr = minSecs.componentsSeparatedByString(":")
+    var minutes: Int? = minSecArr[0].toInt()
+    var seconds: Int? = minSecArr[1].toInt()
+    return (minutes! * 60) + seconds!
+  }
+  
   func secsUntilTimerEnds() -> Double {
     var elapsed = 0.0
     if let st = startTime {

@@ -33,9 +33,9 @@ class OptionsViewController: UIViewController {
     self.dismissViewControllerAnimated(true, nil)
     //self.parentViewController.refresh()
     var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    prefs.setObject(workTimeField.text, forKey: "WORKTIME")
-    prefs.setObject(shortBreakTimeField.text, forKey: "SHORTBREAKTIME")
-    prefs.setObject(longBreakTimeField.text, forKey: "LONGBREAKTIME")
+    prefs.setObject(PomodoroState.convertMinSecsToSecs(workTimeField.text), forKey: "WORKTIME")
+    prefs.setObject(PomodoroState.convertMinSecsToSecs(shortBreakTimeField.text), forKey: "SHORTBREAKTIME")
+    prefs.setObject(PomodoroState.convertMinSecsToSecs(longBreakTimeField.text), forKey: "LONGBREAKTIME")
     prefs.synchronize()
   }
   
@@ -49,10 +49,10 @@ class OptionsViewController: UIViewController {
   }
   
   func setTimeLabels() {
-
-    workTimeField!.text = PomodoroMode.Work.totalTimeMinSecs()
-    shortBreakTimeField!.text = PomodoroMode.ShortBreak.totalTimeMinSecs()
-    longBreakTimeField!.text = PomodoroMode.LongBreak.totalTimeMinSecs()
+    var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    workTimeField!.text = PomodoroState.convertSecsToMinSecs(prefs.doubleForKey("WORKTIME"))
+    shortBreakTimeField!.text = PomodoroState.convertSecsToMinSecs(prefs.doubleForKey("SHORTBREAKTIME"))
+    longBreakTimeField!.text = PomodoroState.convertSecsToMinSecs(prefs.doubleForKey("LONGBREAKTIME"))
 
     
       }

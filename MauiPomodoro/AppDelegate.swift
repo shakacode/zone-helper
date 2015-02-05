@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         // Override point for customization after application launch.
+      let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+
+      if (prefs.objectForKey("WORKTIME") == nil) {
+        prefs.setObject(PomodoroState.convertMinSecsToSecs("00:27"), forKey: "WORKTIME")
+        prefs.setObject(PomodoroState.convertMinSecsToSecs("00:03"), forKey: "SHORTBREAKTIME")
+        prefs.setObject(PomodoroState.convertMinSecsToSecs("00:15"), forKey: "LONGBREAKTIME")
+        prefs.synchronize()
+      }
+      
         return true
     }
 
