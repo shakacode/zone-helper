@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment version="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <deployment version="1808" defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -211,7 +211,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spa-oS-88K">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Spa-oS-88K">
                                 <rect key="frame" x="10" y="41" width="460" height="429"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demo Mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTn-jA-lhc">
@@ -220,74 +220,23 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S7V-rs-tkP" userLabel="Demo Mode Switch">
-                                        <rect key="frame" x="208" y="8" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="demoModeToggled:" destination="yN9-NF-T3m" eventType="valueChanged" id="TtO-oo-bA3"/>
-                                        </connections>
-                                    </switch>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4r-1c-SjV">
-                                        <rect key="frame" x="8" y="47" width="87" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Break Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2h-Ll-smD">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Short Break Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2h-Ll-smD">
                                         <rect key="frame" x="8" y="76" width="138" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long Break Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LN0-KQ-a8t">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Long Break Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LN0-KQ-a8t">
                                         <rect key="frame" x="8" y="105" width="135" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="so that you get up and carry around" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCg-yo-Qqt">
-                                        <rect key="frame" x="8" y="185" width="275" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your timer. In non-break mode, simple" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLO-rf-RjY">
-                                        <rect key="frame" x="8" y="214" width="291" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="click works to start-stop." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qe-tH-Qkf">
-                                        <rect key="frame" x="8" y="243" width="249" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0 September 15, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sz-hI-lOU">
-                                        <rect key="frame" x="8" y="272" width="199" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Justin Gordon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q00-70-nz3">
-                                        <rect key="frame" x="8" y="301" width="132" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="justin.gordon@gmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3Z-ve-dhl">
-                                        <rect key="frame" x="8" y="330" width="194" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to stop timer in break mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53V-ZX-E7I">
-                                        <rect key="frame" x="8" y="156" width="264" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nRc-PV-ae0">
                                         <rect key="frame" x="278" y="43" width="97" height="30"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                        </accessibility>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
@@ -301,55 +250,114 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
+                                    <datePicker hidden="YES" contentMode="bottom" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9y-KA-IDA">
+                                        <rect key="frame" x="70" y="163" width="320" height="162"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="446179311.398485">
+                                            <!--2015-02-21 02:41:51 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="workDatePickerAction:" destination="yN9-NF-T3m" eventType="valueChanged" id="gYl-bZ-YWY"/>
+                                        </connections>
+                                    </datePicker>
+                                    <datePicker hidden="YES" contentMode="bottom" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwY-2A-OqY">
+                                        <rect key="frame" x="70" y="163" width="320" height="162"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="446179311.398485">
+                                            <!--2015-02-21 02:41:51 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="shortBreakDatePickerAction:" destination="yN9-NF-T3m" eventType="valueChanged" id="MjJ-z2-h5u"/>
+                                        </connections>
+                                    </datePicker>
+                                    <datePicker hidden="YES" contentMode="bottom" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbD-mB-sRl">
+                                        <rect key="frame" x="70" y="163" width="320" height="162"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="446179311.398485">
+                                            <!--2015-02-21 02:41:51 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="longBreakDatePickerAction:" destination="yN9-NF-T3m" eventType="valueChanged" id="mTN-7L-4IX"/>
+                                        </connections>
+                                    </datePicker>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Work Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4r-1c-SjV">
+                                        <rect key="frame" x="8" y="47" width="87" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCg-Xc-SPF">
+                                        <rect key="frame" x="278" y="43" width="97" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="97" id="VON-fO-wzY"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="workTimeButtonPressed:" destination="yN9-NF-T3m" eventType="touchDown" id="lt0-pG-OiS"/>
+                                        </connections>
+                                    </button>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EsN-H1-r8y">
+                                        <rect key="frame" x="278" y="72" width="97" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="97" id="SNg-OT-tyD"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shortBreakButtonPressed:" destination="yN9-NF-T3m" eventType="touchDown" id="0Ot-Dw-SwX"/>
+                                        </connections>
+                                    </button>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S7V-rs-tkP" userLabel="Demo Mode Switch">
+                                        <rect key="frame" x="278" y="8" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="demoModeToggled:" destination="yN9-NF-T3m" eventType="valueChanged" id="TtO-oo-bA3"/>
+                                        </connections>
+                                    </switch>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wH6-Gr-cij">
+                                        <rect key="frame" x="278" y="102" width="97" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="97" id="z3J-Ys-PBa"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="longBreakButtonPressed:" destination="yN9-NF-T3m" eventType="touchDown" id="MqJ-N1-o1b"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="d2h-Ll-smD" firstAttribute="top" secondItem="Spa-oS-88K" secondAttribute="top" constant="76" id="1SE-9X-C3y"/>
-                                    <constraint firstItem="Q00-70-nz3" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="2CI-UP-Oi4"/>
-                                    <constraint firstAttribute="bottom" secondItem="y3Z-ve-dhl" secondAttribute="bottom" constant="38" id="2Vl-56-FQM"/>
-                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="top" secondItem="Spa-oS-88K" secondAttribute="top" constant="156" id="541-IH-JsH"/>
-                                    <constraint firstItem="2Sz-hI-lOU" firstAttribute="top" secondItem="0Qe-tH-Qkf" secondAttribute="bottom" constant="8" symbolic="YES" id="97K-zW-msK"/>
+                                    <constraint firstItem="LN0-KQ-a8t" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="8" id="9IW-EC-fu8"/>
                                     <constraint firstItem="M4r-1c-SjV" firstAttribute="top" secondItem="Spa-oS-88K" secondAttribute="top" constant="47" id="9N8-Ha-aan"/>
-                                    <constraint firstAttribute="trailing" secondItem="0Qe-tH-Qkf" secondAttribute="trailing" constant="203" id="AiH-ah-qM0"/>
-                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="LN0-KQ-a8t" secondAttribute="leading" id="C1R-8t-CsW"/>
-                                    <constraint firstItem="fCg-yo-Qqt" firstAttribute="top" secondItem="53V-ZX-E7I" secondAttribute="bottom" constant="8" id="GH4-UR-xgg"/>
-                                    <constraint firstItem="fCg-yo-Qqt" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="Hzt-eT-rva"/>
-                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="2Sz-hI-lOU" secondAttribute="leading" id="IJC-lp-P7F"/>
-                                    <constraint firstItem="lLO-rf-RjY" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="JYO-K4-Xpx"/>
-                                    <constraint firstItem="lLO-rf-RjY" firstAttribute="top" secondItem="fCg-yo-Qqt" secondAttribute="bottom" constant="8" id="Jg4-dR-uvY"/>
-                                    <constraint firstItem="y3Z-ve-dhl" firstAttribute="top" secondItem="Q00-70-nz3" secondAttribute="bottom" constant="8" id="N8z-ey-CHl"/>
+                                    <constraint firstItem="wH6-Gr-cij" firstAttribute="top" secondItem="EsN-H1-r8y" secondAttribute="bottom" constant="-1" id="EXB-v3-hBS"/>
+                                    <constraint firstItem="M4r-1c-SjV" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="8" id="NOt-E4-Ugk"/>
                                     <constraint firstItem="d2h-Ll-smD" firstAttribute="top" secondItem="M4r-1c-SjV" secondAttribute="bottom" constant="8" id="O04-08-C0u"/>
-                                    <constraint firstItem="S7V-rs-tkP" firstAttribute="centerY" secondItem="NTn-jA-lhc" secondAttribute="centerY" id="S0r-9t-apT"/>
+                                    <constraint firstItem="EsN-H1-r8y" firstAttribute="leading" secondItem="d2h-Ll-smD" secondAttribute="trailing" constant="132" id="Ptg-Tg-8dH"/>
                                     <constraint firstItem="NTn-jA-lhc" firstAttribute="top" secondItem="Spa-oS-88K" secondAttribute="top" constant="8" id="SwH-nZ-fry"/>
-                                    <constraint firstItem="2Sz-hI-lOU" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="TPR-iK-CPB"/>
                                     <constraint firstItem="NTn-jA-lhc" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="8" id="UEk-m9-qwc"/>
-                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="Q00-70-nz3" secondAttribute="leading" id="f9u-Gg-nMw"/>
-                                    <constraint firstItem="Q00-70-nz3" firstAttribute="top" secondItem="2Sz-hI-lOU" secondAttribute="bottom" constant="8" id="gJl-wh-ilJ"/>
-                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="d2h-Ll-smD" secondAttribute="leading" id="gfc-Md-EWB"/>
-                                    <constraint firstItem="0Qe-tH-Qkf" firstAttribute="leading" secondItem="lLO-rf-RjY" secondAttribute="leading" id="it1-p5-vAz"/>
-                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="jK7-Tk-E13"/>
-                                    <constraint firstAttribute="trailing" secondItem="S7V-rs-tkP" secondAttribute="trailing" constant="203" id="mKb-dj-AjK"/>
-                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="lLO-rf-RjY" secondAttribute="leading" id="nZq-xi-0dF"/>
-                                    <constraint firstItem="0Qe-tH-Qkf" firstAttribute="top" secondItem="lLO-rf-RjY" secondAttribute="bottom" constant="8" symbolic="YES" id="o8W-Bp-Cpz"/>
+                                    <constraint firstItem="n9y-KA-IDA" firstAttribute="top" secondItem="Spa-oS-88K" secondAttribute="top" constant="163" id="bNh-0W-y0y"/>
+                                    <constraint firstItem="S7V-rs-tkP" firstAttribute="leading" secondItem="NTn-jA-lhc" secondAttribute="trailing" constant="175" id="chh-FO-va4"/>
+                                    <constraint firstItem="wH6-Gr-cij" firstAttribute="leading" secondItem="LN0-KQ-a8t" secondAttribute="trailing" constant="135" id="jGr-me-QvT"/>
                                     <constraint firstItem="d2h-Ll-smD" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="olc-kj-79b"/>
                                     <constraint firstItem="M4r-1c-SjV" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="p67-pw-aBa"/>
                                     <constraint firstItem="LN0-KQ-a8t" firstAttribute="top" secondItem="d2h-Ll-smD" secondAttribute="bottom" constant="8" id="qw9-r5-WJ8"/>
                                     <constraint firstItem="LN0-KQ-a8t" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="20" id="rYF-J1-HV6"/>
-                                    <constraint firstItem="S7V-rs-tkP" firstAttribute="height" secondItem="NTn-jA-lhc" secondAttribute="height" id="utm-et-BgM"/>
-                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="M4r-1c-SjV" secondAttribute="leading" id="wz6-YI-ODY"/>
-                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="NTn-jA-lhc" secondAttribute="leading" id="xa6-gc-vYD"/>
-                                    <constraint firstItem="y3Z-ve-dhl" firstAttribute="leading" secondItem="53V-ZX-E7I" secondAttribute="leading" id="xlZ-Kt-Le5"/>
-                                    <constraint firstItem="53V-ZX-E7I" firstAttribute="leading" secondItem="fCg-yo-Qqt" secondAttribute="leading" id="yK8-eV-xVi"/>
+                                    <constraint firstItem="yCg-Xc-SPF" firstAttribute="leading" secondItem="M4r-1c-SjV" secondAttribute="trailing" constant="183" id="tQY-dd-mqi"/>
+                                    <constraint firstItem="yCg-Xc-SPF" firstAttribute="top" secondItem="Spa-oS-88K" secondAttribute="top" constant="43" id="uDp-l6-6YQ"/>
+                                    <constraint firstItem="EsN-H1-r8y" firstAttribute="top" secondItem="yCg-Xc-SPF" secondAttribute="bottom" constant="-2" id="ueu-hL-LmX"/>
+                                    <constraint firstItem="d2h-Ll-smD" firstAttribute="leading" secondItem="Spa-oS-88K" secondAttribute="leading" constant="8" id="vYD-MC-mqk"/>
+                                    <constraint firstItem="S7V-rs-tkP" firstAttribute="top" secondItem="Spa-oS-88K" secondAttribute="top" constant="8" id="x7w-SS-LPt"/>
+                                    <constraint firstAttribute="width" secondItem="n9y-KA-IDA" secondAttribute="width" id="xuV-Uc-3Jf"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="p67-pw-aBa"/>
                                         <exclude reference="olc-kj-79b"/>
                                         <exclude reference="rYF-J1-HV6"/>
-                                        <exclude reference="jK7-Tk-E13"/>
-                                        <exclude reference="Hzt-eT-rva"/>
-                                        <exclude reference="JYO-K4-Xpx"/>
-                                        <exclude reference="TPR-iK-CPB"/>
-                                        <exclude reference="2CI-UP-Oi4"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -392,6 +400,7 @@
                             <constraint firstItem="Spa-oS-88K" firstAttribute="top" secondItem="sDL-BO-GqP" secondAttribute="bottom" id="HeV-pv-EB4"/>
                             <constraint firstItem="Spa-oS-88K" firstAttribute="top" secondItem="Osf-cX-RAt" secondAttribute="bottom" id="PcA-l9-9Fx"/>
                             <constraint firstAttribute="trailing" secondItem="Osf-cX-RAt" secondAttribute="trailing" constant="20" id="cBT-7R-khF"/>
+                            <constraint firstAttribute="centerX" secondItem="Spa-oS-88K" secondAttribute="centerX" id="eAQ-Uh-dur"/>
                             <constraint firstItem="Osf-cX-RAt" firstAttribute="top" secondItem="7kL-LB-F5A" secondAttribute="top" constant="11" id="mzf-Ux-14f"/>
                             <constraint firstAttribute="trailing" secondItem="Spa-oS-88K" secondAttribute="trailing" constant="10" id="prz-td-Ro6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sDL-BO-GqP" secondAttribute="trailing" constant="-16" id="sBf-eU-Dmt"/>
@@ -406,14 +415,66 @@
                     <size key="freeformSize" width="480" height="480"/>
                     <connections>
                         <outlet property="demoModeSwitch" destination="S7V-rs-tkP" id="MNE-Qe-F51"/>
+                        <outlet property="longBreakDatePicker" destination="IbD-mB-sRl" id="XcS-aB-LBu"/>
                         <outlet property="longBreakTimeField" destination="X6x-Vy-bQg" id="6bu-gS-aX1"/>
+                        <outlet property="shortBreakDatePicker" destination="RwY-2A-OqY" id="L7w-K2-lia"/>
                         <outlet property="shortBreakTimeField" destination="3ce-80-4G3" id="tCX-bT-SvE"/>
-                        <outlet property="workTimeField" destination="nRc-PV-ae0" id="r8d-ac-aGx"/>
+                        <outlet property="workDatePicker" destination="n9y-KA-IDA" id="FVr-nj-2hj"/>
+                        <outlet property="workTimeField" destination="nRc-PV-ae0" id="USc-4m-ef1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJR-aG-hCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="so that you get up and carry around" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fCg-yo-Qqt">
+                    <rect key="frame" x="0.0" y="0.0" width="275" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your timer. In non-break mode, simple" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lLO-rf-RjY">
+                    <rect key="frame" x="0.0" y="0.0" width="291" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="click works to start-stop." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Qe-tH-Qkf">
+                    <rect key="frame" x="0.0" y="0.0" width="249" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to stop timer in break mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="53V-ZX-E7I">
+                    <rect key="frame" x="0.0" y="0.0" width="264" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0 September 15, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Sz-hI-lOU">
+                    <rect key="frame" x="0.0" y="0.0" width="199" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Justin Gordon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q00-70-nz3">
+                    <rect key="frame" x="0.0" y="0.0" width="132" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="justin.gordon@gmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y3Z-ve-dhl">
+                    <rect key="frame" x="0.0" y="0.0" width="194" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </objects>
-            <point key="canvasLocation" x="-51" y="859"/>
+            <point key="canvasLocation" x="-46" y="929"/>
         </scene>
     </scenes>
     <resources>
