@@ -16,7 +16,7 @@ let pomodoroState = PomodoroState()
 class PomodoroState {
   let colors = Colors()
   
-  let timeConsecutiveWorksResets = 30.minutes
+  var timeConsecutiveWorksResets = 30.minutes
   
   var startTime: NSDate?
   var pauseStartTime: NSDate?

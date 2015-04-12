@@ -79,7 +79,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   
   func switchBackgroundColor(setOvertimeColor: Bool) {
     if lastMode == PomodoroMode.Work && !setOvertimeColor {
-      if let cur = currentBackgroundLayer? {
+      if let cur = currentBackgroundLayer {
         cur.removeFromSuperlayer()
         currentBackgroundLayer = nil
       }
@@ -89,7 +89,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
       var backgroundLayer = pomodoroState.backgroundGradient()
       backgroundLayer.frame = view.bounds;
       
-      if let cur = currentBackgroundLayer? {
+      if let cur = currentBackgroundLayer {
         view.layer.replaceSublayer(cur, with: backgroundLayer)
       } else {
         view.layer.insertSublayer(backgroundLayer, atIndex: 0)

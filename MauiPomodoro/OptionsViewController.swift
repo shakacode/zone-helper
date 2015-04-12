@@ -33,7 +33,7 @@ class OptionsViewController: UIViewController {
   }
   
   @IBAction func donePressed(sender : UIButton) {
-    self.dismissViewControllerAnimated(true, nil)
+    self.dismissViewControllerAnimated(true, completion: nil)
     var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
     prefs.setObject(PomodoroState.convertMinSecsToSecs(workTimeField.text), forKey: "WORKTIME")
     prefs.setObject(PomodoroState.convertMinSecsToSecs(shortBreakTimeField.text), forKey: "SHORTBREAKTIME")
