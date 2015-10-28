@@ -18,6 +18,8 @@ I use this app every day!
 
 ## Work
 ![img_3920](https://cloud.githubusercontent.com/assets/1118459/10801399/827eb82c-7d74-11e5-85c0-8f4f3df078f4.jpg)
+
+Notice no distractions when work mode activated:
 ![img_3921](https://cloud.githubusercontent.com/assets/1118459/10801401/827fa1ba-7d74-11e5-8425-a33fdf0947c6.jpg)
 
 ## Short Break
