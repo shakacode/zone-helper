@@ -155,11 +155,11 @@ class PomodoroState {
         return String(num)
       }
     }
-    var absSecs = abs(secs)
-    var hours = Int(absSecs / 3600)
-    var secondsAfterHours = Int(absSecs % 3600)
-    var minutes = secondsAfterHours / 60
-    var seconds = Int(secondsAfterHours % 60)
+    let absSecs = abs(secs)
+    let hours = Int(absSecs / 3600)
+    let secondsAfterHours = Int(absSecs % 3600)
+    let minutes = secondsAfterHours / 60
+    let seconds = Int(secondsAfterHours % 60)
     if 0 < hours {
       return String("\(hours):\(leadingZero(minutes)):\(leadingZero(seconds))")
     } else {
@@ -169,8 +169,8 @@ class PomodoroState {
   
   class func convertMinSecsToSecs(minSecs: String) -> Int {
     let minSecArr = minSecs.componentsSeparatedByString(":")
-    var minutes: Int? = minSecArr[0].toInt()
-    var seconds: Int? = minSecArr[1].toInt()
+    let minutes: Int? = Int(minSecArr[0])
+    let seconds: Int? = Int(minSecArr[1])
     return (minutes! * 60) + seconds!
   }
   
@@ -183,7 +183,7 @@ class PomodoroState {
   }
   
   func timerStatus() -> (text: String, secs: Double) {
-    var secs = secsUntilTimerEnds()
+    let secs = secsUntilTimerEnds()
     checkResetConsecutiveWorks(secs)
     return (PomodoroState.convertSecsToMinSecs(secs), secs)
   }
@@ -210,7 +210,7 @@ class PomodoroState {
   }
   
   func checkPlayedAlarm() {
-    var secs = secsUntilTimerEnds()
+    let secs = secsUntilTimerEnds()
     if secs < -5 {
       // if more than 5 secs went by, then probably app was in background, so don't play sound when going to foreground
       playedAlarm = true

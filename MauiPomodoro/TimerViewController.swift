@@ -18,7 +18,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   
   var currentBackgroundLayer: CALayer?
   
-  required init(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
   
@@ -49,21 +49,21 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   }
   
   func refresh() {
-    var timerStatus = pomodoroState.timerStatus()
+    let timerStatus = pomodoroState.timerStatus()
     timerLabel!.text = timerStatus.text
     
     if (timerStatus.secs < 0 && pomodoroState.mode != PomodoroMode.Meeting) || pomodoroState.paused() {
       showBottomButtonBar()
     }
     
-    var cw = pomodoroState.consecutiveWorks
+    let cw = pomodoroState.consecutiveWorks
     workStateLabel!.text = cw > 0 ? String(cw) : ""
     
     statusLabel!.text = pomodoroState.statusLabel()
 
-    var setOvertimeColor = (pomodoroState.mode != PomodoroMode.Meeting) && timerStatus.secs < 0 && (!overtimeColorSet || refreshOnRotate)
+    let setOvertimeColor = (pomodoroState.mode != PomodoroMode.Meeting) && timerStatus.secs < 0 && (!overtimeColorSet || refreshOnRotate)
 
-    var switchColor = (lastMode != pomodoroState.mode) || setOvertimeColor || refreshOnRotate || (overtimeColorSet && timerStatus.secs >= 0)
+    let switchColor = (lastMode != pomodoroState.mode) || setOvertimeColor || refreshOnRotate || (overtimeColorSet && timerStatus.secs >= 0)
 
     if switchColor {
       lastMode = pomodoroState.mode
@@ -86,7 +86,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
       view.backgroundColor = UIColor.blackColor()
     } else {
       view.backgroundColor = UIColor.clearColor()
-      var backgroundLayer = pomodoroState.backgroundGradient()
+      let backgroundLayer = pomodoroState.backgroundGradient()
       backgroundLayer.frame = view.bounds;
       
       if let cur = currentBackgroundLayer {
@@ -111,7 +111,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   }
   
   func showBottomButtonBar() {
-    var nextButtonTitle = pomodoroState.nextButtonLabel()
+    let nextButtonTitle = pomodoroState.nextButtonLabel()
     nextButton!.setTitle(nextButtonTitle, forState: UIControlState.Normal)
     bottomButtonView!.hidden = false
     optionsButton!.hidden = false

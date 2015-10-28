@@ -186,12 +186,14 @@
 		D0A851ED195134AC0004A4A2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Justin Gordon";
 				TargetAttributes = {
 					D0A851F4195134AC0004A4A2 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = 6X96472YF2;
+						DevelopmentTeam = T6STMA5X8L;
 						SystemCapabilities = {
 							com.apple.InterAppAudio = {
 								enabled = 0;
@@ -309,6 +311,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -378,6 +381,7 @@
 				INFOPLIST_FILE = MauiPomodoro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hotCoconut.zoneHelper.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ZoneHelper;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -394,6 +398,7 @@
 				INFOPLIST_FILE = MauiPomodoro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hotCoconut.zoneHelper.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ZoneHelper;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -415,6 +420,7 @@
 				INFOPLIST_FILE = MauiPomodoroTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hotCoconut.mauiPomodoro.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ZoneHelperTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZoneHelper.app/ZoneHelper";
 			};
@@ -431,6 +437,7 @@
 				INFOPLIST_FILE = MauiPomodoroTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hotCoconut.mauiPomodoro.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ZoneHelperTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZoneHelper.app/ZoneHelper";
 			};
