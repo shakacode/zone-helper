@@ -126,7 +126,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
     pomodoroState.start()
     hideBottomButtonBar()
     if refreshTimer == nil  {
-      refreshTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "refresh", userInfo: nil, repeats: true)
+      refreshTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(TimerViewController.refresh), userInfo: nil, repeats: true)
     }
     UIApplication.sharedApplication().idleTimerDisabled = true
   }
