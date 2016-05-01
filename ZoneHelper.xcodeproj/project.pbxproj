@@ -22,6 +22,7 @@
 		FA1962B11CD562E20008DA6F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1962B01CD562E20008DA6F /* SettingsController.swift */; };
 		FA1962B71CD5707E0008DA6F /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1962B61CD5707E0008DA6F /* SettingsCell.swift */; };
 		FA67D2631CD6331D00243743 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67D2621CD6331D00243743 /* Settings.swift */; };
+		FA67D2651CD647A300243743 /* BackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67D2641CD647A300243743 /* BackdropView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		FA1962B01CD562E20008DA6F /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		FA1962B61CD5707E0008DA6F /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		FA67D2621CD6331D00243743 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		FA67D2641CD647A300243743 /* BackdropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackdropView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				FA1962B01CD562E20008DA6F /* SettingsController.swift */,
 				FA1962B61CD5707E0008DA6F /* SettingsCell.swift */,
 				FA67D2621CD6331D00243743 /* Settings.swift */,
+				FA67D2641CD647A300243743 /* BackdropView.swift */,
 			);
 			name = ZoneHelper;
 			path = MauiPomodoro;
@@ -269,6 +272,7 @@
 				D0A8521A19517B540004A4A2 /* PomodoroState.swift in Sources */,
 				D0A851FB195134AC0004A4A2 /* AppDelegate.swift in Sources */,
 				FA67D2631CD6331D00243743 /* Settings.swift in Sources */,
+				FA67D2651CD647A300243743 /* BackdropView.swift in Sources */,
 				FA1962B71CD5707E0008DA6F /* SettingsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

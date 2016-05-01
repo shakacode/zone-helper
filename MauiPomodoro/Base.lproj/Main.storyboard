@@ -147,7 +147,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="J59-fe-NYL" kind="show" id="icC-Fv-BbU"/>
+                                    <action selector="optionsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cut-xQ-5qd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -706,7 +706,7 @@
         <!--Navigation Controller-->
         <scene sceneID="YxE-fX-CK7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J59-fe-NYL" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Settings" automaticallyAdjustsScrollViewInsets="NO" id="J59-fe-NYL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="OoT-lf-QMk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
