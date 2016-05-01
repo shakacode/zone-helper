@@ -19,6 +19,8 @@
 		D0A85218195142780004A4A2 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A85217195142780004A4A2 /* OptionsViewController.swift */; };
 		D0A8521A19517B540004A4A2 /* PomodoroState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A8521919517B540004A4A2 /* PomodoroState.swift */; };
 		D0E1648719673CD50061EFFA /* settings_filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D0E1648619673CD50061EFFA /* settings_filled-50.png */; };
+		FA1962B11CD562E20008DA6F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1962B01CD562E20008DA6F /* SettingsController.swift */; };
+		FA1962B71CD5707E0008DA6F /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1962B61CD5707E0008DA6F /* SettingsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		D0A85217195142780004A4A2 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		D0A8521919517B540004A4A2 /* PomodoroState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroState.swift; sourceTree = "<group>"; };
 		D0E1648619673CD50061EFFA /* settings_filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_filled-50.png"; sourceTree = "<group>"; };
+		FA1962B01CD562E20008DA6F /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		FA1962B61CD5707E0008DA6F /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 				D0201335195942370072A084 /* Colors.swift */,
 				D04574B1195F2D700047040E /* PomodoroMode.swift */,
 				D00877D11970AD6900C91792 /* SoundResource.swift */,
+				FA1962B01CD562E20008DA6F /* SettingsController.swift */,
+				FA1962B61CD5707E0008DA6F /* SettingsCell.swift */,
 			);
 			name = ZoneHelper;
 			path = MauiPomodoro;
@@ -250,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1962B11CD562E20008DA6F /* SettingsController.swift in Sources */,
 				D0A85218195142780004A4A2 /* OptionsViewController.swift in Sources */,
 				D0201336195942370072A084 /* Colors.swift in Sources */,
 				D00877D01970AC2200C91792 /* IntExtension.swift in Sources */,
@@ -258,6 +265,7 @@
 				D04574B2195F2D700047040E /* PomodoroMode.swift in Sources */,
 				D0A8521A19517B540004A4A2 /* PomodoroState.swift in Sources */,
 				D0A851FB195134AC0004A4A2 /* AppDelegate.swift in Sources */,
+				FA1962B71CD5707E0008DA6F /* SettingsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
