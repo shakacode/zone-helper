@@ -480,10 +480,11 @@
         <scene sceneID="oDn-yF-Rsu">
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="XAf-ep-I5q" customClass="SettingsController" customModule="ZoneHelper" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="4" sectionFooterHeight="4" id="3sq-1R-FhV">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="4" sectionFooterHeight="4" id="3sq-1R-FhV">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <color key="sectionIndexBackgroundColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="ATP-Q0-yBF">
@@ -496,9 +497,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GENERAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlN-NF-btY">
-                                                    <rect key="frame" x="262" y="11" width="76" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="261" y="11" width="79" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="0.67843137254901964" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -523,11 +524,14 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demo mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0z-MW-Dax">
                                                     <rect key="frame" x="28" y="11" width="94" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.67843137254901964" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ja6-WQ-NsE">
                                                     <rect key="frame" x="523" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="demoTapped:" destination="XAf-ep-I5q" eventType="valueChanged" id="LOz-2b-pbR"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -554,10 +558,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyB-sb-OvD">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyB-sb-OvD">
                                                     <rect key="frame" x="279" y="11" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="0.67843137254901964" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -581,17 +585,17 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f11-pq-SsZ">
                                                     <rect key="frame" x="28" y="11" width="78" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.67843137254901964" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="00:00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xAY-fa-fHQ">
                                                     <rect key="frame" x="529" y="14" width="43" height="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.67843137254901964" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="editingDidBegin:" destination="XAf-ep-I5q" eventType="editingDidBegin" id="DJn-KJ-sKB"/>
-                                                        <action selector="editingDidEnd:" destination="XAf-ep-I5q" eventType="editingDidEnd" id="iMZ-cm-EiQ"/>
+                                                        <action selector="editingDidBegin:" destination="XAf-ep-I5q" eventType="editingDidBegin" id="iJ3-Se-LtU"/>
+                                                        <action selector="editingDidEnd:" destination="XAf-ep-I5q" eventType="editingDidEnd" id="ZqC-Uh-b9S"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -611,20 +615,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWj-yn-PKd">
-                                                    <rect key="frame" x="28" y="11" width="78" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short break time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWj-yn-PKd">
+                                                    <rect key="frame" x="28" y="11" width="128" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.67843137254901964" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="00:00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PcW-5w-Tr9">
                                                     <rect key="frame" x="529" y="14" width="43" height="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.67843137254901964" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="editingDidBegin:" destination="XAf-ep-I5q" eventType="editingDidEnd" id="voe-Uf-bAH"/>
-                                                        <action selector="editingDidEnd:" destination="XAf-ep-I5q" eventType="editingDidEnd" id="Gme-XR-ZpL"/>
+                                                        <action selector="editingDidBegin:" destination="XAf-ep-I5q" eventType="editingDidBegin" id="Uup-L8-xPd"/>
+                                                        <action selector="editingDidEnd:" destination="XAf-ep-I5q" eventType="editingDidEnd" id="9WH-8x-Xmx"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -644,20 +648,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u52-DU-b0C">
-                                                    <rect key="frame" x="28" y="11" width="78" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long break time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u52-DU-b0C">
+                                                    <rect key="frame" x="28" y="11" width="124" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.67843137254901964" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="00:00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T31-ph-ODH">
                                                     <rect key="frame" x="529" y="14" width="43" height="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.67843137254901964" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="editingDidBegin:" destination="XAf-ep-I5q" eventType="editingDidEnd" id="4wE-Kv-XcA"/>
-                                                        <action selector="editingDidEnd:" destination="XAf-ep-I5q" eventType="editingDidEnd" id="SZ1-do-y3c"/>
+                                                        <action selector="editingDidBegin:" destination="XAf-ep-I5q" eventType="editingDidBegin" id="eC5-p8-Qh0"/>
+                                                        <action selector="editingDidEnd:" destination="XAf-ep-I5q" eventType="editingDidEnd" id="FzI-mg-p7x"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -669,6 +673,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -676,16 +683,23 @@
                         <connections>
                             <outlet property="dataSource" destination="XAf-ep-I5q" id="PCR-Vb-1OA"/>
                             <outlet property="delegate" destination="XAf-ep-I5q" id="mBJ-Aw-Yre"/>
+                            <outletCollection property="gestureRecognizers" destination="RgL-7f-BGF" appends="YES" id="tsS-70-woS"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="Mcq-SC-4ay"/>
                     <connections>
-                        <outletCollection property="timeInputs" destination="T31-ph-ODH" collectionClass="NSMutableArray" id="sKo-8t-Raq"/>
-                        <outletCollection property="timeInputs" destination="xAY-fa-fHQ" collectionClass="NSMutableArray" id="KcB-wi-zwy"/>
-                        <outletCollection property="timeInputs" destination="PcW-5w-Tr9" collectionClass="NSMutableArray" id="lOc-7p-Bht"/>
+                        <outlet property="demoSwitch" destination="Ja6-WQ-NsE" id="r6E-mq-L3h"/>
+                        <outletCollection property="timeInputs" destination="xAY-fa-fHQ" collectionClass="NSMutableArray" id="oU5-eO-g2G"/>
+                        <outletCollection property="timeInputs" destination="PcW-5w-Tr9" collectionClass="NSMutableArray" id="k2b-L7-Y7Z"/>
+                        <outletCollection property="timeInputs" destination="T31-ph-ODH" collectionClass="NSMutableArray" id="pSj-3G-Atv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvT-aT-LRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="RgL-7f-BGF">
+                    <connections>
+                        <action selector="tableTapped:" destination="XAf-ep-I5q" id="H0t-F9-Nfb"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1396" y="958"/>
         </scene>
