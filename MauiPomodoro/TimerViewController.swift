@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
+class TimerViewController:  UIViewController, UIGestureRecognizerDelegate, SettingsControllerDelegate {
   
   private let settingsWidth:CGFloat = 300
   private let settingsAnimationDuration:CGFloat = 0.5
@@ -159,6 +159,10 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
     overtimeColorSet = false
   }
   
+  func updateSettings() {
+    pomodoroState.resetWork()
+  }
+  
   @IBAction func nextPressed(sender: UIButton) {
     pomodoroState.nextPressed()
     overtimeColorSet = false
@@ -215,9 +219,10 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
     view.addSubview(backdrop)
     self.view.addSubview(settingsController.view)
     
-    let controller = settingsController.topViewController!
+    let controller = settingsController.topViewController! as! SettingsController
     settingsController.view.frame = CGRect(x: -settingsWidth, y: 0, width: settingsWidth, height: view.frame.height)
     controller.view.frame = CGRect(x: 0, y: 0, width: settingsWidth, height: view.frame.height)
+    controller.delegate = self
     
     UIView.animateWithDuration(0.5) { [unowned self] in
       self.settingsController.view.frame.origin.x = 0

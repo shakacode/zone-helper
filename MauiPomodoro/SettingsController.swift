@@ -8,13 +8,18 @@
 
 import UIKit
 
+protocol SettingsControllerDelegate {
+  func updateSettings()
+}
+
 class SettingsController: UITableViewController {
   
   @IBOutlet var timeInputs: [UITextField]!
   @IBOutlet weak var demoSwitch: UISwitch!
   private var dateFormatter: NSDateFormatter!
   private var firstResponder: UITextField!
-    
+  
+  var delegate: SettingsControllerDelegate!
   
   @IBOutlet weak var about: UITextView!
   
@@ -64,10 +69,13 @@ class SettingsController: UITableViewController {
     sender.inputView = nil
     let times = timeInputs.map { $0.text! }
     Settings.instance.times = times
+    delegate.updateSettings()
+    
   }
   
   @IBAction func demoTapped(sender: UISwitch) {
     Settings.instance.demo = sender.on
+    delegate.updateSettings()
   }
   @IBAction func tableTapped(sender: AnyObject) {
     tableView.endEditing(true)
