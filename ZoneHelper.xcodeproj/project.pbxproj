@@ -23,6 +23,7 @@
 		FA1962B71CD5707E0008DA6F /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1962B61CD5707E0008DA6F /* SettingsCell.swift */; };
 		FA67D2631CD6331D00243743 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67D2621CD6331D00243743 /* Settings.swift */; };
 		FA67D2651CD647A300243743 /* BackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67D2641CD647A300243743 /* BackdropView.swift */; };
+		FAA4E29D1CE90DB600860508 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA4E29C1CE90DB600860508 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		FA1962B61CD5707E0008DA6F /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		FA67D2621CD6331D00243743 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		FA67D2641CD647A300243743 /* BackdropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackdropView.swift; sourceTree = "<group>"; };
+		FAA4E29C1CE90DB600860508 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				D0A851FC195134AC0004A4A2 /* TimerViewController.swift */,
 				D0A85217195142780004A4A2 /* OptionsViewController.swift */,
 				D0A851FE195134AC0004A4A2 /* Main.storyboard */,
+				FAA4E29C1CE90DB600860508 /* Launch Screen.storyboard */,
 				D0A8521919517B540004A4A2 /* PomodoroState.swift */,
 				D0A85201195134AC0004A4A2 /* Images.xcassets */,
 				D0A851F8195134AC0004A4A2 /* Supporting Files */,
@@ -205,7 +208,7 @@
 				TargetAttributes = {
 					D0A851F4195134AC0004A4A2 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = T6STMA5X8L;
+						DevelopmentTeam = FFVHVU5ZLX;
 						SystemCapabilities = {
 							com.apple.InterAppAudio = {
 								enabled = 0;
@@ -244,6 +247,7 @@
 			files = (
 				D0E1648719673CD50061EFFA /* settings_filled-50.png in Resources */,
 				D0A85200195134AC0004A4A2 /* Main.storyboard in Resources */,
+				FAA4E29D1CE90DB600860508 /* Launch Screen.storyboard in Resources */,
 				D0A85202195134AC0004A4A2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,13 +395,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MauiPomodoro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hotCoconut.zoneHelper.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.alexeykarasev.zonehelper;
 				PRODUCT_NAME = ZoneHelper;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -408,13 +411,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MauiPomodoro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hotCoconut.zoneHelper.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.alexeykarasev.zonehelper;
 				PRODUCT_NAME = ZoneHelper;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
