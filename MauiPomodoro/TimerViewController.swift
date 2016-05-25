@@ -236,7 +236,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate, Setti
         controller.view.frame = view.frame
         addChildViewController(controller)
         view.addSubview(controller.view)
-        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(1000 * Double(NSEC_PER_MSEC)))
+        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(4000 * Double(NSEC_PER_MSEC)))
         dispatch_after(delay, dispatch_get_main_queue()) {
             UIView.animateWithDuration(1.0, animations: {
                 controller.view.layer.opacity = 0
