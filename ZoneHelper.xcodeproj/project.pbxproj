@@ -208,7 +208,7 @@
 				TargetAttributes = {
 					D0A851F4195134AC0004A4A2 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = FFVHVU5ZLX;
+						DevelopmentTeam = T6STMA5X8L;
 						SystemCapabilities = {
 							com.apple.InterAppAudio = {
 								enabled = 0;
@@ -400,7 +400,7 @@
 				INFOPLIST_FILE = MauiPomodoro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.alexeykarasev.zonehelper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shakacode.zonehelper;
 				PRODUCT_NAME = ZoneHelper;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -416,7 +416,7 @@
 				INFOPLIST_FILE = MauiPomodoro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.alexeykarasev.zonehelper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shakacode.zonehelper;
 				PRODUCT_NAME = ZoneHelper;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
