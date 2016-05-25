@@ -12,19 +12,16 @@ enum PomodoroMode: Int {
   
   func totalTimeSeconds() -> Double {
     var result: Double
-    if !demoMode {
+    if !Settings.instance.demo {
+      let times = Settings.instance.times
       switch self {
       case .Work:
-        result = prefs.integerForKey("WORKTIME").minutes
-        //result = 27.minutes
+        result = stringToSeconds(times[0])
       case .ShortBreak:
-        result = prefs.integerForKey("SHORTBREAKTIME").minutes
-        //result = 3.minutes
+        result = stringToSeconds(times[1])
       case .LongBreak:
-        result = prefs.integerForKey("LONGBREAKTIME").minutes
-        //result = 15.minutes
+        result = stringToSeconds(times[2])
       case .Meeting:
-        //result = prefs.integerForKey("MEETINGTIME").minutes
         result = 0.0
       }
     } else {
@@ -89,4 +86,12 @@ enum PomodoroMode: Int {
       return "Continue Meeting"
     }
   }
+  private func stringToSeconds(string: String) -> Double {
+    let hoursStr = string[string.startIndex ..< string.startIndex.advancedBy(2)]
+    let minutesStr = string[string.endIndex.advancedBy(-2) ..< string.endIndex]
+    let hours = Double(hoursStr)!
+    let minutes = Double(minutesStr)!
+    return hours * 3600 + minutes * 60
+  }
+  
 }

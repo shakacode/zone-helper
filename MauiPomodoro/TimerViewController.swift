@@ -9,7 +9,11 @@
 import UIKit
 import QuartzCore
 
-class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
+class TimerViewController:  UIViewController, UIGestureRecognizerDelegate, SettingsControllerDelegate {
+  
+  private let settingsWidth:CGFloat = 300
+  private let settingsAnimationDuration:CGFloat = 0.5
+  
   var lastMode = PomodoroMode.Work
   
   var refreshTimer: NSTimer?
@@ -17,6 +21,8 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   var overtimeColorSet = false
   
   var currentBackgroundLayer: CALayer?
+    
+  var settingsController: UINavigationController!
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -31,6 +37,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    showLaunchScreen()
     doWork()
     refresh()
   }
@@ -126,7 +133,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
     pomodoroState.start()
     hideBottomButtonBar()
     if refreshTimer == nil  {
-      refreshTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "refresh", userInfo: nil, repeats: true)
+      refreshTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(TimerViewController.refresh), userInfo: nil, repeats: true)
     }
     UIApplication.sharedApplication().idleTimerDisabled = true
   }
@@ -151,6 +158,10 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
     stopTimer()
     refresh()
     overtimeColorSet = false
+  }
+  
+  func updateSettings() {
+    pomodoroState.resetWork()
   }
   
   @IBAction func nextPressed(sender: UIButton) {
@@ -197,5 +208,45 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate {
       startStop()
     }
   }
+  
+  @IBAction func optionsButtonTapped(sender: AnyObject) {
+    
+
+    
+    settingsController = storyboard!.instantiateViewControllerWithIdentifier("Settings") as! UINavigationController
+    addChildViewController(settingsController)
+    
+    let backdrop = BackdropView(frame: view.frame, dismissController: settingsController, dismissDuration: settingsAnimationDuration)
+    view.addSubview(backdrop)
+    self.view.addSubview(settingsController.view)
+    
+    let controller = settingsController.topViewController! as! SettingsController
+    settingsController.view.frame = CGRect(x: -settingsWidth, y: 0, width: settingsWidth, height: view.frame.height)
+    controller.view.frame = CGRect(x: 0, y: 0, width: settingsWidth, height: view.frame.height)
+    controller.delegate = self
+    
+    UIView.animateWithDuration(0.5) { [unowned self] in
+      self.settingsController.view.frame.origin.x = 0
+    }
+  }
+
+    private func showLaunchScreen() {
+        let storyboard = UIStoryboard(name: "Launch Screen", bundle: nil)
+        let controller = storyboard.instantiateInitialViewController()!
+        controller.view.frame = view.frame
+        addChildViewController(controller)
+        view.addSubview(controller.view)
+        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(1000 * Double(NSEC_PER_MSEC)))
+        dispatch_after(delay, dispatch_get_main_queue()) {
+            UIView.animateWithDuration(1.0, animations: {
+                controller.view.layer.opacity = 0
+            }) { result in
+                controller.view.removeFromSuperview()
+                controller.removeFromParentViewController()
+            }
+        }
+
+    }
+  
 }
 

@@ -85,7 +85,7 @@ class PomodoroState {
   func nextPressed() {
     if startedSinceReset() {
       if secsUntilTimerEnds() < 0 && mode == PomodoroMode.Work {
-        consecutiveWorks++
+        consecutiveWorks += 1
         if consecutiveWorks < 4 {
           resetShortBreak()
         } else {
