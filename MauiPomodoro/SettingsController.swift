@@ -36,7 +36,7 @@ class SettingsController: UITableViewController {
     }
     demoSwitch.on = Settings.instance.demo
     
-    let aboutText = NSMutableAttributedString(string: "Designed by the ShakaCode team.\nhttp://www.shakacode.com\n\nPlease contact us for your custom application development needs!")
+    let aboutText = NSMutableAttributedString(string: "Designed by the ShakaCode team.\nhttp://www.shakacode.com\n\nPlease contact us if you want additional features in this app.")
     let range = NSRange(location: 0, length: aboutText.length)
     let color = UIColor(red: 173.0/255, green: 173.0/255, blue: 173.0/255, alpha: 1.0)
     aboutText.addAttribute(NSForegroundColorAttributeName, value: color, range: range)
@@ -47,6 +47,7 @@ class SettingsController: UITableViewController {
     about.attributedText = aboutText
     about.textContainer.lineFragmentPadding = 0
     about.textContainerInset = UIEdgeInsetsZero
+    
   }
   
   
@@ -85,5 +86,9 @@ class SettingsController: UITableViewController {
     let picker = sender as! UIDatePicker
     firstResponder.text = dateFormatter.stringFromDate(picker.date)
   }
-  
+    
+  // Remove this override to show demo mode
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return section == 0 ? 0 : super.tableView(tableView, numberOfRowsInSection: section)
+  }
 }

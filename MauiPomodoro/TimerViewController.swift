@@ -204,7 +204,8 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate, Setti
   
   @IBAction func startStopButton(sender : AnyObject) {
     // stop/start timer if timer stopped, or in work mode (b/c on desk)
-    if !pomodoroState.startedSinceReset() ||  pomodoroState.paused() || (pomodoroState.mode == PomodoroMode.Work || pomodoroState.mode == PomodoroMode.Meeting) {
+    if !pomodoroState.startedSinceReset() ||  pomodoroState.paused() || (pomodoroState.mode == PomodoroMode.Work) || (pomodoroState.mode == PomodoroMode.Meeting) || (pomodoroState.mode == PomodoroMode.ShortBreak) ||
+      (pomodoroState.mode == PomodoroMode.LongBreak) {
       startStop()
     }
   }
