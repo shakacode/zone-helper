@@ -208,7 +208,7 @@
 				TargetAttributes = {
 					D0A851F4195134AC0004A4A2 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = T6STMA5X8L;
+						DevelopmentTeam = YAX6XB3T67;
 						SystemCapabilities = {
 							com.apple.InterAppAudio = {
 								enabled = 0;
@@ -398,12 +398,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MauiPomodoro/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shakacode.zonehelper;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shakacode.zone-helper";
 				PRODUCT_NAME = ZoneHelper;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -414,12 +414,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MauiPomodoro/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shakacode.zonehelper;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shakacode.zone-helper";
 				PRODUCT_NAME = ZoneHelper;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
