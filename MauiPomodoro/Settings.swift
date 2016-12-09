@@ -14,20 +14,20 @@ struct Settings {
   
   var demo: Bool {
     get {
-      return NSUserDefaults.standardUserDefaults().boolForKey("demo")
+      return UserDefaults.standard.bool(forKey: "demo")
     }
     set {
-      NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "demo")
+      UserDefaults.standard.set(newValue, forKey: "demo")
     }
   }
   
   var times: [String] {
     get {
-      let objects = NSUserDefaults.standardUserDefaults().arrayForKey("times") ?? ["00:27", "00:03", "00:15"]
+      let objects = UserDefaults.standard.array(forKey: "times") ?? ["00:27", "00:03", "00:15"]
       return objects as! [String]
     }
     set {
-      NSUserDefaults.standardUserDefaults().setValue(newValue, forKey: "times")
+      UserDefaults.standard.setValue(newValue, forKey: "times")
     }
   }
 }

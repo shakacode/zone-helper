@@ -12,7 +12,7 @@ class BackdropView: UIView {
   
   var dismissController: UIViewController!
   var tap: UITapGestureRecognizer!
-  private var dismissDuration:CGFloat!
+  fileprivate var dismissDuration:CGFloat!
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -26,8 +26,8 @@ class BackdropView: UIView {
     addGestureRecognizer(self.tap)
   }
   
-  func tapped(sender: UITapGestureRecognizer) {
-    UIView.animateWithDuration(0.5, animations: { [unowned self] in
+  func tapped(_ sender: UITapGestureRecognizer) {
+    UIView.animate(withDuration: 0.5, animations: { [unowned self] in
       self.dismissController.view.frame.origin.x = -self.dismissController.view.frame.size.width
       }, completion: { [unowned self] result in
       self.dismissController.view.removeFromSuperview()

@@ -18,10 +18,10 @@ class PomodoroState {
   
   var timeConsecutiveWorksResets = 30.minutes
   
-  var startTime: NSDate?
-  var pauseStartTime: NSDate?
+  var startTime: Date?
+  var pauseStartTime: Date?
   
-  var mode: PomodoroMode = PomodoroMode.Work
+  var mode: PomodoroMode = PomodoroMode.work
   
   // Used when timer is paused and restarted
   var secondsRemainingWhenTimerStarts = 0.minutes
@@ -38,7 +38,7 @@ class PomodoroState {
   }
   
   func backgroundGradient() -> (CAGradientLayer) {
-    if mode == PomodoroMode.Meeting {
+    if mode == PomodoroMode.meeting {
       return colors.meetingColorGradientLayer
     }
     
@@ -46,23 +46,23 @@ class PomodoroState {
       return colors.overColorGradientLayer
     } else {
       switch mode {
-      case .Work:
+      case .work:
         return colors.longBreakColorGradientLayer
-      case .ShortBreak:
+      case .shortBreak:
         return colors.shortBreakColorGradientLayer
-      case .LongBreak:
+      case .longBreak:
         return colors.longBreakColorGradientLayer
-      case .Meeting:
+      case .meeting:
         return colors.meetingColorGradientLayer
       }
     }
   }
   
   func statusLabel() -> (String) {
-    if secsUntilTimerEnds() > 0 || mode == PomodoroMode.Meeting {
+    if secsUntilTimerEnds() > 0 || mode == PomodoroMode.meeting {
       return "\(mode.label())\(pausedTimeMinSecs())"
     } else {
-      if mode == PomodoroMode.Work {
+      if mode == PomodoroMode.work {
         return "\(mode.label()) Finished: Take Break"
       } else {
         return "\(mode.label()) Finished: Start Work"
@@ -84,7 +84,7 @@ class PomodoroState {
   
   func nextPressed() {
     if startedSinceReset() {
-      if secsUntilTimerEnds() < 0 && mode == PomodoroMode.Work {
+      if secsUntilTimerEnds() < 0 && mode == PomodoroMode.work {
         consecutiveWorks += 1
         if consecutiveWorks < 4 {
           resetShortBreak()
@@ -93,7 +93,7 @@ class PomodoroState {
           consecutiveWorks = 0
         }
       } else {
-        if (mode == PomodoroMode.ShortBreak || mode == PomodoroMode.LongBreak) {
+        if (mode == PomodoroMode.shortBreak || mode == PomodoroMode.longBreak) {
           resetWork()
         }
       }
@@ -102,44 +102,44 @@ class PomodoroState {
     start()
   }
   
-  func totalTimeForMode(mode: PomodoroMode) -> (Double) {
+  func totalTimeForMode(_ mode: PomodoroMode) -> (Double) {
     return mode.totalTimeSeconds()
   }
   
-  func resetCommon(mode: PomodoroMode) {
+  func resetCommon(_ mode: PomodoroMode) {
     self.mode = mode
     startTime = nil
     pauseStartTime = nil
     secondsRemainingWhenTimerStarts = mode.totalTimeSeconds()
-    playedAlarm = mode == PomodoroMode.Meeting // false otherwise
+    playedAlarm = mode == PomodoroMode.meeting // false otherwise
   }
   
   func resetWork() {
-    resetCommon(PomodoroMode.Work)
+    resetCommon(PomodoroMode.work)
   }
   
   func resetShortBreak() {
-    resetCommon(PomodoroMode.ShortBreak)
+    resetCommon(PomodoroMode.shortBreak)
   }
   
   func resetLongBreak() {
-    resetCommon(PomodoroMode.LongBreak)
+    resetCommon(PomodoroMode.longBreak)
   }
   
   func resetMeeting() {
-    resetCommon(PomodoroMode.Meeting)
+    resetCommon(PomodoroMode.meeting)
   }
   
   func pause() {
     secondsRemainingWhenTimerStarts = secsUntilTimerEnds()
     startTime = nil
-    pauseStartTime = NSDate()
+    pauseStartTime = Date()
     soundResource.playPauseSound()
   }
   
   func start() {
     pauseStartTime = nil
-    startTime = NSDate()
+    startTime = Date()
     soundResource.playStartSound()
   }
   
@@ -147,8 +147,8 @@ class PomodoroState {
     return pauseStartTime != nil
   }
   
-  class func convertSecsToMinSecs(secs: Double) -> String {
-    func leadingZero(num: Int) -> String {
+  class func convertSecsToMinSecs(_ secs: Double) -> String {
+    func leadingZero(_ num: Int) -> String {
       if num < 10 {
         return "0\(num)"
       } else {
@@ -157,7 +157,7 @@ class PomodoroState {
     }
     let absSecs = abs(secs)
     let hours = Int(absSecs / 3600)
-    let secondsAfterHours = Int(absSecs % 3600)
+    let secondsAfterHours = Int(absSecs.truncatingRemainder(dividingBy: 3600))
     let minutes = secondsAfterHours / 60
     let seconds = Int(secondsAfterHours % 60)
     if 0 < hours {
@@ -167,8 +167,8 @@ class PomodoroState {
     }
   }
   
-  class func convertMinSecsToSecs(minSecs: String) -> Int {
-    let minSecArr = minSecs.componentsSeparatedByString(":")
+  class func convertMinSecsToSecs(_ minSecs: String) -> Int {
+    let minSecArr = minSecs.components(separatedBy: ":")
     let minutes: Int? = Int(minSecArr[0])
     let seconds: Int? = Int(minSecArr[1])
     return (minutes! * 60) + seconds!
@@ -189,7 +189,7 @@ class PomodoroState {
   }
   
   // If any time goes over 30 min or if paused for over 30 min
-  func checkResetConsecutiveWorks(secs: Double) {
+  func checkResetConsecutiveWorks(_ secs: Double) {
     if secs < -timeConsecutiveWorksResets || timeConsecutiveWorksResets < pausedTime() {
       consecutiveWorks = 0
     }

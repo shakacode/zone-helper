@@ -11,19 +11,19 @@ import QuartzCore
 import UIKit
 
 class Colors {
-  let overColorTop = UIColor(red: 192.0/255.0, green: 38.0/255.0, blue: 42.0/255.0, alpha: 1.0).CGColor
-  let overColorBottom = UIColor(red: 35.0/255.0, green: 2.0/255.0, blue: 2.0/255.0, alpha: 1.0).CGColor
+  let overColorTop = UIColor(red: 192.0/255.0, green: 38.0/255.0, blue: 42.0/255.0, alpha: 1.0).cgColor
+  let overColorBottom = UIColor(red: 35.0/255.0, green: 2.0/255.0, blue: 2.0/255.0, alpha: 1.0).cgColor
   
-  let shortBreakColorTop = UIColor(red: 6.0/255.0, green: 61.0/255.0, blue: 117.0/255.0, alpha: 1.0).CGColor
-  let shortBreakColorBottom = UIColor(red: 1.0/255.0, green: 12.0/255.0, blue: 33.0/255.0, alpha: 1.0).CGColor
+  let shortBreakColorTop = UIColor(red: 6.0/255.0, green: 61.0/255.0, blue: 117.0/255.0, alpha: 1.0).cgColor
+  let shortBreakColorBottom = UIColor(red: 1.0/255.0, green: 12.0/255.0, blue: 33.0/255.0, alpha: 1.0).cgColor
   
-  let longBreakColorTop = UIColor(red: 13.0/255.0, green: 85.0/255.0, blue: 89.0/255.0, alpha: 1.0).CGColor
-  let longBreakColorBottom = UIColor(red: 4.0/255.0, green: 32.0/255.0, blue: 33.0/255.0, alpha: 1.0).CGColor
+  let longBreakColorTop = UIColor(red: 13.0/255.0, green: 85.0/255.0, blue: 89.0/255.0, alpha: 1.0).cgColor
+  let longBreakColorBottom = UIColor(red: 4.0/255.0, green: 32.0/255.0, blue: 33.0/255.0, alpha: 1.0).cgColor
   
-  let meetingColorTop = UIColor(red: 59.0/255.0, green: 59.0/255.0, blue: 84.0/255.0, alpha: 1.0).CGColor
-  let meetingColorBottom = UIColor(red: 7.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0).CGColor
+  let meetingColorTop = UIColor(red: 59.0/255.0, green: 59.0/255.0, blue: 84.0/255.0, alpha: 1.0).cgColor
+  let meetingColorBottom = UIColor(red: 7.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0).cgColor
   
-  let workColor = UIColor.blackColor()
+  let workColor = UIColor.black
 
   let overColorGradientLayer: CAGradientLayer
   let shortBreakColorGradientLayer: CAGradientLayer
