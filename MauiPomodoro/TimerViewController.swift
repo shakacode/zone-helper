@@ -11,12 +11,12 @@ import QuartzCore
 
 class TimerViewController:  UIViewController, UIGestureRecognizerDelegate, SettingsControllerDelegate {
   
-  private let settingsWidth:CGFloat = 300
-  private let settingsAnimationDuration:CGFloat = 0.5
+  fileprivate let settingsWidth:CGFloat = 300
+  fileprivate let settingsAnimationDuration:CGFloat = 0.5
   
-  var lastMode = PomodoroMode.Work
+  var lastMode = PomodoroMode.work
   
-  var refreshTimer: NSTimer?
+  var refreshTimer: Timer?
   
   var overtimeColorSet = false
   
@@ -49,7 +49,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate, Setti
 
   var refreshOnRotate = false
   
-  override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+  override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
     refreshOnRotate = true
     refresh()
     refreshOnRotate = false
@@ -59,7 +59,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate, Setti
     let timerStatus = pomodoroState.timerStatus()
     timerLabel!.text = timerStatus.text
     
-    if (timerStatus.secs < 0 && pomodoroState.mode != PomodoroMode.Meeting) || pomodoroState.paused() {
+    if (timerStatus.secs < 0 && pomodoroState.mode != PomodoroMode.meeting) || pomodoroState.paused() {
       showBottomButtonBar()
     }
     
@@ -68,7 +68,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate, Setti
     
     statusLabel!.text = pomodoroState.statusLabel()
 
-    let setOvertimeColor = (pomodoroState.mode != PomodoroMode.Meeting) && timerStatus.secs < 0 && (!overtimeColorSet || refreshOnRotate)
+    let setOvertimeColor = (pomodoroState.mode != PomodoroMode.meeting) && timerStatus.secs < 0 && (!overtimeColorSet || refreshOnRotate)
 
     let switchColor = (lastMode != pomodoroState.mode) || setOvertimeColor || refreshOnRotate || (overtimeColorSet && timerStatus.secs >= 0)
 
@@ -84,68 +84,68 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate, Setti
     pomodoroState.checkPlayedAlarm()
   }
   
-  func switchBackgroundColor(setOvertimeColor: Bool) {
-    if lastMode == PomodoroMode.Work && !setOvertimeColor {
+  func switchBackgroundColor(_ setOvertimeColor: Bool) {
+    if lastMode == PomodoroMode.work && !setOvertimeColor {
       if let cur = currentBackgroundLayer {
         cur.removeFromSuperlayer()
         currentBackgroundLayer = nil
       }
-      view.backgroundColor = UIColor.blackColor()
+      view.backgroundColor = UIColor.black
     } else {
-      view.backgroundColor = UIColor.clearColor()
+      view.backgroundColor = UIColor.clear
       let backgroundLayer = pomodoroState.backgroundGradient()
       backgroundLayer.frame = view.bounds;
       
       if let cur = currentBackgroundLayer {
         view.layer.replaceSublayer(cur, with: backgroundLayer)
       } else {
-        view.layer.insertSublayer(backgroundLayer, atIndex: 0)
+        view.layer.insertSublayer(backgroundLayer, at: 0)
       }
       currentBackgroundLayer = backgroundLayer
     }
   }
   
-  @IBAction func swipeRightAction(sender: UISwipeGestureRecognizer) {
+  @IBAction func swipeRightAction(_ sender: UISwipeGestureRecognizer) {
     startStop()
   }
   
-  @IBAction func swipeLeftAction(sender: AnyObject) {
+  @IBAction func swipeLeftAction(_ sender: AnyObject) {
     startStop()
   }
   
-  func timerAtZero(secs: Double) -> Bool {
+  func timerAtZero(_ secs: Double) -> Bool {
     return -0.25 < secs && secs <= 0.25
   }
   
   func showBottomButtonBar() {
     let nextButtonTitle = pomodoroState.nextButtonLabel()
-    nextButton!.setTitle(nextButtonTitle, forState: UIControlState.Normal)
-    bottomButtonView!.hidden = false
-    optionsButton!.hidden = false
+    nextButton!.setTitle(nextButtonTitle, for: UIControlState())
+    bottomButtonView!.isHidden = false
+    optionsButton!.isHidden = false
   }
   
   func hideBottomButtonBar() {
-    bottomButtonView!.hidden = true
-    optionsButton!.hidden = true
+    bottomButtonView!.isHidden = true
+    optionsButton!.isHidden = true
   }
   
   func startTimer() {
     pomodoroState.start()
     hideBottomButtonBar()
     if refreshTimer == nil  {
-      refreshTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(TimerViewController.refresh), userInfo: nil, repeats: true)
+      refreshTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(TimerViewController.refresh), userInfo: nil, repeats: true)
     }
-    UIApplication.sharedApplication().idleTimerDisabled = true
+    UIApplication.shared.isIdleTimerDisabled = true
   }
   
   func stopTimer() {
-    if pomodoroState.mode == PomodoroMode.Meeting {
+    if pomodoroState.mode == PomodoroMode.meeting {
       if let theTimer = refreshTimer  {
         theTimer.invalidate()
         refreshTimer = nil
       }
     }
-    UIApplication.sharedApplication().idleTimerDisabled = false
+    UIApplication.shared.isIdleTimerDisabled = false
     showBottomButtonBar()
   }
   
@@ -164,7 +164,7 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate, Setti
     pomodoroState.resetWork()
   }
   
-  @IBAction func nextPressed(sender: UIButton) {
+  @IBAction func nextPressed(_ sender: UIButton) {
     pomodoroState.nextPressed()
     overtimeColorSet = false
     startTimer()
@@ -175,21 +175,21 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate, Setti
     reset()
   }
   
-  @IBAction func workPressed(sender : UIButton) {
+  @IBAction func workPressed(_ sender : UIButton) {
     doWork()
   }
   
-  @IBAction func shortBreakPressed(sender: UIButton) {
+  @IBAction func shortBreakPressed(_ sender: UIButton) {
     pomodoroState.resetShortBreak()
     reset()
   }
   
-  @IBAction func longBreakPressed(sender: UIButton) {
+  @IBAction func longBreakPressed(_ sender: UIButton) {
     pomodoroState.resetLongBreak()
     reset()
   }
   
-  @IBAction func meetingPressed(sender: UIButton) {
+  @IBAction func meetingPressed(_ sender: UIButton) {
     pomodoroState.resetMeeting()
     reset()
   }
@@ -202,19 +202,19 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate, Setti
     }
   }
   
-  @IBAction func startStopButton(sender : AnyObject) {
+  @IBAction func startStopButton(_ sender : AnyObject) {
     // stop/start timer if timer stopped, or in work mode (b/c on desk)
-    if !pomodoroState.startedSinceReset() ||  pomodoroState.paused() || (pomodoroState.mode == PomodoroMode.Work) || (pomodoroState.mode == PomodoroMode.Meeting) || (pomodoroState.mode == PomodoroMode.ShortBreak) ||
-      (pomodoroState.mode == PomodoroMode.LongBreak) {
+    if !pomodoroState.startedSinceReset() ||  pomodoroState.paused() || (pomodoroState.mode == PomodoroMode.work) || (pomodoroState.mode == PomodoroMode.meeting) || (pomodoroState.mode == PomodoroMode.shortBreak) ||
+      (pomodoroState.mode == PomodoroMode.longBreak) {
       startStop()
     }
   }
   
-  @IBAction func optionsButtonTapped(sender: AnyObject) {
+  @IBAction func optionsButtonTapped(_ sender: AnyObject) {
     
 
     
-    settingsController = storyboard!.instantiateViewControllerWithIdentifier("Settings") as! UINavigationController
+    settingsController = storyboard!.instantiateViewController(withIdentifier: "Settings") as! UINavigationController
     addChildViewController(settingsController)
     
     let backdrop = BackdropView(frame: view.frame, dismissController: settingsController, dismissDuration: settingsAnimationDuration)
@@ -226,23 +226,23 @@ class TimerViewController:  UIViewController, UIGestureRecognizerDelegate, Setti
     controller.view.frame = CGRect(x: 0, y: 0, width: settingsWidth, height: view.frame.height)
     controller.delegate = self
     
-    UIView.animateWithDuration(0.5) { [unowned self] in
+    UIView.animate(withDuration: 0.5, animations: { [unowned self] in
       self.settingsController.view.frame.origin.x = 0
-    }
+    }) 
   }
 
-    private func showLaunchScreen() {
+    fileprivate func showLaunchScreen() {
         let storyboard = UIStoryboard(name: "Launch Screen", bundle: nil)
         let controller = storyboard.instantiateInitialViewController()!
         controller.view.frame = view.frame
         addChildViewController(controller)
         view.addSubview(controller.view)
-        UIView.animateWithDuration(0.5, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
           controller.view.layer.opacity = 0
-        }) { result in
+        }, completion: { result in
           controller.view.removeFromSuperview()
           controller.removeFromParentViewController()
-        }
+        }) 
     }
   
 }

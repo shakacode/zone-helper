@@ -22,7 +22,7 @@ class OptionsViewController: UIViewController {
     
   override func viewDidLoad() {
     super.viewDidLoad()
-    demoModeSwitch!.on = demoMode
+    demoModeSwitch!.isOn = demoMode
     setTimeLabels()
     // Do any additional setup after loading the view, typically from a nib.
   }
@@ -32,82 +32,82 @@ class OptionsViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
-  @IBAction func donePressed(sender : UIButton) {
-    self.dismissViewControllerAnimated(true, completion: nil)
-    let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    prefs.setObject(PomodoroState.convertMinSecsToSecs(workTimeField.text!), forKey: "WORKTIME")
-    prefs.setObject(PomodoroState.convertMinSecsToSecs(shortBreakTimeField.text!), forKey: "SHORTBREAKTIME")
-    prefs.setObject(PomodoroState.convertMinSecsToSecs(longBreakTimeField.text!), forKey: "LONGBREAKTIME")
+  @IBAction func donePressed(_ sender : UIButton) {
+    self.dismiss(animated: true, completion: nil)
+    let prefs:UserDefaults = UserDefaults.standard
+    prefs.set(PomodoroState.convertMinSecsToSecs(workTimeField.text!), forKey: "WORKTIME")
+    prefs.set(PomodoroState.convertMinSecsToSecs(shortBreakTimeField.text!), forKey: "SHORTBREAKTIME")
+    prefs.set(PomodoroState.convertMinSecsToSecs(longBreakTimeField.text!), forKey: "LONGBREAKTIME")
     prefs.synchronize()
     pomodoroState.resetWork()
     setTimeLabels()
   }
   
-    @IBAction func workTimeButtonPressed(sender: AnyObject) {
-        let dateFormatter = NSDateFormatter()
+    @IBAction func workTimeButtonPressed(_ sender: AnyObject) {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
-        let date = dateFormatter.dateFromString(self.workTimeField.text!)
+        let date = dateFormatter.date(from: self.workTimeField.text!)
         workDatePicker.date = date!
-        shortBreakDatePicker.hidden = true
-        longBreakDatePicker.hidden = true
-        workDatePicker.hidden = false
+        shortBreakDatePicker.isHidden = true
+        longBreakDatePicker.isHidden = true
+        workDatePicker.isHidden = false
     }
-    @IBAction func shortBreakButtonPressed(sender: AnyObject) {
-        let dateFormatter = NSDateFormatter()
+    @IBAction func shortBreakButtonPressed(_ sender: AnyObject) {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
-        let date = dateFormatter.dateFromString(self.shortBreakTimeField.text!)
+        let date = dateFormatter.date(from: self.shortBreakTimeField.text!)
         shortBreakDatePicker.date = date!
-        workDatePicker.hidden = true
-        longBreakDatePicker.hidden = true
-        shortBreakDatePicker.hidden = false
+        workDatePicker.isHidden = true
+        longBreakDatePicker.isHidden = true
+        shortBreakDatePicker.isHidden = false
     }
-    @IBAction func longBreakButtonPressed(sender: AnyObject) {
-        let dateFormatter = NSDateFormatter()
+    @IBAction func longBreakButtonPressed(_ sender: AnyObject) {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
-        let date = dateFormatter.dateFromString(self.longBreakTimeField.text!)
+        let date = dateFormatter.date(from: self.longBreakTimeField.text!)
         longBreakDatePicker.date = date!
-        workDatePicker.hidden = true
-        shortBreakDatePicker.hidden = true
-        longBreakDatePicker.hidden = false
+        workDatePicker.isHidden = true
+        shortBreakDatePicker.isHidden = true
+        longBreakDatePicker.isHidden = false
     }
     
-    @IBAction func workDatePickerAction(sender: AnyObject) {
-        let dateFormatter = NSDateFormatter()
+    @IBAction func workDatePickerAction(_ sender: AnyObject) {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
-        let strDate = dateFormatter.stringFromDate(workDatePicker.date)
+        let strDate = dateFormatter.string(from: workDatePicker.date)
         self.workTimeField.text = strDate
-        workDatePicker.hidden = true
+        workDatePicker.isHidden = true
     }
     
-    @IBAction func shortBreakDatePickerAction(sender: AnyObject) {
-        let dateFormatter = NSDateFormatter()
+    @IBAction func shortBreakDatePickerAction(_ sender: AnyObject) {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
-        let strDate = dateFormatter.stringFromDate(shortBreakDatePicker.date)
+        let strDate = dateFormatter.string(from: shortBreakDatePicker.date)
         self.shortBreakTimeField.text = strDate
-        shortBreakDatePicker.hidden = true
+        shortBreakDatePicker.isHidden = true
     }
 
-    @IBAction func longBreakDatePickerAction(sender: AnyObject) {
-        let dateFormatter = NSDateFormatter()
+    @IBAction func longBreakDatePickerAction(_ sender: AnyObject) {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
-        let strDate = dateFormatter.stringFromDate(longBreakDatePicker.date)
+        let strDate = dateFormatter.string(from: longBreakDatePicker.date)
         self.longBreakTimeField.text = strDate
-        longBreakDatePicker.hidden = true
+        longBreakDatePicker.isHidden = true
     }
     
-    @IBAction func demoModeToggled(sender: AnyObject)
+    @IBAction func demoModeToggled(_ sender: AnyObject)
   {
-    print("Demo toggled to \(demoModeSwitch!.on)")
-    demoMode = demoModeSwitch!.on
+    print("Demo toggled to \(demoModeSwitch!.isOn)")
+    demoMode = demoModeSwitch!.isOn
     pomodoroState.resetWork()
     setTimeLabels()
   }
   
   func setTimeLabels() {
-    let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    workTimeField!.text = PomodoroState.convertSecsToMinSecs(prefs.doubleForKey("WORKTIME"))
-    shortBreakTimeField!.text = PomodoroState.convertSecsToMinSecs(prefs.doubleForKey("SHORTBREAKTIME"))
-    longBreakTimeField!.text = PomodoroState.convertSecsToMinSecs(prefs.doubleForKey("LONGBREAKTIME"))
+    let prefs:UserDefaults = UserDefaults.standard
+    workTimeField!.text = PomodoroState.convertSecsToMinSecs(prefs.double(forKey: "WORKTIME"))
+    shortBreakTimeField!.text = PomodoroState.convertSecsToMinSecs(prefs.double(forKey: "SHORTBREAKTIME"))
+    longBreakTimeField!.text = PomodoroState.convertSecsToMinSecs(prefs.double(forKey: "LONGBREAKTIME"))
 
     
       }

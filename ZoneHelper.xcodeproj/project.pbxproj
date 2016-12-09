@@ -209,6 +209,7 @@
 					D0A851F4195134AC0004A4A2 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = YAX6XB3T67;
+						LastSwiftMigration = 0810;
 						SystemCapabilities = {
 							com.apple.InterAppAudio = {
 								enabled = 0;
@@ -217,6 +218,7 @@
 					};
 					D0A85206195134AC0004A4A2 = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0810;
 						TestTargetID = D0A851F4195134AC0004A4A2;
 					};
 				};
@@ -403,6 +405,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shakacode.zone-helper";
 				PRODUCT_NAME = ZoneHelper;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -419,6 +422,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shakacode.zone-helper";
 				PRODUCT_NAME = ZoneHelper;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -440,6 +444,7 @@
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hotCoconut.mauiPomodoro.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ZoneHelperTests;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZoneHelper.app/ZoneHelper";
 			};
 			name = Debug;
@@ -457,6 +462,7 @@
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hotCoconut.mauiPomodoro.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ZoneHelperTests;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZoneHelper.app/ZoneHelper";
 			};
 			name = Release;
